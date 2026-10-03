@@ -882,7 +882,7 @@ footer .credit a{color:inherit}
         <div class="f"><span class="lab" id="kidsL" data-t="f_kids"></span><div class="opts" role="group" aria-labelledby="kidsL" id="kids"><button type="button" aria-pressed="true">1</button><button type="button" aria-pressed="false">2</button><button type="button" aria-pressed="false">3</button><input id="kidsOther" class="age-other" type="number" inputmode="numeric" min="4" max="30" placeholder="4+" aria-label="4+"></div></div>
         <div class="f"><label for="tg" data-t="f_tg"></label><input id="tg" placeholder="@username" autocomplete="off"></div>
         <div class="f"><label for="ref" data-t="f_ref"></label><input id="ref" autocomplete="off"></div>
-        <button class="btn" type="submit"><span data-t="cta"></span> <span class="round" aria-hidden="true">→</span></button>
+        <button class="btn" type="submit" id="submitBtn"><span data-t="cta"></span> <span class="round" aria-hidden="true">→</span></button>
         <p class="fine" data-t="f_fine"></p>
       </form>
       <div class="done" id="done" hidden>
@@ -922,9 +922,10 @@ footer .credit a{color:inherit}
 <footer><div class="wrap" style="display:flex;align-items:center;gap:12px"><svg class="ee-logo" viewBox="0 0 48 48" role="img" aria-label="Expedition in Education"><circle cx="24" cy="24" r="24" fill="#F7F4EE"/><circle cx="24" cy="24" r="20.5" fill="none" stroke="#17357F" stroke-width="2.6"/><circle cx="24" cy="24" r="16.6" fill="none" stroke="#17357F" stroke-width="1"/><path transform="translate(20.5 15) rotate(40) scale(0.42)" d="M0,-10 L7.5,9 L0,4.5 L-7.5,9 Z" fill="#E5A526"/><text x="24" y="31" text-anchor="middle" font-family="Poppins, Arial, sans-serif" font-weight="700" font-size="14.5" fill="#17357F">EE</text></svg><span data-t="footer"></span><small class="credit">Toshkent foto: Tashkent City Park, <a href="https://commons.wikimedia.org/wiki/File:Tashkent_City_Park_at_night_2019.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>, CC BY-SA 4.0</small></div></footer>
 <div class="mbar"><a class="btn" href="#ariza"><span data-t="cta"></span> <span class="round" aria-hidden="true">→</span></a></div>
 
+<script src="config.js"></script>
 <script>
-// Arizalar qayerga yuboriladi: saytni o'z domeningizga qo'yganda Google Sheets (Apps Script) yoki Formspree manzilini shu yerga yozing.
-const ENDPOINT = "";
+// Google Sheets endpoint config.js orqali beriladi.
+const ENDPOINT = (window.NASEEB_SHEETS_ENDPOINT || "").trim();
 
 const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
 
@@ -3941,7 +3942,29 @@ $("#form").addEventListener("submit", async e => {
   const pretty = "+998 " + $("#phone").value, planTxt = `${tr("p" + plan + "_name")} (${tr("p" + plan + "_dates")}, ${["", "$490", "$990", "$1 490"][plan]})`;
   const msg = `${tr("msg_h")}\n${tr("msg_name")}: ${name}\n${tr("msg_phone")}: ${pretty}\n${tr("msg_age")}: ${age}\n${tr("f_gender")}: ${tr("g_" + gender)}\n${tr("msg_plan")}: ${planTxt}\n${tr("msg_kids")}: ${kids}` + (tg ? `\nTelegram: ${tg}` : "") + (ref ? `\n${tr("msg_ref")}: ${ref}` : "");
   let sent = false;
-  if (ENDPOINT) { try { await fetch(ENDPOINT, { method: "POST", mode: "no-cors", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify({ name, phone: pretty, age, gender: tr("g_" + gender), plan: planTxt, kids, telegram: tg, referral: ref, lang, at: new Date().toISOString() }) }); sent = true; } catch (_) {} }
+  const submitBtn = $("#submitBtn");
+  const submitText = submitBtn ? submitBtn.querySelector("span[data-t=\"cta\"]") : null;
+  if (submitBtn) { submitBtn.disabled = true; submitBtn.setAttribute("aria-busy", "true"); }
+  if (submitText) submitText.textContent = lang === "ru" ? "Отправка…" : (lang === "en" ? "Sending…" : "Yuborilmoqda…");
+  if (ENDPOINT) {
+    try {
+      await fetch(ENDPOINT, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify({
+          name, phone: pretty, age, gender: tr("g_" + gender), plan: planTxt, kids,
+          telegram: tg, referral: ref, lang,
+          submittedAt: new Date().toISOString(), source: location.href
+        })
+      });
+      sent = true;
+    } catch (error) {
+      console.error("Registration submit failed", error);
+    }
+  }
+  if (submitBtn) { submitBtn.disabled = false; submitBtn.removeAttribute("aria-busy"); }
+  if (submitText) submitText.textContent = tr("cta");
   $("#form").hidden = true; $("#done").hidden = false; $("#doneMsg").textContent = msg;
   if (sent) { $("#doneT").textContent = tr("ok_t"); $("#doneP").textContent = tr("ok_p"); $("#doneMsg").hidden = true; $("#doneA").hidden = true; }
   else { $("#doneT").textContent = tr("step_t"); $("#doneP").textContent = tr("step_p"); }
