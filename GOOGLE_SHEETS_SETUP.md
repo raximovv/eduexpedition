@@ -1,68 +1,22 @@
-# Google Sheets ulash — Naseeb Expedition
+# Google Sheets setup — Naseeb Expedition
 
-Bu patch quyidagi Google Sheet'ga yozish uchun tayyorlangan:
+## 1. Apps Script kodini yangilang
+Google Sheet → **Extensions → Apps Script** → `Code.gs` faylini shu ZIP ichidagi `google-apps-script/Code.gs` bilan to'liq almashtiring.
 
-`https://docs.google.com/spreadsheets/d/122cukOMkN-0LARNjvEJlfZNQkCy-W2enMpXD_Bv8T_I/edit`
+## 2. Web App deploymentni yangilang
+**Deploy → Manage deployments → Edit → New version → Deploy**.
 
-Ma'lumotlar shu workbook ichida avtomatik yaratiladigan **Registrations** tabiga tushadi.
+Sozlamalar:
+- **Execute as:** Me
+- **Who has access:** Anyone
 
-## 1. Apps Script oching
-
-Google Sheet'ni oching → **Extensions → Apps Script**.
-
-## 2. Backend kodini qo'ying
-
-Apps Script ichidagi eski kodni o'chirib, ushbu ZIP ichidagi:
-
-`google-apps-script/Code.gs`
-
-faylini to'liq copy-paste qiling va Save bosing.
-
-## 3. Web App qilib deploy qiling
-
-**Deploy → New deployment → Web app**
-
-- Execute as: **Me**
-- Who has access: **Anyone**
-
-Deploy qiling va berilgan URL'ni nusxalang. URL odatda `/exec` bilan tugaydi.
-
-## 4. URL'ni saytga qo'ying
-
-Root'dagi `config.js` ni oching:
-
-```js
-window.NASEEB_SHEETS_ENDPOINT = "";
-```
-
-ichiga `/exec` URL'ni qo'ying, masalan:
-
-```js
-window.NASEEB_SHEETS_ENDPOINT = "https://script.google.com/macros/s/XXXXX/exec";
-```
-
-Shundan keyin saytni deploy qiling.
-
-## Sheet ustunlari
-
-Patch quyidagilarni saqlaydi:
-
-- Submitted at (Tashkent)
-- Name
-- Phone
-- Age
-- Gender
-- Plan
-- Students
-- Telegram
-- Referral
-- Language
-- Source
-
-`Registrations` tab mavjud bo'lmasa, birinchi arizada avtomatik yaratiladi.
-
-
-## Current deployment
-The project is already configured to use:
-
+Web App URL allaqachon `config.js` ichida:
 `https://script.google.com/macros/s/AKfycbxfrv6tiBUYf1DGfIV-PYKeZKL3piL56UqqreIUAJZc9WZGr7vCoDLTob9PmJ0UUaGh/exec`
+
+## 3. Library URL haqida
+`https://script.google.com/macros/library/d/12uWQuWOycItqSmUWyf7ZFFr4xrngLScFYFaRwHoMGNUFh24TIzBWkJ9m/1`
+
+Bu URL frontend uchun kerak emas. U boshqa Apps Script projectlarida scriptni library sifatida ulash uchun ishlatiladi. Reference sifatida `config.js`da saqlangan.
+
+## 4. Nima yaxshilandi
+Oldingi versiyada `fetch(..., {mode: "no-cors"})` 401 qaytarsa ham browser response statusini ko'ra olmagani uchun sayt success ko'rsatishi mumkin edi. Bu patch `requestId` + JSONP confirmation ishlatadi. Endi Sheetga yozilganini Apps Script tasdiqlamaguncha **“Arizangiz qabul qilindi!”** chiqmaydi.

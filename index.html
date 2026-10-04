@@ -927,6 +927,46 @@ footer .credit a{color:inherit}
 // Google Sheets endpoint config.js orqali beriladi.
 const ENDPOINT = (window.NASEEB_SHEETS_ENDPOINT || "").trim();
 
+// Apps Script ContentService cross-origin POST javobini browser to'g'ridan-to'g'ri
+// o'qiy olmaydi. Shuning uchun POSTdan keyin JSONP orqali requestId holatini
+// tekshirib, faqat Sheetga yozilgani tasdiqlansa success ko'rsatamiz.
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+function makeRequestId() {
+  if (window.crypto && typeof window.crypto.randomUUID === "function") return window.crypto.randomUUID();
+  return `reg-${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
+}
+function jsonp(url, params = {}, timeout = 4500) {
+  return new Promise((resolve, reject) => {
+    const cb = `__naseebCb_${Date.now()}_${Math.random().toString(36).slice(2)}`;
+    const script = document.createElement("script");
+    const qs = new URLSearchParams({ ...params, callback: cb, _: String(Date.now()) });
+    const timer = setTimeout(() => finish(new Error("Apps Script confirmation timeout")), timeout);
+    function finish(err, data) {
+      clearTimeout(timer);
+      try { delete window[cb]; } catch (_) { window[cb] = undefined; }
+      script.remove();
+      err ? reject(err) : resolve(data);
+    }
+    window[cb] = data => finish(null, data);
+    script.onerror = () => finish(new Error("Apps Script confirmation failed"));
+    script.src = `${url}${url.includes("?") ? "&" : "?"}${qs.toString()}`;
+    document.head.appendChild(script);
+  });
+}
+async function confirmRegistration(requestId) {
+  for (let i = 0; i < 3; i++) {
+    try {
+      // Apps Script javobi 1–5 s, sekin internetda 20 s gacha cho'ziladi; timeoutdan keyin kelgan javob yo'qoladi.
+      const result = await jsonp(ENDPOINT, { action: "status", requestId }, 15000);
+      if (result && result.ok === true) return true;
+    } catch (error) {
+      if (i === 2) console.error("Google Sheets confirmation failed", error);
+    }
+    await sleep(700 + i * 250);
+  }
+  return false;
+}
+
 const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
 
 /* ---------- text: uz (Latin) is the source; cyr is generated from it; ru and en are written by hand ----------
@@ -3942,6 +3982,7 @@ $("#form").addEventListener("submit", async e => {
   const pretty = "+998 " + $("#phone").value, planTxt = `${tr("p" + plan + "_name")} (${tr("p" + plan + "_dates")}, ${["", "$490", "$990", "$1 490"][plan]})`;
   const msg = `${tr("msg_h")}\n${tr("msg_name")}: ${name}\n${tr("msg_phone")}: ${pretty}\n${tr("msg_age")}: ${age}\n${tr("f_gender")}: ${tr("g_" + gender)}\n${tr("msg_plan")}: ${planTxt}\n${tr("msg_kids")}: ${kids}` + (tg ? `\nTelegram: ${tg}` : "") + (ref ? `\n${tr("msg_ref")}: ${ref}` : "");
   let sent = false;
+  const requestId = makeRequestId();
   const submitBtn = $("#submitBtn");
   const submitText = submitBtn ? submitBtn.querySelector("span[data-t=\"cta\"]") : null;
   if (submitBtn) { submitBtn.disabled = true; submitBtn.setAttribute("aria-busy", "true"); }
@@ -3953,12 +3994,12 @@ $("#form").addEventListener("submit", async e => {
         mode: "no-cors",
         headers: { "Content-Type": "text/plain;charset=utf-8" },
         body: JSON.stringify({
-          name, phone: pretty, age, gender: tr("g_" + gender), plan: planTxt, kids,
+          requestId, name, phone: pretty, age, gender: tr("g_" + gender), plan: planTxt, kids,
           telegram: tg, referral: ref, lang,
           submittedAt: new Date().toISOString(), source: location.href
         })
       });
-      sent = true;
+      sent = await confirmRegistration(requestId);
     } catch (error) {
       console.error("Registration submit failed", error);
     }
