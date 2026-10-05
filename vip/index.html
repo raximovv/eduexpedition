@@ -1,0 +1,400 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Edu Expedition VIP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap">
+<style>
+/* Layout: a private-banking brochure for the trip. Ink-navy ground, one gold accent used sparingly, hairline rules, a "membership card" as the hero object.
+   Order follows a parent's questions: what is VIP → how much in total → what changes → who runs it → how it works → contact. Single dark look. */
+:root{
+  --bg:#060A18; --bg2:#0B1229; --panel:#0E1631; --line:rgba(255,255,255,.09); --line2:rgba(255,255,255,.16);
+  --ink:#F4F6FB; --soft:#A9B3CB; --dim:#7D88A4; --gold:#E9C46A; --gold2:#C99A3B; --goldline:rgba(233,196,106,.38); --mint:#86E1B0;
+  --font:"Poppins",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.6;margin:0;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.w{max-width:1160px;margin:0 auto;padding-inline:20px}
+h1,h2,h3{margin:0;line-height:1.06;text-wrap:balance;font-weight:600;letter-spacing:-.025em}
+h2{font-size:clamp(28px,3.8vw,46px)}
+h2 em{font-style:normal;color:var(--gold)}
+.eb{display:flex;align-items:center;gap:12px;font-size:12px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin:0 0 16px}
+.eb::before{content:"";width:28px;height:1px;background:var(--gold)}
+.lead{color:var(--soft);max-width:60ch;margin:14px 0 0;font-weight:300;font-size:17px}
+section{padding-block:clamp(64px,9vw,112px)}
+section+section{border-top:1px solid var(--line)}
+.head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr);gap:40px;align-items:end;margin-bottom:40px}
+.head .lead{margin:0}
+@media (max-width:860px){.head{grid-template-columns:1fr;gap:12px}}
+.num{font-variant-numeric:tabular-nums}
+.btn{display:inline-flex;align-items:center;gap:10px;font:500 15px var(--font);text-decoration:none;border-radius:999px;padding:15px 26px;border:1px solid var(--line2);transition:transform .25s,background .25s,border-color .25s}
+.btn:hover{transform:translateY(-2px)}
+.btn.gold{background:linear-gradient(135deg,#F3D58A,var(--gold) 45%,var(--gold2));color:#0B1229;border-color:transparent;font-weight:600}
+.btn.ghost{color:var(--ink)}
+.btn.ghost:hover{border-color:var(--goldline)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+/* bar */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(6,10,24,.82);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.bar .w{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:14px}
+.bar .lg{display:flex;align-items:center;gap:12px;text-decoration:none}
+.bar .lg img{height:32px;display:block}
+.vipmark{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.24em;color:var(--gold);border:1px solid var(--goldline);border-radius:999px;padding:4px 10px 4px 8px}
+.vipmark svg{width:13px;height:13px}
+.bar nav{display:flex;gap:2px}
+.bar nav a{text-decoration:none;font-size:13.5px;color:var(--soft);padding:8px 12px;border-radius:999px}
+.bar nav a:hover{color:var(--ink);background:rgba(255,255,255,.05)}
+.lang{display:flex;gap:2px;border:1px solid var(--line2);border-radius:999px;padding:3px}
+.lang button{font:600 12px var(--font);color:var(--soft);background:transparent;border:0;border-radius:999px;padding:6px 9px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+@media (max-width:980px){.bar nav{display:none}}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding-block:clamp(56px,8vw,104px)}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.32;filter:saturate(.8)}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(80% 90% at 85% 40%,rgba(233,196,106,.10),transparent 60%),linear-gradient(90deg,var(--bg) 18%,rgba(6,10,24,.75) 55%,rgba(6,10,24,.55)),linear-gradient(180deg,transparent 65%,var(--bg))}
+.hero .w{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:56px;align-items:center}
+.hero h1{font-size:clamp(38px,5.2vw,68px);font-weight:600;letter-spacing:-.04em}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,#F6DE9C,var(--gold) 50%,#D8A84A);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .sub{font-size:clamp(16px,1.5vw,19px);color:var(--soft);font-weight:300;max-width:44ch;margin:22px 0 32px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:44px;border-top:1px solid var(--line2)}
+.facts div{padding:16px 16px 0 0}
+.facts div+div{padding-left:16px;border-left:1px solid var(--line)}
+.facts b{display:block;font-size:22px;font-weight:600;color:var(--ink)}
+.facts span{font-size:12.5px;color:var(--dim)}
+/* membership card */
+.card{position:relative;aspect-ratio:1.586;max-width:100%;border-radius:22px;padding:26px 28px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;
+  background:linear-gradient(135deg,#1A2346 0%,#0C1330 45%,#141B38 100%);border:1px solid var(--goldline);box-shadow:0 40px 80px -30px rgba(0,0,0,.8),inset 0 1px 0 rgba(255,255,255,.08);transform:rotate(-3deg)}
+.card::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,rgba(233,196,106,.05) 0 2px,transparent 2px 14px)}
+.card::after{content:"";position:absolute;top:-60%;left:-30%;width:60%;height:220%;background:linear-gradient(90deg,transparent,rgba(255,240,200,.12),transparent);transform:rotate(20deg);animation:sheen 6s ease-in-out 1s infinite}
+@keyframes sheen{0%,60%{left:-40%}100%{left:130%}}
+.card>*{position:relative;z-index:1}
+.card .ct{display:flex;justify-content:space-between;align-items:flex-start}
+.card .ct img{height:30px}
+.card .tier{font-size:12px;font-weight:700;letter-spacing:.3em;color:var(--gold)}
+.chip{width:42px;height:32px;border-radius:7px;background:linear-gradient(135deg,#F3D58A,#B98A33);box-shadow:inset 0 0 0 1px rgba(0,0,0,.25)}
+.card .cp{display:flex;gap:26px}
+.card .cp small{display:block;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)}
+.card .cp b{font-size:clamp(22px,2.6vw,30px);font-weight:600;letter-spacing:-.01em}
+.card .cn{font-size:12px;letter-spacing:.18em;color:var(--soft);text-transform:uppercase}
+.card-note{margin:20px 4px 0;font-size:13px;color:var(--dim);text-align:center}
+@media (max-width:900px){.hero .w{grid-template-columns:1fr}.card{transform:none;max-width:460px}.facts{grid-template-columns:repeat(2,minmax(0,1fr))}.facts div:nth-child(3){border-left:0;padding-left:0}}
+@media (max-width:420px){.card{padding:18px 20px}.card .cp{gap:16px}}
+
+/* three answers */
+.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line2)}
+.ans{padding:28px 28px 8px 0;display:flex;flex-direction:column;gap:14px}
+.ans+.ans{padding-left:28px;border-left:1px solid var(--line)}
+.ans .ic{width:44px;height:44px;border-radius:50%;border:1px solid var(--goldline);display:grid;place-items:center;color:var(--gold)}
+.ans .ic svg{width:20px;height:20px}
+.ans h3{font-size:20px}
+.ans ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+.ans li{font-size:15px;color:var(--soft);padding-left:16px;position:relative}
+.ans li::before{content:"";position:absolute;left:0;top:10px;width:6px;height:1px;background:var(--gold)}
+.ans li b{color:var(--ink);font-weight:500}
+@media (max-width:860px){.three{grid-template-columns:1fr}.ans,.ans+.ans{padding:24px 0;border-left:0;border-bottom:1px solid var(--line)}}
+
+/* calculator */
+.seg{display:inline-flex;gap:4px;border:1px solid var(--line2);border-radius:999px;padding:4px;margin-bottom:22px}
+.seg button{font:500 14px var(--font);color:var(--soft);background:transparent;border:0;border-radius:999px;padding:10px 20px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--gold);color:#0B1229;font-weight:600}
+.calc{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,.9fr);gap:24px;align-items:start}
+.groups{display:flex;flex-direction:column;gap:16px}
+.grp{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:4px 22px 12px}
+.grp.svc{border-color:var(--goldline)}
+.grp.cur{border-color:rgba(134,225,176,.3)}
+.gh{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 0 12px;border-bottom:1px solid var(--line)}
+.gh b{font-size:15.5px;font-weight:600}
+.gh small{display:block;font-size:12.5px;color:var(--dim);font-weight:400}
+.gh .sum{font-size:20px;font-weight:600;white-space:nowrap}
+.grp.svc .sum{color:var(--gold)}.grp.cur .sum{color:var(--mint)}
+.r{display:flex;justify-content:space-between;gap:16px;padding:10px 0;font-size:14.5px;border-bottom:1px dashed var(--line)}
+.r:last-child{border-bottom:0}
+.r span{color:var(--soft);min-width:0}
+.r span small{display:block;font-size:12px;color:var(--dim)}
+.r b{white-space:nowrap;font-weight:500}
+.total{position:sticky;top:84px;border-radius:24px;padding:28px;background:linear-gradient(160deg,#18213F,#0C1330);border:1px solid var(--goldline);display:flex;flex-direction:column;gap:14px;box-shadow:0 30px 60px -30px rgba(0,0,0,.7)}
+.total small{color:var(--dim);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.total .big{font-size:clamp(44px,5.4vw,60px);font-weight:600;line-height:1;letter-spacing:-.03em;color:var(--gold)}
+.total .split{display:flex;flex-direction:column;gap:8px;border-top:1px solid var(--line);padding-top:14px;font-size:14px}
+.total .split div{display:flex;justify-content:space-between;gap:10px}
+.total .split span{color:var(--soft)}
+.total .vs{font-size:13px;color:var(--soft);border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin:0}
+.total .vs b{color:var(--ink)}
+.total .note{font-size:12px;color:var(--dim);margin:0}
+.total .btn{justify-content:center}
+@media (max-width:900px){.calc{grid-template-columns:1fr}.total{position:static;order:-1}}
+
+/* comparison */
+.ledger{border:1px solid var(--line2);border-radius:20px;overflow:hidden}
+.lrow{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1fr) minmax(0,1.15fr)}
+.lrow+.lrow{border-top:1px solid var(--line)}
+.lrow>div{padding:16px 20px;min-width:0;font-size:15px}
+.lrow .k{color:var(--soft)}
+.lrow .s{color:var(--dim)}
+.lrow .v{background:rgba(233,196,106,.05);border-left:1px solid var(--goldline);color:var(--ink)}
+.lrow .v b{color:var(--gold);font-weight:500}
+.lhead>div{font-size:11.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);padding-block:14px}
+.lhead .v{color:var(--gold)}
+@media (max-width:720px){.lrow{grid-template-columns:1fr 1fr}.lrow .k{grid-column:1/-1;padding-bottom:2px;color:var(--ink);font-weight:500}.lrow .s,.lrow .v{padding-top:6px}.lhead .k{display:none}}
+
+/* included */
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line2)}
+.it{padding:28px 24px 28px 0;display:flex;flex-direction:column;gap:10px;border-bottom:1px solid var(--line)}
+.it:not(:nth-child(3n+1)){padding-left:24px;border-left:1px solid var(--line)}
+.it svg{width:26px;height:26px;color:var(--gold)}
+.it b{font-size:17px;font-weight:600}
+.it span{color:var(--soft);font-size:14.5px;font-weight:300}
+@media (max-width:860px){.grid{grid-template-columns:1fr 1fr}.it:not(:nth-child(3n+1)){padding-left:0;border-left:0}.it:nth-child(even){padding-left:20px;border-left:1px solid var(--line)}}
+@media (max-width:520px){.grid{grid-template-columns:1fr}.it:nth-child(even){padding-left:0;border-left:0}}
+
+/* team */
+.team{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
+.tm{display:flex;flex-direction:column;text-decoration:none;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:22px;overflow:hidden;transition:transform .3s,border-color .3s}
+a.tm:hover{transform:translateY(-4px);border-color:var(--goldline)}
+.tm img{display:block;width:100%;aspect-ratio:1;object-fit:cover;object-position:50% 25%;filter:grayscale(.15)}
+.tm .in{padding:14px 16px 18px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.tm small{font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.tm b{font-size:16.5px;font-weight:600;line-height:1.2}
+.tm span{font-size:12.5px;color:var(--dim);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tm-more{align-items:center;justify-content:center;gap:12px;text-align:center;padding:20px;border-color:var(--goldline);background:radial-gradient(120% 90% at 50% 0%,rgba(233,196,106,.16),var(--panel) 65%)}
+.faces{display:flex}
+.faces img{width:40px;height:40px;aspect-ratio:1;border-radius:50%;border:2px solid var(--panel);margin-left:-12px;object-fit:cover}
+.faces img:first-child{margin-left:0}
+.tm-more b{font-size:clamp(48px,5vw,64px);line-height:1;color:var(--gold);font-weight:600}
+.tm-more span{white-space:normal;font-size:14px;color:var(--soft)}
+@media (max-width:1000px){.team{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:600px){.team{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.tm-more{grid-column:1/-1}}
+
+/* steps */
+.steps{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;position:relative}
+.steps::before{content:"";position:absolute;left:0;right:0;top:19px;height:1px;background:linear-gradient(90deg,var(--gold),var(--goldline) 60%,var(--line))}
+.steps li{position:relative;padding:0 24px 0 0;display:flex;flex-direction:column;gap:8px;counter-increment:s}
+.steps{counter-reset:s}
+.steps li::before{content:counter(s,decimal-leading-zero);width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--bg);border:1px solid var(--gold);color:var(--gold);font-size:13px;font-weight:600;margin-bottom:10px}
+.steps small{color:var(--dim);font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+.steps b{font-size:17px;font-weight:600}
+.steps span{color:var(--soft);font-size:14.5px;font-weight:300}
+@media (max-width:860px){.steps{grid-template-columns:1fr;gap:26px}.steps::before{left:19px;right:auto;top:0;bottom:0;width:1px;height:auto;background:linear-gradient(180deg,var(--gold),var(--line))}.steps li{padding:0 0 0 60px}.steps li::before{position:absolute;left:0;top:0;margin:0}}
+
+/* contact */
+.contact{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:center;border:1px solid var(--goldline);border-radius:28px;padding:32px;background:radial-gradient(90% 120% at 100% 0%,rgba(233,196,106,.12),transparent 60%),var(--panel)}
+.contact h2{font-size:clamp(26px,3vw,38px)}
+.person{display:flex;gap:16px;align-items:center;margin-top:22px}
+.person img{width:72px;height:72px;border-radius:50%;object-fit:cover;border:1px solid var(--gold)}
+.person small{display:block;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.person b{display:block;font-size:18px;font-weight:600}
+.person .tel{font-size:16px;color:var(--soft);user-select:all}
+@media (max-width:760px){.contact{grid-template-columns:1fr;padding:24px}}
+
+.end{text-align:center;padding-block:60px 30px;border-top:1px solid var(--line)}
+.end p{font-size:clamp(26px,3.4vw,38px);font-weight:600;margin:0;letter-spacing:-.02em}
+.end p a{color:var(--gold);text-decoration:none;border-bottom:2px solid var(--gold)}
+.end .by{display:inline-flex;align-items:center;gap:14px;margin-top:20px;text-decoration:none;color:var(--soft);font-size:14px;border:1px solid var(--line2);border-radius:999px;padding:12px 26px}
+.end .by img{height:38px}
+.end .by span{transform:translateY(6px)}
+.back{display:block;text-align:center;color:var(--dim);font-size:13px;padding:6px 0 34px}
+@media (prefers-reduced-motion:reduce){.btn,.tm{transition:none}.card::after{animation:none}}
+</style>
+
+<div class="bar"><div class="w">
+  <a class="lg" href="#top"><img src="/vip/img/ee_word_white.svg" alt="Expedition in Education"><span class="vipmark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8l4.5 4L12 5l4.5 7L21 8l-2 10H5z" fill="currentColor"/></svg>VIP</span></a>
+  <nav><a href="#hisob" data-t="n1"></a><a href="#farq" data-t="n2"></a><a href="#jamoa" data-t="n3"></a><a href="#bogl" data-t="n4"></a></nav>
+  <div class="lang" role="group" aria-label="Til"><button type="button" data-l="uz" aria-pressed="true">UZ</button><button type="button" data-l="cyr" aria-pressed="false">ЎЗ</button><button type="button" data-l="ru" aria-pressed="false">RU</button><button type="button" data-l="en" aria-pressed="false">EN</button></div>
+</div></div>
+
+<header class="hero" id="top">
+  <img src="/vip/img/hk_harbour.webp" alt="">
+  <div class="w">
+    <div>
+      <p class="eb" data-t="h_eb"></p>
+      <h1 data-t="h_t"></h1>
+      <p class="sub" data-t="h_s"></p>
+      <div class="cta"><a class="btn gold" href="#hisob" data-t="cta1"></a><a class="btn ghost" href="#bogl" data-t="cta2"></a></div>
+      <div class="facts"><div><b>1 : 1</b><span data-t="f1"></span></div><div><b data-t="f2b"></b><span data-t="f2"></span></div><div><b>5 ★</b><span data-t="f3"></span></div><div><b data-t="f4b"></b><span data-t="f4"></span></div></div>
+    </div>
+    <div>
+      <div class="card" aria-label="VIP">
+        <div class="ct"><img src="/vip/img/ee_word_white.svg" alt=""><span class="tier">VIP</span></div>
+        <div class="chip" aria-hidden="true"></div>
+        <div class="cp"><div><small data-t="tk2"></small><b class="num">$1 980</b></div><div><small data-t="tk3"></small><b class="num">$2 980</b></div></div>
+        <div class="cn" data-t="card_n"></div>
+      </div>
+      <p class="card-note" data-t="card_note"></p>
+    </div>
+  </div>
+</header>
+
+<section><div class="w">
+  <div class="head"><div><p class="eb" data-t="a_eb"></p><h2 data-t="a_h"></h2></div></div>
+  <div class="three" id="three"></div>
+</div></section>
+
+<section id="hisob"><div class="w">
+  <div class="head"><div><p class="eb" data-t="c_eb"></p><h2 data-t="c_h"></h2></div><p class="lead" data-t="c_p"></p></div>
+  <div class="seg" role="group" aria-label="Reja"><button type="button" data-p="2" aria-pressed="false" data-t="tk2"></button><button type="button" data-p="3" aria-pressed="true" data-t="tk3"></button></div>
+  <div class="calc"><div class="groups" id="groups"></div><aside class="total" id="total"></aside></div>
+</div></section>
+
+<section id="farq"><div class="w">
+  <div class="head"><div><p class="eb" data-t="f_eb"></p><h2 data-t="f_h"></h2></div><p class="lead" data-t="f_p"></p></div>
+  <div class="ledger" id="ledger"></div>
+</div></section>
+
+<section><div class="w">
+  <div class="head"><div><p class="eb" data-t="i_eb"></p><h2 data-t="i_h"></h2></div></div>
+  <div class="grid" id="inc"></div>
+</div></section>
+
+<section id="jamoa"><div class="w">
+  <div class="head"><div><p class="eb" data-t="tm_eb"></p><h2 data-t="tm_h"></h2></div><p class="lead" data-t="tm_p"></p></div>
+  <div class="team">
+    <a class="tm" href="https://www.instagram.com/hasan_mamasaidov/" target="_blank" rel="noopener"><img src="/vip/img/p_hasan.webp" alt="Hasan Mamasaidov" loading="lazy"><div class="in"><small data-t="r_adv"></small><b>Hasan Mamasaidov</b><span>Instagram · @hasan_mamasaidov</span></div></a>
+    <a class="tm" href="https://t.me/naseeb_edu" target="_blank" rel="noopener"><img src="/vip/img/p_humoyun.webp" alt="Humoyun Nasipkulov" loading="lazy"><div class="in"><small data-t="r_fnd"></small><b>Humoyun Nasipkulov</b><span>Telegram · @naseeb_edu</span></div></a>
+    <a class="tm" href="https://t.me/Muhammadamin_HKU" target="_blank" rel="noopener"><img src="/vip/img/p_muhammadamin.webp" alt="Muhammadamin Rahmonberdiev" loading="lazy"><div class="in"><small data-t="r_pm"></small><b>Muhammadamin Rahmonberdiev</b><span>Telegram · @Muhammadamin_HKU</span></div></a>
+    <a class="tm" href="https://t.me/burhunter" target="_blank" rel="noopener"><img src="/vip/img/p_burxoniddin.webp" alt="Burxoniddin Fatiddinov" loading="lazy"><div class="in"><small data-t="r_rep"></small><b>Burxoniddin Fatiddinov</b><span>Telegram · @burhunter</span></div></a>
+    <div class="tm tm-more"><div class="faces" aria-hidden="true"><img src="/vip/img/p_hasan.webp" alt=""><img src="/vip/img/p_humoyun.webp" alt=""><img src="/vip/img/p_muhammadamin.webp" alt=""><img src="/vip/img/p_burxoniddin.webp" alt=""></div><b>10+</b><span data-t="tm_more"></span></div>
+  </div>
+</div></section>
+
+<section><div class="w">
+  <div class="head"><div><p class="eb" data-t="s_eb"></p><h2 data-t="s_h"></h2></div></div>
+  <ol class="steps" id="steps"></ol>
+</div></section>
+
+<section id="bogl"><div class="w">
+  <div class="contact">
+    <div><p class="eb" data-t="d_eb"></p><h2 data-t="d_h"></h2>
+      <div class="person"><img src="/vip/img/p_burxoniddin.webp" alt="Burxoniddin Fatiddinov"><div><small data-t="r_rep"></small><b>Burxoniddin Fatiddinov</b><span class="tel num">+998 95 355 00 88</span></div></div></div>
+    <a class="btn gold" href="https://t.me/burhunter" target="_blank" rel="noopener">Telegram · @burhunter ↗</a>
+  </div>
+</div></section>
+
+<div class="end"><p data-t="end"></p><a class="by" href="https://www.naseebedu.com/" target="_blank" rel="noopener"><span>by</span><img src="/vip/img/logo_white.png" alt="Naseeb"><span>naseebedu.com ↗</span></a></div>
+<a class="back" href="/" data-t="back"></a>
+
+<script>
+(() => {
+/* VIP service = 2× the standard plan (exact, fixed). Everything else is an estimate, shown rounded UP (~):
+   student — business-class flights (Shanghai⇄Tashkent business from ≈ $1 903), 5★ private room (Shenzhen ≈ $150, Guangzhou ≈ $130, Hong Kong ≈ $300 a night;
+   2 cities = 3+4 nights, 3 cities = 3+4+2+1), meals ≈ $40/day, business trains + driver, insurance, HK visa, optional programs, pocket money;
+   counselor (paid by the family) — economy seat on the group ticket ($371 / $370), a standard-plan room alone (Hampton $97, Echarm $68, Kimberley $150, Zhonghui $28),
+   meals, HK visa. Standard-plan totals are the main site's (≈ $1 980 / ≈ $2 990). */
+const B = {
+  2: { svc: 1980, fl: 2000, ht: 970, food: 320, tr: 400, ins: 20, visa: 0, opt: 45, pocket: 200, cfl: 370, cht: 555, cfood: 120, cvisa: 0, std: 1980, nights: 7 },
+  3: { svc: 2980, fl: 2000, ht: 1700, food: 440, tr: 700, ins: 25, visa: 150, opt: 160, pocket: 200, cfl: 370, cht: 885, cfood: 210, cvisa: 150, std: 2990, nights: 10 } };
+// line items are already approximate; group totals and the grand total are their exact sums (2 cities ~$6 980, 3 cities ~$9 970)
+const est = v => v;
+const IC = {
+  user:'<path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4 21a8 8 0 0 1 16 0"/>', plane:'<path d="M2 16l20-6-20-6 4 6-4 6zM6 10h8"/>',
+  bed:'<path d="M3 18V7M3 13h18v5M21 13a4 4 0 0 0-4-4h-6v4"/>', car:'<path d="M5 17h14M4 17l1.5-6h13L20 17M7 17v2M17 17v2"/>',
+  uni:'<path d="M4 10l8-5 8 5M6 10v8M10 10v8M14 10v8M18 10v8M3 20h18"/>', chat:'<path d="M4 5h16v11H9l-5 4z"/>',
+  who:'<circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0M16 4a3 3 0 0 1 0 6M21 20a6 6 0 0 0-4-5.6"/>', star:'<path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/>', wallet:'<path d="M3 7h18v12H3zM3 7l3-3h12l3 3M16 13h2"/>'};
+const svg = k => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${IC[k]}</svg>`;
+const T = {
+uz:{n1:"Narx",n2:"Farqi",n3:"Jamoa",n4:"Bog‘lanish",
+h_eb:"Edu Expedition · VIP",h_t:"Har bir o‘quvchiga — <em>shaxsiy maslahatchi</em>",h_s:"Xuddi shu Xitoy va Gonkong ekspeditsiyasi, farzandingiz uchun alohida: shaxsiy maslahatchi, biznes-klass va 5 yulduzli mehmonxona.",cta1:"Umumiy narxni ko‘rish",cta2:"Bog‘lanish",
+f1:"bir o‘quvchiga bir maslahatchi",f2b:"Biznes",f2:"klass parvoz va poyezd",f3:"mehmonxona, alohida xona",f4b:"2 · 3",f4:"shahar rejalari uchun",
+tk2:"2 shahar",tk3:"3 shahar",card_n:"VIP xizmat narxi · bir o‘quvchi",card_note:"1 shahar rejasida VIP yo‘q",
+a_eb:"Qisqacha",a_h:"VIP haqida <em>uchta savol</em>",
+A:[["who","Kim uchun?",["Faqat <b>2 shahar</b> va <b>3 shahar</b> rejalari","Dastur, sanalar va universitetlar oddiy reja bilan bir xil"]],["star","Nimasi boshqacha?",["<b>1 o‘quvchiga 1 maslahatchi</b>","<b>Biznes-klass</b> parvoz va poyezd","<b>5 ★</b> mehmonxona, alohida xona","Shaxsiy haydovchi va universitetlarda shaxsiy uchrashuvlar"]],["wallet","Kim nimani to‘laydi?",["<b>VIP xizmati</b>: oddiy rejadan 2 baravar","<b>O‘quvchi xarajatlari</b>: parvoz, mehmonxona, ovqat va boshqalar","<b>Maslahatchining xarajatlari</b>: uning parvozi, mehmonxonasi va ovqati ham mijoz hisobidan"]]],
+c_eb:"Umumiy hisob",c_h:"VIP taxminan <em>qancha turadi?</em>",c_p:"Rejani tanlang. «~» belgisi taxminiy summani bildiradi: aviachipta va mehmonxona narxi bron qilingan kunga qarab o‘zgaradi.",
+g_svc:"Edu Expedition VIP xizmati",g_svc_s:"aniq narx · oddiy rejadan 2 baravar",g_st:"O‘quvchining xarajatlari",g_st_s:"taxminan, bir o‘quvchi uchun",g_cu:"Maslahatchining xarajatlari",g_cu_s:"taxminan · mijoz to‘laydi",
+R:{svc:["VIP xizmati","maslahatchi, universitet uchrashuvlari, tashkil etish"],fl:["Aviachipta, biznes-klass","Toshkent ⇄ Xitoy"],ht:["5 ★ mehmonxona, alohida xona","# kecha"],food:["Ovqat","halol restoranlar"],tr:["Poyezd va transport","biznes-klass poyezd, shaxsiy haydovchi"],ins:["Tibbiy sug‘urta",""],visa:["Gonkong vizasi",""],opt:["Ixtiyoriy dasturlar","Canton Tower, daryo sayri · 3 shaharda Disneyland va Victoria Peak ham"],pocket:["Cho‘ntak puli","tavsiya"],cfl:["Maslahatchining aviachiptasi","ekonom, guruh chiptasi"],cht:["Maslahatchining mehmonxonasi","alohida xona, # kecha"],cfood:["Maslahatchining ovqati",""],cvisa:["Maslahatchining Gonkong vizasi",""]},
+t_l:"Taxminiy jami · bir o‘quvchi",t_svc:"VIP xizmati",t_st:"O‘quvchi xarajatlari",t_cu:"Maslahatchi xarajatlari",t_vs:"Oddiy rejada: <b>#</b>",t_note:"Aniq summani mas’ul shaxs siz bilan birga hisoblab beradi.",t_cta:"Aniq hisob uchun yozish",
+f_eb:"Farqi",f_h:"Oddiy reja va <em>VIP</em>",f_p:"Dastur, shaharlar va universitetlar bir xil. Farzandingizga bo‘lgan e’tibor va qulaylik boshqacha.",lh:["","Oddiy reja","VIP"],
+L:[["Kurator","Har 5–6 o‘quvchiga bitta","<b>Shaxsiy maslahatchi</b>, faqat farzandingiz bilan"],["Aviachipta","Ekonom","<b>Biznes-klass</b>"],["Mehmonxona","3–4 ★, xonada 2 kishi","<b>5 ★</b>, alohida xona"],["Poyezd","2-klass","<b>Biznes-klass</b>"],["Shahar ichida","Metro va guruh avtobusi","<b>Shaxsiy haydovchi</b>"],["Universitetlar","Guruh tashrifi va taqdimot","<b>Shaxsiy uchrashuvlar</b>, tanlagan fakultet bilan"],["Kuratorning xarajatlari","Xizmat narxiga kiritilgan","<b>Mijoz to‘laydi</b>"],["Edu Expedition xizmati","$990 · $1 490","<b>$1 980 · $2 980</b>"]],
+i_eb:"VIPda nima bor",i_h:"Farzandingiz o‘qishni o‘ylaydi, <em>qolganini biz</em>",
+I:[["user","Shaxsiy maslahatchi","Jo‘nashdan qaytishgacha yonida, ingliz va xitoy tillarida yordam beradi."],["plane","Biznes-klass","Parvozlar va shaharlararo poyezdlar biznes-klassda."],["bed","5 ★ mehmonxona","Har shaharda markazdagi 5 ★ mehmonxona, alohida xona."],["car","Shaxsiy haydovchi","Aeroport, vokzal va kampuslar orasida."],["uni","Shaxsiy uchrashuvlar","Qabul komissiyasi va tanlagan fakultet bilan alohida suhbat."],["chat","Ota-onaga har kuni xabar","Foto, video va kun xulosasi — har kuni kechqurun."]],
+tm_eb:"Jamoa",tm_h:"Safarni kimlar <em>tashkil qiladi</em>",tm_p:"Har bir bosqichda farzandingiz yonida tajribali jamoa bo‘ladi.",r_adv:"Maslahatchi",r_fnd:"Loyiha asoschisi",r_pm:"Loyiha menejeri",r_rep:"O‘zbekistondagi mas’ul shaxs",tm_more:"va yana jamoa a’zolari",
+s_eb:"Qanday ishlaydi",s_h:"To‘rt <em>qadam</em>",
+S:[["Safardan oldin","Shaxsiy suhbat","Maqsad, fanlar va budjet haqida gaplashamiz."],["Safardan oldin","Universitetlar ro‘yxati","Farzandingizga mos universitetlar va uchrashuvlarni tanlaymiz."],["31-okt – 8 yoki 11-noy","Ekspeditsiya","Har kuni shaxsiy maslahatchi bilan."],["Safardan keyin","Qabul rejasi","Hujjatlar, muddatlar va grantlar bo‘yicha reja."]],
+d_eb:"Bog‘lanish",d_h:"VIP joyni band qilish uchun <em>yozing</em>",
+end:"Sizga ham <a href=\"https://www.naseebedu.com/\" target=\"_blank\" rel=\"noopener\">naseeb</a> qilsin!",back:"← Oddiy rejalar va to‘liq dastur — asosiy sahifa"},
+ru:{n1:"Цена",n2:"Отличия",n3:"Команда",n4:"Связь",
+h_eb:"Edu Expedition · VIP",h_t:"Каждому ученику — <em>личный консультант</em>",h_s:"Та же экспедиция по Китаю и Гонконгу, лично для вашего ребёнка: личный консультант, бизнес-класс и отель 5 звёзд.",cta1:"Посмотреть общую сумму",cta2:"Связаться",
+f1:"один консультант на ученика",f2b:"Бизнес",f2:"класс: перелёт и поезда",f3:"отель, отдельный номер",f4b:"2 · 3",f4:"города — только эти программы",
+tk2:"2 города",tk3:"3 города",card_n:"Стоимость услуг VIP · на ученика",card_note:"Для программы «1 город» VIP нет",
+a_eb:"Коротко",a_h:"Три вопроса <em>о VIP</em>",
+A:[["who","Для кого?",["Только программы <b>«2 города»</b> и <b>«3 города»</b>","Маршрут, даты и университеты те же, что в обычной программе"]],["star","Что меняется?",["<b>1 консультант на 1 ученика</b>","Перелёт и поезда <b>бизнес-классом</b>","Отель <b>5 ★</b>, отдельный номер","Личный водитель и личные встречи в университетах"]],["wallet","Кто за что платит?",["<b>Услуги VIP</b>: в 2 раза дороже обычной программы","<b>Расходы ученика</b>: перелёт, отель, питание и другое","<b>Расходы консультанта</b>: его перелёт, отель и питание тоже оплачивает клиент"]]],
+c_eb:"Общий расчёт",c_h:"Сколько примерно <em>стоит VIP?</em>",c_p:"Выберите программу. Знак «~» означает примерную сумму: цены на билеты и отели зависят от даты бронирования.",
+g_svc:"Услуги Edu Expedition VIP",g_svc_s:"точная цена · в 2 раза дороже обычной",g_st:"Расходы ученика",g_st_s:"примерно, на одного ученика",g_cu:"Расходы консультанта",g_cu_s:"примерно · оплачивает клиент",
+R:{svc:["Услуги VIP","консультант, встречи в вузах, организация"],fl:["Авиабилет, бизнес-класс","Ташкент ⇄ Китай"],ht:["Отель 5 ★, отдельный номер","# ночей"],food:["Питание","халяльные рестораны"],tr:["Поезда и транспорт","поезд бизнес-класса, личный водитель"],ins:["Медицинская страховка",""],visa:["Виза в Гонконг",""],opt:["Доп. программы","Canton Tower, круиз · в «3 города» ещё Disneyland и Victoria Peak"],pocket:["Карманные деньги","рекомендуем"],cfl:["Авиабилет консультанта","эконом, групповой билет"],cht:["Отель консультанта","отдельный номер, # ночей"],cfood:["Питание консультанта",""],cvisa:["Виза консультанта в Гонконг",""]},
+t_l:"Примерно всего · на ученика",t_svc:"Услуги VIP",t_st:"Расходы ученика",t_cu:"Расходы консультанта",t_vs:"В обычной программе: <b>#</b>",t_note:"Точную сумму рассчитает вместе с вами ответственное лицо.",t_cta:"Написать для точного расчёта",
+f_eb:"Отличия",f_h:"Обычная программа и <em>VIP</em>",f_p:"Маршрут, города и университеты те же. Другое внимание к ребёнку и другой уровень комфорта.",lh:["","Обычная","VIP"],
+L:[["Куратор","Один на 5–6 учеников","<b>Личный консультант</b>, только с вашим ребёнком"],["Авиабилет","Эконом","<b>Бизнес-класс</b>"],["Отель","3–4 ★, двое в номере","<b>5 ★</b>, отдельный номер"],["Поезд","2-й класс","<b>Бизнес-класс</b>"],["По городу","Метро и групповой автобус","<b>Личный водитель</b>"],["Университеты","Групповой визит и презентация","<b>Личные встречи</b> с выбранным факультетом"],["Расходы куратора","Входят в стоимость услуг","<b>Оплачивает клиент</b>"],["Услуги Edu Expedition","$990 · $1 490","<b>$1 980 · $2 980</b>"]],
+i_eb:"Что есть в VIP",i_h:"Ваш ребёнок думает об учёбе, <em>остальное — мы</em>",
+I:[["user","Личный консультант","Рядом от вылета до возвращения, помогает на английском и китайском."],["plane","Бизнес-класс","Перелёты и поезда между городами бизнес-классом."],["bed","Отель 5 ★","В каждом городе отель 5 ★ в центре, отдельный номер."],["car","Личный водитель","Между аэропортом, вокзалами и кампусами."],["uni","Личные встречи","Отдельные беседы с приёмной комиссией и выбранным факультетом."],["chat","Ежедневно родителям","Фото, видео и итоги дня — каждый вечер."]],
+tm_eb:"Команда",tm_h:"Кто <em>организует поездку</em>",tm_p:"На каждом этапе рядом с вашим ребёнком — опытная команда.",r_adv:"Советник",r_fnd:"Основатель проекта",r_pm:"Менеджер проекта",r_rep:"Ответственное лицо в Узбекистане",tm_more:"и ещё членов команды",
+s_eb:"Как это работает",s_h:"Четыре <em>шага</em>",
+S:[["До поездки","Личная беседа","Говорим о целях, предметах и бюджете."],["До поездки","Список вузов","Подбираем подходящие университеты и встречи."],["31 окт – 8 или 11 ноя","Экспедиция","Каждый день с личным консультантом."],["После поездки","План поступления","План по документам, срокам и грантам."]],
+d_eb:"Связь",d_h:"Напишите, чтобы <em>забронировать VIP</em>",
+end:"Пусть и вам будет <a href=\"https://www.naseebedu.com/\" target=\"_blank\" rel=\"noopener\">naseeb</a>!",back:"← Обычные программы и полный маршрут — главная страница"},
+en:{n1:"Price",n2:"Difference",n3:"Team",n4:"Contact",
+h_eb:"Edu Expedition · VIP",h_t:"One student, <em>one personal counselor</em>",h_s:"The same China and Hong Kong expedition, made personal: a dedicated counselor, business class and five-star hotels.",cta1:"See the full cost",cta2:"Contact",
+f1:"one counselor per student",f2b:"Business",f2:"class flights and trains",f3:"hotels, private room",f4b:"2 · 3",f4:"city plans only",
+tk2:"2 cities",tk3:"3 cities",card_n:"VIP service fee · per student",card_note:"VIP is not offered for the 1-city plan",
+a_eb:"In short",a_h:"Three questions <em>about VIP</em>",
+A:[["who","Who is it for?",["The <b>2-city</b> and <b>3-city</b> plans only","Same route, dates and universities as the standard plan"]],["star","What changes?",["<b>One counselor per student</b>","<b>Business class</b> flights and trains","<b>5 ★</b> hotels, private room","A private driver and private university meetings"]],["wallet","Who pays for what?",["<b>VIP service</b>: twice the standard plan","<b>Student costs</b>: flights, hotel, meals and more","<b>Counselor costs</b>: the counselor's flights, hotel and meals are paid by the family too"]]],
+c_eb:"Full cost",c_h:"Roughly <em>how much is VIP?</em>",c_p:"Pick a plan. “~” means an approximate amount: flight and hotel prices depend on the booking date.",
+g_svc:"Edu Expedition VIP service",g_svc_s:"fixed price · twice the standard plan",g_st:"Student costs",g_st_s:"approximate, per student",g_cu:"Counselor costs",g_cu_s:"approximate · paid by the family",
+R:{svc:["VIP service","counselor, university meetings, arrangements"],fl:["Flights, business class","Tashkent ⇄ China"],ht:["5 ★ hotel, private room","# nights"],food:["Meals","halal restaurants"],tr:["Trains and transport","business-class trains, private driver"],ins:["Health insurance",""],visa:["Hong Kong visa",""],opt:["Optional programs","Canton Tower, river cruise · 3 cities adds Disneyland and Victoria Peak"],pocket:["Pocket money","suggested"],cfl:["Counselor's flights","economy, group ticket"],cht:["Counselor's hotel","own room, # nights"],cfood:["Counselor's meals",""],cvisa:["Counselor's Hong Kong visa",""]},
+t_l:"Estimated total · per student",t_svc:"VIP service",t_st:"Student costs",t_cu:"Counselor costs",t_vs:"Standard plan: <b>#</b>",t_note:"Our coordinator will work out the exact amount with you.",t_cta:"Message for an exact quote",
+f_eb:"The difference",f_h:"Standard and <em>VIP</em>",f_p:"Same route, cities and universities. VIP changes the attention your child gets and the comfort of every day.",lh:["","Standard","VIP"],
+L:[["Curator","One per 5–6 students","<b>Personal counselor</b>, for your child only"],["Flights","Economy","<b>Business class</b>"],["Hotel","3–4 ★, two per room","<b>5 ★</b>, private room"],["Trains","2nd class","<b>Business class</b>"],["In the city","Metro and group bus","<b>Private driver</b>"],["Universities","Group visit and talk","<b>Private meetings</b> with the chosen faculty"],["Curator costs","Included in the service fee","<b>Paid by the family</b>"],["Edu Expedition service","$990 · $1 490","<b>$1 980 · $2 980</b>"]],
+i_eb:"What VIP gives",i_h:"Your child thinks about studying. <em>We handle the rest</em>",
+I:[["user","Personal counselor","From departure to the return home, helping in English and Chinese."],["plane","Business class","Flights and intercity trains in business class."],["bed","5 ★ hotel","A central 5 ★ hotel in every city, private room."],["car","Private driver","Between airports, stations and campuses."],["uni","Private meetings","Separate talks with admissions and the chosen faculty."],["chat","Daily updates for parents","Photos, video and a summary every evening."]],
+tm_eb:"Team",tm_h:"Who <em>runs the trip</em>",tm_p:"An experienced team is with your child at every step.",r_adv:"Advisor",r_fnd:"Founder",r_pm:"Project manager",r_rep:"Responsible person in Uzbekistan",tm_more:"more team members",
+s_eb:"How it works",s_h:"Four <em>steps</em>",
+S:[["Before the trip","Personal consultation","We talk about goals, subjects and budget."],["Before the trip","University list","We choose the right universities and meetings."],["31 Oct – 8 or 11 Nov","The expedition","With the personal counselor every day."],["After the trip","Admissions plan","A plan for documents, deadlines and grants."]],
+d_eb:"Contact",d_h:"Message us to <em>reserve a VIP place</em>",
+end:"May it be <a href=\"https://www.naseebedu.com/\" target=\"_blank\" rel=\"noopener\">naseeb</a> for you too!",back:"← Standard plans and full program: main page"}};
+function toCyr(s) {
+  if (Array.isArray(s)) return s.map(toCyr);
+  return s.split(/(<[^>]*>|\[\[[^\]]*\]\])/).map(part => {
+    if (part.startsWith("<") || part.startsWith("[[")) return part;
+    let t = part.replace(/tsiya/g, "ция").replace(/([OoGg])[‘ʻ'`]/g, (m, c) => ({ O: "Ў", o: "ў", G: "Ғ", g: "ғ" })[c]).replace(/[’ʼ]/g, "ъ");
+    const pairs = [["Sh", "Ш"], ["SH", "Ш"], ["sh", "ш"], ["Ch", "Ч"], ["CH", "Ч"], ["ch", "ч"], ["Yo", "Ё"], ["yo", "ё"], ["Yu", "Ю"], ["yu", "ю"], ["Ya", "Я"], ["ya", "я"], ["Ye", "Е"], ["ye", "е"]];
+    for (const [a, b] of pairs) t = t.split(a).join(b);
+    t = t.replace(/(^|[^A-Za-zА-Яа-яЎўҒғҚқҲҳЁё])E/g, "$1Э").replace(/(^|[^A-Za-zА-Яа-яЎўҒғҚқҲҳЁё])e/g, "$1э");
+    const map = { a: "а", b: "б", d: "д", e: "е", f: "ф", g: "г", h: "ҳ", i: "и", j: "ж", k: "к", l: "л", m: "м", n: "н", o: "о", p: "п", q: "қ", r: "р", s: "с", t: "т", u: "у", v: "в", x: "х", y: "й", z: "з", c: "с", w: "в" };
+    return [...t].map(ch => { const lo = ch.toLowerCase(); if (!map[lo]) return ch; return ch === lo ? map[lo] : map[lo].toUpperCase(); }).join("");
+  }).join("");
+}
+// Cyrillic is generated from Uzbek Latin, keeping brand and place names in Latin
+const KEEP=["Edu Expedition","Canton Tower","Disneyland","Victoria Peak","VIP","naseeb"];
+const deep=v=>typeof v==="string"?toCyr(KEEP.reduce((t,w)=>t.split(w).join("[["+w+"]]"),v)).replace(/\[\[|\]\]/g,""):Array.isArray(v)?v.map(deep):(v&&typeof v==="object")?Object.fromEntries(Object.entries(v).map(([k,x])=>[k,deep(x)])):v;
+T.cyr=deep(T.uz);
+
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const money=v=>"$"+String(v).replace(/\B(?=(\d{3})+(?!\d))/g," ");
+const approx=v=>"~"+money(v);
+let L="uz",P=3;
+function calc(){const D=T[L],b=B[P],R=D.R;
+  const st=["fl","ht","food","tr","ins","visa","opt","pocket"],cu=["cfl","cht","cfood","cvisa"];
+  const row=(k,exact)=>{if(!b[k])return"";const[a,s]=R[k];return`<div class="r"><span>${a}${s?`<small>${s.replace("#",b.nights)}</small>`:""}</span><b class="num">${exact?money(b[k]):approx(est(b[k]))}</b></div>`};
+  const sum=ks=>ks.reduce((a,k)=>a+(b[k]?est(b[k]):0),0);
+  const S=b.svc,ST=sum(st),CU=sum(cu),TOT=S+ST+CU;
+  const grp=(cls,t,s,body,total)=>`<div class="grp ${cls}"><div class="gh"><b>${t}<small>${s}</small></b><span class="sum num">${total}</span></div>${body}</div>`;
+  $("#groups").innerHTML=grp("svc",D.g_svc,D.g_svc_s,row("svc",1),money(S))+grp("",D.g_st,D.g_st_s,st.map(k=>row(k)).join(""),approx(ST))+grp("cur",D.g_cu,D.g_cu_s,cu.map(k=>row(k)).join(""),approx(CU));
+  $("#total").innerHTML=`<small>${D.t_l} · ${D["tk"+P]}</small><div class="big num">${approx(TOT)}</div>
+    <div class="split"><div><span>${D.t_svc}</span><b class="num">${money(S)}</b></div><div><span>${D.t_st}</span><b class="num">${approx(ST)}</b></div><div><span>${D.t_cu}</span><b class="num">${approx(CU)}</b></div></div>
+    <p class="vs">${D.t_vs.replace("#",approx(b.std))}</p><p class="note">${D.t_note}</p><a class="btn gold" href="#bogl">${D.t_cta}</a>`;
+  $$(".seg button").forEach(x=>x.setAttribute("aria-pressed",+x.dataset.p===P));}
+function render(l){L=l;const D=T[l];document.documentElement.lang=l==="cyr"?"uz-Cyrl":l;
+  $$("[data-t]").forEach(e=>{e.innerHTML=D[e.dataset.t]??""});
+  $("#three").innerHTML=D.A.map(([i,h,li])=>`<div class="ans"><span class="ic">${svg(i)}</span><h3>${h}</h3><ul>${li.map(x=>`<li>${x}</li>`).join("")}</ul></div>`).join("");
+  $("#ledger").innerHTML=`<div class="lrow lhead"><div class="k"></div><div class="s">${D.lh[1]}</div><div class="v">${D.lh[2]}</div></div>`+D.L.map(([k,s,v])=>`<div class="lrow"><div class="k">${k}</div><div class="s">${s}</div><div class="v">${v}</div></div>`).join("");
+  $("#inc").innerHTML=D.I.map(([i,b,t])=>`<div class="it">${svg(i)}<b>${b}</b><span>${t}</span></div>`).join("");
+  $("#steps").innerHTML=D.S.map(([w,b,t])=>`<li><small>${w}</small><b>${b}</b><span>${t}</span></li>`).join("");
+  $$(".lang button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.l===l));
+  calc();try{localStorage.setItem("vip-lang",l)}catch(_){}}
+$$(".seg button").forEach(b=>b.addEventListener("click",()=>{P=+b.dataset.p;calc()}));
+$$(".lang button").forEach(b=>b.addEventListener("click",()=>render(b.dataset.l)));
+let l0="uz";try{const s=localStorage.getItem("vip-lang");if(T[s])l0=s}catch(_){}
+render(l0);
+})();
+</script>
+
+</body></html>
