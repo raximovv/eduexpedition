@@ -1,5 +1,5 @@
 <!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
-<title>Ta’lim ekspeditsiyasi · Naseeb Tour (Copy)</title>
+<title>Ta’lim ekspeditsiyasi · Naseeb Tour</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
@@ -563,10 +563,163 @@ footer .credit{margin-left:auto;font-size:11px;color:var(--soft,#DDE3EE);opacity
 footer .credit a{color:inherit}
 @media (max-width:640px){footer .wrap{flex-wrap:wrap}footer .credit{margin-left:0}}
 
+/* nav brand: Edu Expedition wordmark, "by Naseeb" */
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff}
+.brand .brand-word{height:40px;width:auto;display:block}
+.brand .by{font-size:11px;line-height:1.2;color:var(--soft,#DDE3EE);border-left:1px solid rgba(255,255,255,.28);padding-left:10px;white-space:nowrap}
+.brand .by b{display:block;font-size:13px;font-weight:600;color:#fff}
+@media (max-width:640px){.brand .brand-word{height:32px}.brand{gap:7px}.brand .by{padding-left:7px}}
+
+/* closing line at the very bottom */
+footer .sign-off{display:block;text-align:center;padding:34px 0 22px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:18px}
+footer .so-t{font-size:clamp(22px,3vw,30px);font-weight:700;color:#fff;letter-spacing:-.01em}
+footer .so-by{margin-top:6px;font-size:14px;color:var(--soft,#DDE3EE)}
+footer .so-by a{color:#fff;font-weight:600;text-decoration:underline;text-decoration-color:rgba(246,196,83,.7);text-underline-offset:3px}
+footer .so-by a:hover{color:var(--gold,#F6C453)}
+
+/* tickets by plan */
+.tseg{margin:0 0 18px}
+.legs{display:flex;flex-direction:column;gap:14px;counter-reset:leg}
+.ticket.leg .route{font-size:clamp(30px,4.2vw,50px)}
+.ticket.leg .via{display:block;margin-top:2px}
+.ticket.leg .stub .pr{font-size:22px;font-weight:700;color:var(--ink)}
+.ticket.leg.leg-train .route i{font-size:.6em}
+.tsum{margin-top:16px;border-radius:30px;padding:18px 26px;display:flex;flex-direction:column;gap:8px}
+.tsum .ts-row{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.tsum .ts-row span{display:flex;flex-direction:column;font-size:16px}
+.tsum .ts-row small{color:var(--soft);font-size:13px}
+.tsum .ts-row b{font-size:20px}
+.tsum .ts-row.tot{border-top:1px solid rgba(255,255,255,.18);padding-top:10px}
+.tsum .ts-row.tot b{font-size:clamp(26px,3vw,34px);color:var(--gold)}
+.tsum .ts-bag{font-size:13px;color:var(--soft)}
+/* hero label: one slim line — dot · name | audience */
+.hero .ee{padding:9px 18px 9px 16px;gap:10px;margin-top:18px;border-radius:999px}
+.hero .ee::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold,#F6C453);box-shadow:0 0 0 4px rgba(246,196,83,.18);flex:0 0 8px}
+.hero .ee>div{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.hero .ee b{display:inline;font-size:14px;font-weight:600;letter-spacing:.01em}
+.hero .ee small{display:inline;font-size:14px;padding-left:10px;border-left:1px solid rgba(255,255,255,.25)}
+html[lang=en] .hero .ee small{padding-left:0;border-left:0}
+@media (max-width:640px){.hero .ee{border-radius:18px;align-items:flex-start;padding:10px 14px}.hero .ee::before{margin-top:6px}.hero .ee>div{gap:2px 10px}.hero .ee small{padding-left:0;border-left:0;flex-basis:100%}}
+@media (max-width:640px){.hero .ee b,.hero .ee small{font-size:12.5px}.hero .ee{padding:9px 12px}}
+
+/* livelier icons in the "why" list */
+.why li .round{font-size:24px;background:rgba(255,255,255,.92);box-shadow:0 6px 16px rgba(0,0,0,.18)}
+/* coupon amount stays on one line */
+.coupon .amt{white-space:nowrap;font-size:clamp(44px,7vw,92px)}
+/* sign-off: the phrase links, then "by" + Naseeb logo */
+footer .so-t a{color:var(--gold,#F6C453);text-decoration:none;border-bottom:2px solid rgba(246,196,83,.45)}
+footer .so-t a:hover{border-bottom-color:var(--gold,#F6C453)}
+footer .so-by{display:inline-flex;align-items:center;gap:8px;margin-top:10px;text-decoration:none;color:var(--soft,#DDE3EE);font-size:14px;opacity:.9}
+footer .so-by img{height:22px;width:auto;display:block}
+footer .so-by:hover{opacity:1}
+
+/* visa fallback choice under the plans */
+.avq{all:unset;box-sizing:border-box;cursor:pointer;margin-top:18px;width:100%;display:flex;align-items:center;gap:16px;padding:18px 22px;border-radius:26px;border:1.5px solid rgba(126,226,168,.55)!important}
+.avq .ic{font-size:30px;flex:0 0 auto}
+.avq b{display:block;font-size:18px;color:#fff;margin-bottom:2px}
+.avq span span{color:var(--soft);font-size:15px}
+.avq span span b{display:inline;font-size:15px;color:#7EE2A8}
+.avq:hover{border-color:#7EE2A8!important}
+.avbar{margin:6px 0 4px;padding:4px}
+.avbar button{font-size:13px;padding:8px 14px}
+.avbar button[data-av="1"][aria-pressed="true"]{background:#7EE2A8;color:#0B1430}
+/* discount rule, clearly visible */
+.d-only{margin-top:16px;padding:12px 16px;border-radius:16px;background:rgba(246,196,83,.14);border:1.5px solid rgba(246,196,83,.6);font-size:16px;color:#fff;max-width:34em}
+.d-only b{color:var(--gold,#F6C453)}
+/* coupons: stacked, always fully on screen */
+.disc{grid-template-columns:minmax(0,1fr);gap:22px;max-width:560px;width:100%;justify-self:end}
+.disc .coupon{min-width:0}
+.coupon .amt{font-size:clamp(44px,5.4vw,80px)}
+@media (max-width:980px){.disc{justify-self:stretch;max-width:none}}
+
+/* sights: swipeable, animated carousel */
+#joylar .sights{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:6px 2px 18px;margin:0 -2px;scrollbar-width:none;grid-template-columns:none}
+#joylar .sights::-webkit-scrollbar{display:none}
+.sg-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.sg-city{margin:0}
+.sg-nav{display:flex;align-items:center;gap:10px}
+.sg-count{font-size:14px;color:var(--soft);min-width:52px;text-align:right;font-variant-numeric:tabular-nums}
+.sg-bar{height:3px;border-radius:3px;background:rgba(255,255,255,.12);overflow:hidden}
+.sg-bar i{display:block;height:100%;width:0;background:var(--gold,#F6C453);transition:width .25s}
+#joylar .sight{all:unset;box-sizing:border-box;cursor:pointer;position:relative;flex:0 0 clamp(240px,28vw,320px);aspect-ratio:3/4;border-radius:28px;overflow:hidden;scroll-snap-align:start;
+  box-shadow:0 18px 40px rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.16);opacity:0;transform:translateY(24px) scale(.97);transition:opacity .5s,transform .5s}
+#joylar .sights.in .sight{opacity:1;transform:none;transition-delay:var(--d)}
+#joylar .sight img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+#joylar .sight:hover img,#joylar .sight:focus-visible img{transform:scale(1.08)}
+#joylar .sight .sgsh{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,14,34,0) 35%,rgba(8,14,34,.55) 62%,rgba(8,14,34,.95))}
+#joylar .sight .opt{position:absolute;top:14px;right:14px;font-style:normal;font-size:12px;font-weight:600;color:#0B1430;background:var(--opt,#FF8FC7);border-radius:999px;padding:3px 10px}
+#joylar .sight .in{position:absolute;left:0;right:0;bottom:0;padding:18px;display:flex;flex-direction:column;gap:5px}
+#joylar .sight .city{align-self:flex-start;font-size:11.5px;font-weight:600;color:#0B1430;background:var(--c);border-radius:999px;padding:3px 10px}
+#joylar .sight b{font-size:21px;line-height:1.15;color:#fff}
+#joylar .sight small{font-size:13px;line-height:1.4;color:#DDE3EE;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;max-height:0;opacity:0;transition:max-height .4s,opacity .4s}
+#joylar .sight:hover small,#joylar .sight:focus-visible small{max-height:40px;opacity:1}
+#joylar .sight .more{font-size:12.5px;font-weight:600;color:var(--gold,#F6C453)}
+#joylar .sight:focus-visible{outline:2px solid var(--gold,#F6C453);outline-offset:3px}
+@media (hover:none){#joylar .sight small{max-height:40px;opacity:1}}
+@media (max-width:640px){#joylar .sight{flex-basis:72vw}.sg-top{flex-direction:column;align-items:stretch}.sg-nav{justify-content:flex-end}}
+@media (prefers-reduced-motion:reduce){#joylar .sight{opacity:1;transform:none;transition:none}#joylar .sight img{transition:none}}
+
+/* why: roadmap with animated line icons */
+.why2 .sh{margin-bottom:34px}
+.roadmap{position:relative}
+.roadmap ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px;position:relative}
+.rm-line{position:absolute;left:4%;right:4%;top:6px;width:92%;height:90px;overflow:visible}
+.rm-line path{fill:none;stroke:var(--gold,#F6C453);stroke-width:3;stroke-dasharray:.012 .012;stroke-linecap:round;opacity:.75;
+  stroke-dashoffset:1;mask:none}
+.roadmap.go .rm-line path{animation:rmDraw 1.6s ease forwards}
+@keyframes rmDraw{from{stroke-dasharray:0 1}to{stroke-dasharray:.012 .012}}
+.rm-stop{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s;transition-delay:calc(var(--i) * 180ms + 200ms)}
+.roadmap.go .rm-stop{opacity:1;transform:none}
+.rm-ic{position:relative;width:88px;height:88px;border-radius:28px;display:grid;place-items:center;color:#F6C453;
+  background:linear-gradient(145deg,rgba(255,255,255,.2),rgba(255,255,255,.06));border:1.5px solid rgba(246,196,83,.55);
+  box-shadow:0 14px 34px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.25);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);transition:transform .3s}
+.rm-stop:hover .rm-ic{transform:translateY(-4px) rotate(-3deg)}
+.rm-ic svg{width:42px;height:42px}
+.rm-ic svg path,.rm-ic svg circle{stroke-dasharray:1;stroke-dashoffset:1}
+.roadmap.go .rm-ic svg path,.roadmap.go .rm-ic svg circle{animation:icDraw 1s ease forwards;animation-delay:calc(var(--i) * 180ms + 450ms)}
+@keyframes icDraw{to{stroke-dashoffset:0}}
+.rm-ic em{position:absolute;top:-10px;right:-10px;font-style:normal;font-size:12px;font-weight:700;color:#0B1430;background:#F6C453;border-radius:999px;padding:3px 8px;box-shadow:0 4px 10px rgba(0,0,0,.3)}
+.rm-stop b{font-size:17px;color:#fff;margin-top:6px}
+.rm-stop>span:last-child{font-size:14px;line-height:1.45;color:var(--soft,#DDE3EE);max-width:16em}
+@media (max-width:900px){
+  .rm-line{display:none}
+  .roadmap ol{grid-template-columns:1fr;gap:0;padding-left:0}
+  .roadmap ol::before{content:"";position:absolute;left:43px;top:30px;bottom:30px;border-left:3px dotted rgba(246,196,83,.75)}
+  .rm-stop{display:grid;grid-template-columns:88px 1fr;column-gap:16px;align-items:center;text-align:left;padding:10px 0}
+  .rm-ic{grid-row:span 2}
+  .rm-stop b{margin:0;align-self:end}
+  .rm-stop>span:last-child{align-self:start;max-width:none}
+}
+@media (prefers-reduced-motion:reduce){.rm-stop{opacity:1;transform:none;transition:none}.rm-ic svg path,.rm-ic svg circle{stroke-dashoffset:0}.roadmap .rm-line path{animation:none}}
+
+/* sign-off: larger logo, soft glow, entrance animation */
+footer .sign-off{position:relative;padding:64px 0 46px;overflow:hidden}
+footer .sign-off::before{content:"";position:absolute;left:50%;top:50%;width:min(720px,90vw);height:260px;transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(246,196,83,.16),rgba(31,61,138,.12) 55%,transparent);pointer-events:none;animation:soGlow 6s ease-in-out infinite}
+footer .so-t{position:relative;font-size:clamp(28px,4vw,46px);opacity:0;transform:translateY(16px);transition:opacity .8s,transform .8s}
+footer .so-t a{border-bottom:0;background:linear-gradient(90deg,#F6C453,#FFE6A3,#F6C453);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;position:relative;animation:soShine 4s linear infinite}
+footer .so-t a::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:3px;border-radius:3px;background:#F6C453;transform:scaleX(0);transform-origin:left;transition:transform .9s .5s cubic-bezier(.2,.7,.2,1)}
+footer .so-by{position:relative;margin-top:22px;gap:14px;padding:12px 26px;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);opacity:0;transform:translateY(14px);transition:opacity .8s .35s,transform .8s .35s,background .3s,border-color .3s;overflow:hidden}
+footer .so-by .by{font-size:15px;color:var(--soft,#DDE3EE)}
+footer .so-by img{height:44px;width:auto}
+footer .so-by .url{font-size:13px;color:var(--soft,#DDE3EE);border-left:1px solid rgba(255,255,255,.2);padding-left:14px}
+footer .so-by::after{content:"";position:absolute;top:0;bottom:0;width:60px;left:-80px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);transform:skewX(-20deg);animation:soSweep 5s ease-in-out 1.6s infinite}
+footer .so-by:hover{background:rgba(255,255,255,.12);border-color:rgba(246,196,83,.6)}
+footer .sign-off.go .so-t,footer .sign-off.go .so-by{opacity:1;transform:none}
+footer .sign-off.go .so-t a::after{transform:scaleX(1)}
+@keyframes soShine{to{background-position:-200% 0}}
+@keyframes soSweep{0%,70%{left:-80px}100%{left:110%}}
+@keyframes soGlow{0%,100%{opacity:.75}50%{opacity:1}}
+@media (max-width:520px){footer .so-by img{height:34px}footer .so-by .url{display:none}}
+@media (prefers-reduced-motion:reduce){footer .so-t,footer .so-by{opacity:1;transform:none;transition:none}footer .so-t a,footer .so-by::after,footer .sign-off::before{animation:none}}
+.coupon .stub span{white-space:nowrap}
+/* coupon tab: real vertical text, centred, never clipped */
+.coupon .stub{display:flex;align-items:center;justify-content:center;padding:14px 0;min-width:0}
+.coupon .stub span{transform:none;writing-mode:vertical-rl;rotate:180deg;white-space:nowrap;font-size:12px;letter-spacing:.08em;line-height:1}
+
 </style>
 
 <header class="nav"><div class="wrap"><div class="bar glass">
-  <a href="#top" aria-label="Naseeb Tour"><img src="img/logo_white.png" alt="Naseeb" width="88" height="30"></a>
+  <a class="brand" href="#top" aria-label="Expedition in Education"><svg class="brand-word" viewBox="0 0 480 205" aria-hidden="true"><text x="240" y="66" font-family="Poppins, Arial, sans-serif" font-weight="700" font-size="66" letter-spacing="-1.5" text-anchor="middle"><tspan fill="#E5A526">e</tspan><tspan fill="#FFFFFF">xpedition</tspan></text><text x="240" y="138" font-family="Poppins, Arial, sans-serif" font-weight="700" font-size="66" letter-spacing="-1.5" text-anchor="middle"><tspan fill="#E5A526">in e</tspan><tspan fill="#FFFFFF">ducation</tspan></text><path d="M44 172 Q 220 202 404 166" fill="none" stroke="#E5A526" stroke-width="7" stroke-linecap="round"/><path transform="translate(424 160) rotate(-14)" d="M16,0 L-14,-12 L-6,0 L-14,12 Z" fill="#FFFFFF"/></svg></a>
   <nav><a href="#rejalar" data-t="nav_plans"></a><a href="#dastur" data-t="nav_program"></a><a href="#obhavo" data-t="nav_wx"></a><a href="#mehmonxona" data-t="nav_hotels"></a><a href="#narx" data-t="nav_price"></a></nav>
   <div class="right">
     <div class="lang" role="group" aria-label="Language"><button type="button" data-lang="uz">UZ</button><button type="button" data-lang="cyr">ЎЗ</button><button type="button" data-lang="ru">RU</button><button type="button" data-lang="en">EN</button></div>
@@ -579,7 +732,7 @@ footer .credit a{color:inherit}
   <img class="bg" id="heroBg" src="img/hk_harbour.jpg" alt="">
   <div class="shade"></div>
   <div class="wrap" style="width:100%">
-    <div class="ee glass"><svg class="ee-word" viewBox="0 0 480 205" role="img" aria-label="Expedition in Education"><text x="240" y="66" font-family="Poppins, Arial, sans-serif" font-weight="700" font-size="66" letter-spacing="-1.5" text-anchor="middle"><tspan fill="#E5A526">e</tspan><tspan fill="#FFFFFF">xpedition</tspan></text><text x="240" y="138" font-family="Poppins, Arial, sans-serif" font-weight="700" font-size="66" letter-spacing="-1.5" text-anchor="middle"><tspan fill="#E5A526">in e</tspan><tspan fill="#FFFFFF">ducation</tspan></text><path d="M44 172 Q 220 202 404 166" fill="none" stroke="#E5A526" stroke-width="7" stroke-linecap="round"/><path transform="translate(424 160) rotate(-14)" d="M16,0 L-14,-12 L-6,0 L-14,12 Z" fill="#FFFFFF"/></svg><span class="ee-sep" aria-hidden="true"></span><div><b data-t="ee_name"></b><small data-t="hero_eyebrow"></small></div></div>
+    <div class="ee glass"><div><b data-t="ee_name"></b><small data-t="hero_eyebrow"></small></div></div>
     <h1 data-t="hero_h1"></h1>
     <p class="sub" data-t="hero_sub"></p>
     <div class="seg glass" role="group" id="citySeg">
@@ -593,7 +746,7 @@ footer .credit a{color:inherit}
         <div class="rl-track" style="--p:0%">
           <div class="rl-fill" aria-hidden="true"></div><i class="rl-plane" aria-hidden="true">✈</i>
           <div class="stop start"><span class="dot"></span><small data-t="rl_start"></small></div>
-          <a class="stop" href="#rejalar" data-plan-link="1" data-p="33.3%"><span class="dot" style="--c:var(--sz)"></span><small data-t="c_sz"></small><b>$490</b><em data-t="p1_tag"></em></a>
+          <a class="stop" href="#rejalar" data-plan-link="1" data-p="33.3%"><span class="dot" style="--c:var(--sz)"></span><small data-t="c_sz"></small><b>$690</b><em data-t="p1_tag"></em></a>
           <a class="stop" href="#rejalar" data-plan-link="2" data-p="66.6%"><span class="dot" style="--c:var(--gz)"></span><small data-t="c_gz"></small><b>$990</b><em data-t="p2_tag"></em></a>
           <a class="stop best" href="#rejalar" data-plan-link="3" data-p="100%"><span class="dot" style="--c:var(--hk)"></span><small data-t="c_hk"></small><b class="gold">$1 490</b><em class="goldp" data-t="p3_tag"></em></a>
         </div>
@@ -621,21 +774,12 @@ footer .credit a{color:inherit}
 </section>
 
 <section class="photo">
-  <img class="bg" src="img/stars.jpg" alt="">
-  <div class="shade" style="background:linear-gradient(90deg,rgba(8,14,34,.9),rgba(8,14,34,.6) 60%,rgba(8,14,34,.35))"></div>
-  <div class="wrap why">
-    <div>
-      <p class="label" data-t="w_label"></p>
-      <h2 style="font-size:clamp(30px,4.4vw,56px);line-height:1.08;margin:10px 0 16px" data-t="w_h2"></h2>
-      <p style="color:var(--soft);font-size:18px;max-width:30em" data-t="w_p"></p>
-    </div>
-    <ul class="glass">
-      <li><span class="round" aria-hidden="true">🎓</span><span data-t="w1"></span></li>
-      <li><span class="round" aria-hidden="true">★</span><span data-t="w2"></span></li>
-      <li><span class="round" aria-hidden="true">💬</span><span data-t="w3"></span></li>
-      <li><span class="round" aria-hidden="true">🏙</span><span data-t="w4"></span></li>
-      <li><span class="round" aria-hidden="true">🌏</span><span data-t="w5"></span></li>
-    </ul>
+  <img class="bg" src="img/sustech.jpg" alt="">
+  <div class="shade" style="background:linear-gradient(180deg,rgba(8,14,34,.75),rgba(8,14,34,.5) 38%,rgba(8,14,34,.88) 62%,rgba(8,14,34,.92))"></div>
+  <div class="wrap why2">
+    <div class="sh"><div><p class="label" data-t="w_label"></p><h2 data-t="w_h2"></h2></div><p data-t="w_p"></p></div>
+    <div class="roadmap" id="roadmap"><svg class="rm-line" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true"><path d="M20 60 C 150 0, 250 120, 400 60 S 650 0, 800 60 S 950 110, 980 60" pathLength="1"/></svg>
+      <ol><li class="rm-stop" style="--i:0"><span class="rm-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" pathLength="1" d="M4 10 12 5l8 5"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" pathLength="1" d="M6 10v8M10 10v8M14 10v8M18 10v8"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" pathLength="1" d="M3 20h18"/></svg><em>01</em></span><b data-t="w1t"></b><span data-t="w1"></span></li><li class="rm-stop" style="--i:1"><span class="rm-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" pathLength="1" cx="12" cy="14" r="5"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" pathLength="1" d="M9 3l3 6 3-6"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" pathLength="1" d="M12 12v4"/></svg><em>02</em></span><b data-t="w2t"></b><span data-t="w2"></span></li><li class="rm-stop" style="--i:2"><span class="rm-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" pathLength="1" d="M4 6h10v7H8l-4 3z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" pathLength="1" d="M14 10h6v7l-3-2h-5v-2"/></svg><em>03</em></span><b data-t="w3t"></b><span data-t="w3"></span></li><li class="rm-stop" style="--i:3"><span class="rm-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" pathLength="1" d="M3 21h18"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" pathLength="1" d="M5 21V10h5v11M10 21V5h5v16M15 21v-8h4v8"/></svg><em>04</em></span><b data-t="w4t"></b><span data-t="w4"></span></li><li class="rm-stop" style="--i:4"><span class="rm-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" pathLength="1" cx="12" cy="12" r="9"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" pathLength="1" d="M15.5 8.5 13.5 13.5 8.5 15.5 10.5 10.5z"/></svg><em>05</em></span><b data-t="w5t"></b><span data-t="w5"></span></li></ol></div>
   </div>
 </section>
 
@@ -647,7 +791,7 @@ footer .credit a{color:inherit}
     <div class="plans3" role="group">
       <button type="button" class="plan glass" data-plan="1" aria-pressed="false">
         <div class="top"><b data-t="p1_name"></b></div><span class="pdates" data-t="p1_dates"></span>
-        <span class="tagline" data-t="p1_tag"></span><span class="big">$490</span><small class="svc" data-t="svc"></small>
+        <span class="tagline" data-t="p1_tag"></span><span class="big">$690</span><small class="svc" data-t="svc"></small>
         <ul><li data-t="p1_a"></li><li data-t="p1_b"></li><li data-t="p1_c"></li></ul>
         <span class="check" data-t="choose"></span>
       </button>
@@ -659,11 +803,12 @@ footer .credit a{color:inherit}
       </button>
       <button type="button" class="plan glass" data-plan="3" aria-pressed="true">
         <div class="top"><b data-t="p3_name"></b><span class="pill goldp" data-t="p3_badge"></span></div>
-        <span class="tagline gold" data-t="p3_tag"></span><span class="big gold">$1 490</span><small class="svc" data-t="svc"></small>
+        <span class="tagline gold" data-t="p3_tl"></span><span class="big gold">$1 490</span><small class="svc" data-t="svc"></small>
         <ul><li data-t="p3_dates_li"></li><li data-t="p3_b"></li><li data-t="p3_c"></li></ul>
         <span class="check" data-t="choose"></span>
       </button>
     </div>
+    <button type="button" class="avq glass" id="avGo"><span class="ic" aria-hidden="true">⛰️</span><span><b data-t="av_q"></b><span data-t="av_a"></span> →</span></button>
   </div>
 </section>
 
@@ -674,9 +819,9 @@ footer .credit a{color:inherit}
     <div class="sh"><div><p class="label" data-t="pr_label"></p><h2><span data-t="pr_h2"></span> <span class="gold" id="planName"></span></h2></div><p data-t="pr_p"></p></div>
     <div class="days glass" role="tablist" id="days"></div>
     <div class="stage">
-      <img id="stageImg" src="img/ngongping.jpg" alt="">
+      <img id="stageImg" src="img/tas_meet.jpg" alt="">
       <div class="stage-in">
-        <div class="daycard glass" aria-live="polite"><div class="chips" id="dChips"></div><h3 id="dTitle"></h3><div id="dRows"></div></div>
+        <div class="daycard glass" aria-live="polite"><div class="chips" id="dChips"></div><div class="seg glass avbar" id="avBar" role="group" hidden><button type="button" data-av="0" aria-pressed="true" data-t="av_on"></button><button type="button" data-av="1" aria-pressed="false" data-t="av_off"></button></div><h3 id="dTitle"></h3><div id="dRows"></div></div>
         <div class="mini glass"><img id="miniImg" src="img/sz_skyline.jpg" alt=""><div class="mthumbs" id="mThumbs"></div><div class="cap"><div><b id="miniT"></b><small id="miniS"></small></div><button class="round" type="button" id="miniOpen" aria-label="Batafsil">→</button></div></div>
       </div>
     </div>
@@ -687,7 +832,7 @@ footer .credit a{color:inherit}
 </section>
 
 <section class="photo" id="obhavo">
-  <img class="bg blur" src="img/lantau_peak.jpg" alt="">
+  <img class="bg blur" src="img/sz_skyline.jpg" alt="">
   <div class="shade"></div>
   <div class="wrap">
     <div class="sh"><div><p class="label" data-t="wx_label"></p><h2 data-t="wx_h2"></h2></div><div class="stepnav" style="margin:0"><button class="round" type="button" id="wxPrev" aria-label="←">←</button><button class="round" type="button" id="wxNext" aria-label="→">→</button></div></div>
@@ -696,7 +841,7 @@ footer .credit a{color:inherit}
 </section>
 
 <section class="photo" id="yuk">
-  <img class="bg blur" src="img/taio.jpg" alt="">
+  <img class="bg blur" src="img/tas_park.jpg" alt="">
   <div class="shade"></div>
   <div class="wrap">
     <div class="sh"><div><p class="label" data-t="pk_label"></p><h2 data-t="pk_h2"></h2></div><p data-t="pk_p"></p></div>
@@ -718,7 +863,10 @@ footer .credit a{color:inherit}
   <div class="shade"></div>
   <div class="wrap">
     <div class="sh"><div><p class="label" data-t="sg_label"></p><h2 data-t="sg_h2"></h2></div><p data-t="sg_p"></p></div>
+    <div class="sg-top"><div class="seg glass sg-city" id="sgCity" role="group"><button type="button" data-c="all" aria-pressed="true" data-t="sg_all"></button><button type="button" data-c="sz" aria-pressed="false" data-t="c_sz"></button><button type="button" data-c="gz" aria-pressed="false" data-t="c_gz"></button><button type="button" data-c="hk" aria-pressed="false" data-t="c_hk"></button></div>
+      <div class="sg-nav"><span class="sg-count" id="sgCount"></span><button class="round" type="button" id="sgPrev" aria-label="←">←</button><button class="round" type="button" id="sgNext" aria-label="→">→</button></div></div>
     <div class="sights" id="sights"></div>
+    <div class="sg-bar" aria-hidden="true"><i id="sgBar"></i></div>
   </div>
 </section>
 
@@ -756,49 +904,13 @@ footer .credit a{color:inherit}
 </section>
 
 <section class="photo">
-  <img class="bg blur" src="img/ngongping.jpg" alt="">
+  <img class="bg blur" src="img/train.jpg" alt="">
   <div class="shade"></div>
   <div class="wrap">
     <div class="sh"><div><p class="label" data-t="t_label"></p><h2 data-t="t_h2"></h2></div><span class="pill soft" data-t="t_pill"></span></div>
-    <div class="tickets">
-      <div class="ticket">
-        <div class="main"><p class="k" data-t="t_out_k"></p><p class="route">TAS <i>✈</i> SZX</p><small data-t="t_out_s"></small></div>
-        <div class="stub"><span>China Eastern</span><b style="font-size:15px;color:var(--ink)" data-t="t_out_bag"></b><span>20:10 → 11:40 (+1)</span></div>
-      </div>
-      <div class="ticket" data-ret="2">
-        <div class="main"><p class="k" data-t="t_ret_k"></p><p class="route">CAN <i>✈</i> TAS</p><small data-t="t_ret_s"></small></div>
-        <div class="stub"><span>China Eastern</span><b style="font-size:15px;color:var(--ink)" data-t="t_ret_bag"></b><span>13:40 → 21:20</span></div>
-      </div>
-      <div class="ticket" data-ret="2" style="grid-template-columns:1fr">
-        <div class="main" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px"><div><p class="k" data-t="t_rt"></p><p style="font-size:15px;color:#4A5568;margin-top:4px" data-t="t_rt_p"></p></div><p style="font-size:clamp(32px,4vw,44px);font-weight:700">$371</p></div>
-      </div>
-      <div class="train glass" data-ret="3">
-        <img src="img/train.jpg" alt="G6503 tezyurar poyezdi">
-        <div class="ticket">
-          <div class="main"><p class="k" data-t="tr_k"></p>
-            <div class="rail-wrap"><div><b>10:14</b><small data-t="tr_from"></small></div>
-              <div class="rail" aria-hidden="true"><i class="dot"></i><i class="dot r"></i><svg class="loco" viewBox="0 0 64 20"><path d="M2 4h40c8 0 16 4 20 10v2H2z" fill="#fff" stroke="#0B1430" stroke-width="2"/><path d="M2 11h56" stroke="#E2453C" stroke-width="3"/><rect x="8" y="6" width="6" height="3" rx="1" fill="#0B1430"/><rect x="18" y="6" width="6" height="3" rx="1" fill="#0B1430"/><rect x="28" y="6" width="6" height="3" rx="1" fill="#0B1430"/></svg></div>
-              <div style="text-align:right"><b>11:01</b><small data-t="tr_to"></small></div></div>
-            <small data-t="tr_s"></small></div>
-          <div class="stub"><span data-t="tr_class"></span><b>G6503</b><span style="font-size:22px;font-weight:700;color:var(--ink)">$32</span></div>
-        </div>
-      </div>
-      <div class="ticket" data-ret="3">
-        <div class="main"><p class="k" data-t="t_r3_k"></p><p class="route">CAN <i>✈</i> TAS</p><small data-t="t_r3_s"></small></div>
-        <div class="stub"><span>China Eastern</span><b style="font-size:15px;color:var(--ink)">MU2302 + MU855</b><span>13:40 → 21:20</span><span style="font-size:15px;font-weight:700;color:var(--ink)" data-t="t_r3_p"></span></div>
-      </div>
-      <div class="ticket" data-ret="3">
-        <div class="main"><p class="k" data-t="tr2_k"></p><p class="route" style="font-size:clamp(28px,4vw,44px)">21:02 <i>🚄</i> 22:38</p><small data-t="tr2_s"></small><small style="display:block">Hong Kong West Kowloon → Guangzhou East (Guangzhoudong)</small></div>
-        <div class="stub"><span data-t="tr_class"></span><b>G6564</b><span style="font-size:22px;font-weight:700;color:var(--ink)">$32</span></div>
-      </div>
-      <div>
-        <div class="ticket" data-ret="1">
-          <div class="main"><p class="k" data-t="t_r1_k"></p><p class="route">SZX <i>✈</i> TAS</p><small data-t="t_r1_s"></small></div>
-          <div class="stub"><span>China Eastern</span><b style="font-size:15px;color:var(--ink)">MU2320 + MU855</b><span>13:35 → 21:20</span><span style="font-size:22px;font-weight:700;color:var(--ink)">$220</span></div>
-        </div>
-        
-      </div>
-    </div>
+    <div class="seg glass tseg" role="group" id="tSeg"><button type="button" data-plan="1" aria-pressed="false" data-t="p1_name"></button><button type="button" data-plan="2" aria-pressed="false" data-t="p2_name"></button><button type="button" data-plan="3" aria-pressed="true" data-t="p3_name"></button></div>
+    <div class="legs" id="legs"></div>
+    <div class="tsum glass" id="tSum"></div>
     <p class="note"><span data-t="t_note"></span> <span data-t="tr_note"></span></p>
   </div>
 </section>
@@ -821,7 +933,7 @@ footer .credit a{color:inherit}
   <div class="wrap">
     <div class="sh"><div><p class="label" data-t="pc_label"></p><h2 data-t="pc_h2"></h2></div></div>
     <div class="pricegrid">
-      <div class="glass"><b data-t="p1_name"></b><p class="tagline" data-t="p1_tag"></p><p style="color:var(--soft)" data-t="p1_dates"></p><p class="big">$490</p></div>
+      <div class="glass"><b data-t="p1_name"></b><p class="tagline" data-t="p1_tag"></p><p style="color:var(--soft)" data-t="p1_dates"></p><p class="big">$690</p></div>
       <div class="glass"><b data-t="p2_name"></b><p class="tagline" data-t="p2_tag"></p><p style="color:var(--soft)" data-t="p2_dates"></p><p class="big">$990</p></div>
       <div style="background:#fff;color:var(--ink)"><div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><b data-t="p3_name"></b><span class="pill goldp" data-t="p3_badge"></span></div><p style="color:#4A5568" data-t="p3_dates"></p><p class="big">$1 490</p></div>
     </div>
@@ -854,11 +966,12 @@ footer .credit a{color:inherit}
       <p class="label" data-t="d_label"></p>
       <h2 style="font-size:clamp(30px,4.4vw,56px);line-height:1.08;margin:10px 0 16px" data-t="d_h2"></h2>
       <p style="color:var(--soft);font-size:18px;max-width:30em" data-t="d_p"></p>
+      <p class="d-only" data-t="d_only"></p>
       <div class="ex" id="discEx"></div>
     </div>
     <div class="disc">
-      <div class="coupon"><div class="main"><p class="k" data-t="d1_k"></p><p class="amt">5% <span style="color:var(--gold)">+</span> 5%</p><p style="font-weight:600" data-t="d1_p"></p></div><div class="stub"><span>NASEEB</span></div></div>
-      <div class="coupon"><div class="main"><p class="k" data-t="d2_k"></p><p class="amt">10%</p><p style="font-weight:600" data-t="d2_p"></p></div><div class="stub"><span>NASEEB</span></div></div>
+      <div class="coupon"><div class="main"><p class="k" data-t="d1_k"></p><p class="amt">5% <span style="color:var(--gold)">+</span> 5%</p><p style="font-weight:600" data-t="d1_p"></p></div><div class="stub"><span>Sizga ham naseeb qilsin</span></div></div>
+      <div class="coupon"><div class="main"><p class="k" data-t="d2_k"></p><p class="amt">10%</p><p style="font-weight:600" data-t="d2_p"></p></div><div class="stub"><span>Sizga ham naseeb qilsin</span></div></div>
     </div>
   </div>
 </section>
@@ -878,7 +991,7 @@ footer .credit a{color:inherit}
         <div class="f" id="f-phone"><label for="phone" data-t="f_phone"></label><div class="phone"><span>+998</span><input id="phone" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="90 123 45 67"></div><div class="msg"></div></div>
         <div class="f" id="f-age"><span class="lab" id="ageL" data-t="f_age"></span><div class="opts" role="group" aria-labelledby="ageL" id="ages"><button type="button" aria-pressed="false">14</button><button type="button" aria-pressed="false">15</button><button type="button" aria-pressed="false">16</button><button type="button" aria-pressed="false">17</button><input id="ageOther" class="age-other" type="number" inputmode="numeric" min="18" max="99" placeholder="18+" aria-label="18+"></div><div class="msg"></div></div>
         <div class="f" id="f-gender"><span class="lab" id="genL" data-t="f_gender"></span><div class="opts" role="group" aria-labelledby="genL" id="genders"><button type="button" data-g="m" aria-pressed="false" data-t="g_m"></button><button type="button" data-g="f" aria-pressed="false" data-t="g_f"></button></div><div class="msg"></div></div>
-        <div class="f"><span class="lab" id="planL" data-t="f_plan"></span><div class="opts" role="group" aria-labelledby="planL" id="planOpts"><button type="button" data-plan="1" aria-pressed="false"><span data-t="p1_name"></span> · $490</button><button type="button" data-plan="2" aria-pressed="false"><span data-t="p2_name"></span> · $990</button><button type="button" data-plan="3" aria-pressed="true"><span data-t="p3_name"></span> · $1 490</button></div></div>
+        <div class="f"><span class="lab" id="planL" data-t="f_plan"></span><div class="opts" role="group" aria-labelledby="planL" id="planOpts"><button type="button" data-plan="1" aria-pressed="false"><span data-t="p1_name"></span> · $690</button><button type="button" data-plan="2" aria-pressed="false"><span data-t="p2_name"></span> · $990</button><button type="button" data-plan="3" aria-pressed="true"><span data-t="p3_name"></span> · $1 490</button></div></div>
         <div class="f"><span class="lab" id="kidsL" data-t="f_kids"></span><div class="opts" role="group" aria-labelledby="kidsL" id="kids"><button type="button" aria-pressed="true">1</button><button type="button" aria-pressed="false">2</button><button type="button" aria-pressed="false">3</button><input id="kidsOther" class="age-other" type="number" inputmode="numeric" min="4" max="30" placeholder="4+" aria-label="4+"></div></div>
         <div class="f"><label for="tg" data-t="f_tg"></label><input id="tg" placeholder="@username" autocomplete="off"></div>
         <div class="f"><label for="ref" data-t="f_ref"></label><input id="ref" autocomplete="off"></div>
@@ -889,7 +1002,7 @@ footer .credit a{color:inherit}
         <h3 id="doneT" style="font-size:26px"></h3>
         <p id="doneP" style="color:var(--soft)"></p>
         <pre id="doneMsg"></pre>
-        <div class="row" id="doneA"><button class="btn" type="button" id="copy" data-t="copy"></button><a class="btn ghost" href="https://t.me/naseebtour" target="_blank" rel="noopener" data-t="open_tg"></a></div>
+        <div class="row" id="doneA"><button class="btn" type="button" id="copy" data-t="copy"></button><a class="btn ghost" href="https://t.me/burhunter" target="_blank" rel="noopener" data-t="open_tg"></a></div>
       </div>
     </div>
   </div>
@@ -901,11 +1014,11 @@ footer .credit a{color:inherit}
   <div class="wrap">
     <h2 style="font-size:clamp(38px,6vw,80px);line-height:1.02" data-t="c_h2"></h2>
     <p style="color:var(--soft);font-size:18px;max-width:32em;margin-top:14px" data-t="c_p"></p>
-    <div class="person glass"><img src="img/p_burxoniddin.jpg" alt="Burxoniddin Fatiddinov"><div><small data-t="ps_role"></small><b>Burxoniddin Fatiddinov</b><span class="ps-tel">☎ +998 95 355 00 88</span><p data-t="ps_p"></p></div></div>
+    <div class="person glass"><img src="img/p_burxoniddin.jpg" alt="Burxoniddin Fatiddinov"><div><small data-t="ps_role"></small><b>Burxoniddin Fatiddinov</b><span class="ps-tel">☎ +998 95 355 00 88</span></div></div>
     <div class="contact">
-      <div class="glass"><div><small data-t="c_phone"></small><b>+998 99 885 96 55</b></div><span class="round" aria-hidden="true">☎</span></div>
-      <a class="glass" href="https://t.me/naseebtour" target="_blank" rel="noopener"><div><small>Telegram</small><b>@naseebtour</b></div><span class="round" aria-hidden="true">→</span></a>
-      <a class="glass" href="https://instagram.com/naseeb_tour" target="_blank" rel="noopener"><div><small>Instagram</small><b>@naseeb_tour</b></div><span class="round" aria-hidden="true">→</span></a>
+      <a class="glass" href="tel:+998953550088"><div><small data-t="c_phone"></small><b>+998 95 355 00 88</b></div><span class="round" aria-hidden="true">☎</span></a>
+      <a class="glass" href="https://t.me/burhunter" target="_blank" rel="noopener"><div><small>Telegram</small><b>@burhunter</b></div><span class="round" aria-hidden="true">→</span></a>
+      <a class="glass" href="https://instagram.com/burxoniddin_fatiddinov" target="_blank" rel="noopener"><div><small>Instagram</small><b>@burxoniddin_fatiddinov</b></div><span class="round" aria-hidden="true">→</span></a>
     </div>
   </div>
 </section>
@@ -919,7 +1032,7 @@ footer .credit a{color:inherit}
       <div class="pm-dots" id="pmDots"></div></div>
   </div>
 </div>
-<footer><div class="wrap" style="display:flex;align-items:center;gap:12px"><svg class="ee-logo" viewBox="0 0 48 48" role="img" aria-label="Expedition in Education"><circle cx="24" cy="24" r="24" fill="#F7F4EE"/><circle cx="24" cy="24" r="20.5" fill="none" stroke="#17357F" stroke-width="2.6"/><circle cx="24" cy="24" r="16.6" fill="none" stroke="#17357F" stroke-width="1"/><path transform="translate(20.5 15) rotate(40) scale(0.42)" d="M0,-10 L7.5,9 L0,4.5 L-7.5,9 Z" fill="#E5A526"/><text x="24" y="31" text-anchor="middle" font-family="Poppins, Arial, sans-serif" font-weight="700" font-size="14.5" fill="#17357F">EE</text></svg><span data-t="footer"></span><small class="credit">Toshkent foto: Tashkent City Park, <a href="https://commons.wikimedia.org/wiki/File:Tashkent_City_Park_at_night_2019.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>, CC BY-SA 4.0</small></div></footer>
+<footer><div class="wrap sign-off"><p class="so-t" data-t="so_t"></p><a class="so-by" href="https://www.naseebedu.com/" target="_blank" rel="noopener" aria-label="by Naseeb — naseebedu.com"><span class="by">by</span><img src="img/logo_white.png" alt="Naseeb" width="176" height="60"><span class="url">naseebedu.com ↗</span></a></div><div class="wrap" style="display:flex;align-items:center;gap:12px"><svg class="ee-logo" viewBox="0 0 48 48" role="img" aria-label="Expedition in Education"><circle cx="24" cy="24" r="24" fill="#F7F4EE"/><circle cx="24" cy="24" r="20.5" fill="none" stroke="#17357F" stroke-width="2.6"/><circle cx="24" cy="24" r="16.6" fill="none" stroke="#17357F" stroke-width="1"/><path transform="translate(20.5 15) rotate(40) scale(0.42)" d="M0,-10 L7.5,9 L0,4.5 L-7.5,9 Z" fill="#E5A526"/><text x="24" y="31" text-anchor="middle" font-family="Poppins, Arial, sans-serif" font-weight="700" font-size="14.5" fill="#17357F">EE</text></svg><span data-t="footer"></span><small class="credit">Fotolar: <a href="https://commons.wikimedia.org/wiki/File:Tashkent_City_Park_at_night_2019.jpg" target="_blank" rel="noopener">Tashkent City Park</a>, <a href="https://commons.wikimedia.org/wiki/File:Uzbek_national_dastarkhan.jpg" target="_blank" rel="noopener">Uzbek dastarkhan</a> — Wikimedia Commons, CC BY-SA 4.0</small></div></footer>
 <div class="mbar"><a class="btn" href="#ariza"><span data-t="cta"></span> <span class="round" aria-hidden="true">→</span></a></div>
 
 <script src="config.js"></script>
@@ -974,7 +1087,7 @@ const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAl
 const T = {
 uz: {
   nav_plans: "Rejalar", nav_program: "Dastur", nav_hotels: "Mehmonxonalar", nav_price: "Narx", cta: "Ro‘yxatdan o‘tish",
-  hero_eyebrow: "14–17 yoshli o‘quvchilar uchun akademik sayohat",
+  hero_eyebrow: "14 va undan katta o‘quvchilar uchun akademik sayohat",
   hero_h1: "Universitetni <span class=\"gold\">o‘z ko‘zingiz bilan</span> tanlang",
   hero_sub: "Shenchjen, Guanchjou va Gonkong: to‘qqizta universitet va har bir shaharda sayohat. Kampuslarni o‘z ko‘zimiz bilan ko‘ramiz, qabul komissiyalari bilan yuzma-yuz suhbatlashamiz.",
   c_sz: "Shenchjen", c_gz: "Guanchjou", c_hk: "Gonkong",
@@ -999,13 +1112,18 @@ uz: {
   choose: "Shu rejani tanlash →",
   pr_label: "Dastur", pr_h2: "Kunma-kun:", pr_p: "Kunni tanlang yoki ← → tugmalarini bosing. Har kun soatma-soat yozilgan; chiziq rangi — o‘sha payt qaysi shahardaligimiz.",
   part_m: "Ertalab", part_d: "Kunduzi", part_e: "Kechqurun", both: "Barcha rejalar", only3: "Faqat 3 shahar", only23: "2 va 3 shahar",
-  sg_label: "Sayohat joylari", sg_h2: "Universitetlardan tashqari — <span class=\"gold\">yana nimalarni ko‘ramiz?</span>", sg_p: "Har bir shaharning eng mashhur joylari dasturga kiritilgan. Rasmni bosing — batafsil ma’lumot ochiladi. Pushti belgili joylar ixtiyoriy.", sg_opt: "ixtiyoriy",
+  sg_label: "Sayohat joylari", sg_h2: "Universitetlardan tashqari — <span class=\"gold\">yana nimalarni ko‘ramiz?</span>", sg_p: "Yon tomonga suring yoki shaharni tanlang. Rasmni bosing — batafsil ochiladi.", sg_opt: "ixtiyoriy",
   in_seat: "12A o‘rindiq, deraza yonida", in_h: "Derazadan qarang — <span class=\"gold\">kelajagingiz</span> shu yerda", in_hint: "Pastga aylantiring",
+  so_t: "Sizga ham <a href=\"https://www.naseebedu.com/\" target=\"_blank\" rel=\"noopener\">[[naseeb]]</a> qilsin!",
+  lg_out: "Borish", lg_ret: "Qaytish", lg_train: "Poyezd", tk_ow: "bir tomonga", tk_in_rt: "borish-qaytish chiptasida", tk_fl: "Aviachiptalar", tk_two_ow: "ikkita bir tomonlama chipta", tk_one_rt: "borish va qaytish — bitta chiptada", tk_rail: "Poyezdlar", tk_total: "Yo‘l chiptalari jami",
+  d_only: "Chegirma faqat <b>[[Edu Expedition]] xizmat haqidan</b> ayriladi — aviachipta, mehmonxona va boshqa xarajatlarga tegishli emas.", p3_tl: "Hammasini bir safarda ko‘ring", av_q: "Gonkong vizasi chiqmasa-chi?", av_a: "Unda 8–10-noyabr kunlari Gonkong o‘rniga <b>Avatar tog‘lariga</b> ([[Zhangjiajie]]) boramiz. Dasturni ko‘ring", av_on: "Viza chiqsa — Gonkong", av_off: "Viza chiqmasa — Avatar tog‘lari", av_short: "Avatar tog‘lari", av_note: "Viza chiqmasa: Gonkong universitetlari o‘rniga Avatar tog‘lari. Chipta va xarajatlar farqini alohida xabar qilamiz.",
+  sg_all: "Hammasi",
+  w1t: "Qabul komissiyasi", w2t: "Grant va stipendiya", w3t: "Talabalar bilan suhbat", w4t: "Shahar hayoti", w5t: "O‘z tanlovi",
   u_label: "To‘qqiz kampus", u_h2: "To‘qqizta universitet — <span class=\"gold\">to‘qqizta imkoniyat</span>", u_p: "Har birida kampusni aylanamiz va qabul komissiyasini tinglaymiz.",
   h_label: "Mehmonxonalar", h_h2: "Shahar markazida, <span class=\"gold\">qulay va xavfsiz</span>", h_pill: "Alohida to‘lanadi · nonushta bilan",
   h_note: "Narxlar [[Trip.com]] bo‘yicha (2026-yil 1-oktabr), bron qilingan kunga qarab o‘zgaradi. Xona 2 kishilik.",
   m_label: "Ovqatlanish", m_h2: "Ovqat vaqtlari aniq, <span class=\"gold\">taomlar halol</span>",
-  m1_pill: "Mehmonxona narxida", m1_b: "Nonushta · 07:00–08:00", m1_p: "Mehmonxonada, shved stoli — mehmonxona to‘lovi ichida keladi. Nonushta odatda halol sertifikatiga ega emas, shuning uchun kurator go‘shtsiz taomlarni — tuxum, non, bo‘tqa, meva va sut mahsulotlarini tanlashga yordam beradi.",
+  m1_pill: "Mehmonxona narxida", m1_b: "Nonushta · 08:00–09:00", m1_p: "Mehmonxonada, shved stoli — mehmonxona to‘lovi ichida keladi. Nonushta odatda halol sertifikatiga ega emas, shuning uchun kurator go‘shtsiz taomlarni — tuxum, non, bo‘tqa, meva va sut mahsulotlarini tanlashga yordam beradi.",
   m2_pill: "Alohida to‘lanadi", m2_b: "Tushlik · 12:30–13:30", m2_p: "Faqat halol oshxonalarda — kampus yaqinida yoki dastur yo‘lida.",
   m3_pill: "Alohida to‘lanadi", m3_b: "Kechki ovqat · 18:00–19:00", m3_p: "Mehmonxona yaqinidagi halol restoranlarda. Ro‘yxatini oldindan beramiz, kurator yo‘l ko‘rsatadi.",
   t_label: "Chiptalar", t_h2: "Yo‘l chiptalari <span class=\"gold\">tayyor!</span>", t_pill: "Narxga kirmaydi",
@@ -1019,27 +1137,29 @@ uz: {
   v_label: "Viza", v_h2: "Xitoyga vizasiz, <span class=\"gold\">Gonkongga — viza bilan</span>",
   v_cn: "Xitoy", v_cn_pill: "Barcha rejalar", v_free: "VIZASIZ", v_30: "30 KUNGACHA",
   v_cn_p: "2025-yil 1-iyundan O‘zbekiston fuqarolari Xitoyga 30 kungacha vizasiz boradi.",
-  v_hk: "Gonkong", v_fee: "VIZA TO‘LOVI", v_hk_p: "Gonkong uchun viza kerak. Viza to‘lovi narxga kirmaydi va alohida to‘lanadi.",
+  v_hk: "Gonkong", v_fee: "VIZA TO‘LOVI", v_hk_p: "Gonkong uchun viza kerak. Viza to‘lovi narxga kirmaydi va alohida to‘lanadi. Agar viza chiqmasa, Gonkong o‘rniga Avatar tog‘lariga ([[Zhangjiajie]]) olib boramiz.",
   pc_label: "Narx", pc_h2: "Bir o‘quvchi uchun xizmat narxi",
   inc_t: "Narxga nimalar kiradi", i1: "Universitet tashriflari va qabul komissiyasi bilan uchrashuvlar", i2: "Har bir shaharda shahar sayohati", i3: "Madaniy sayohatlar",
   i4: "Har kuni nonushta", i5: "Butun safar davomida kurator", i6: "Ishtirok sertifikati",
   exc_t: "Alohida to‘lanadi", exc_p: "Aviachiptalar · Mehmonxona va nonushta (o‘zingiz tanlaysiz) · Poyezd va shahar transporti · Tushlik va kechki ovqat · Ixtiyoriy kechki dasturlar va [[Disneyland]] ($100) · Tibbiy sug‘urta · Gonkong vizasi (3 shahar) · Shaxsiy xarajatlar",
   d_label: "Chegirmalar", d_h2: "Birga kelsangiz — <span class=\"gold\">arzonroq</span>",
   d_p: "Do‘stingizni taklif qiling — ikkalangiz ham 5% tejaysiz. Ikki farzandingiz birga borsa — 10% chegirma.",
-  d1_k: "DO‘STLAR", d1_p: "taklif qilganga ham, taklif bilan kelganga ham", d2_k: "OILA", d2_p: "ikki farzand birga borsa",
+  d1_k: "DO‘STLAR", d1_p: "taklif qilganga ham, taklif bilan kelganga ham · [[Edu Expedition]] xizmat haqidan", d2_k: "OILA", d2_p: "ikki farzand birga borsa · [[Edu Expedition]] xizmat haqidan",
   f_label: "Ro‘yxatdan o‘tish", f_h2: "Farzandingiz uchun <span class=\"gold\">joy band qiling</span>",
   f_p: "Ma’lumotlaringizni qoldiring — kuratorimiz o‘zi qo‘ng‘iroq qilib, dastur, to‘lov va hujjatlar haqida batafsil aytib beradi.",
   f_name: "Ota-onaning ismi", f_phone: "Telefon raqam", f_age: "Ishtirokchining yoshi", f_plan: "Reja", f_kids: "Nechta farzand boradi?",
   f_tg: "Telegram (ixtiyoriy)", f_ref: "Sizni kim taklif qildi? (ixtiyoriy)", f_fine: "Hech qanday majburiyat yo‘q · Ma’lumotlaringiz boshqalarga berilmaydi",
   e_name: "Ismingizni yozing", e_phone: "9 ta raqam kiriting, masalan 90 123 45 67", e_age: "Yoshni tanlang yoki yozing (18 va undan katta)",
   ok_t: "Arizangiz qabul qilindi!", ok_p: "Kuratorimiz tez orada qo‘ng‘iroq qiladi.", step_t: "Bir qadam qoldi",
-  step_p: "Quyidagi matnni nusxalab, Telegramda [[@naseebtour]] ga yuboring — kuratorimiz siz bilan bog‘lanadi.",
+  step_p: "Quyidagi matnni nusxalab, Telegramda [[@burhunter]] ga yuboring — kuratorimiz siz bilan bog‘lanadi.",
   copy: "Matnni nusxalash", copied: "Nusxalandi ✓", open_tg: "Telegramda ochish",
   msg_h: "[[Naseeb Tour]] — ariza", msg_name: "Ism", msg_phone: "Telefon", msg_age: "Yoshi", msg_plan: "Reja", msg_kids: "Farzandlar soni", msg_ref: "Taklif qilgan",
   c_h2: "Sizga ham <span class=\"gold\">[[Naseeb]] qilsin!</span>",
   c_p: "Farzandingiz kelajagiga eng yaxshi sarmoya — ta’lim. Savolingiz bormi? Bemalol yozing, albatta javob beramiz.", c_phone: "Telefon",
   footer: "Ta’lim ekspeditsiyasi · [[Naseeb Tour]] · 31-oktabr (shanba) – 11-noyabr (chorshanba) 2026",
   months: ["oktabr", "noyabr"], days: ["yakshanba", "dushanba", "seshanba", "chorshanba", "payshanba", "juma", "shanba"],
+  meet_on: "Onlayn uchrashuv",
+  meet_off: "Tanishuv kuni",
   dep_day: "Jo‘nash kuni",
   day_n: "#-kun",
   wx_typ: "odatda",
@@ -1061,6 +1181,7 @@ uz: {
   tr_s: "To‘g‘ri yo‘nalish · 47 daqiqa · chiptalar safardan taxminan 2 hafta oldin sotuvga chiqadi",
   tr_class: "2-klass",
   tr_note: "1-klass — $51, biznes-klass — $96.",
+  dwin: "%1: do‘st bilan <b>%2</b>, oila bilan <b>%3</b> tejaysiz",
   dx1: "Do‘stlar",
   dx2: "Oila",
   wds: ["yak", "dush", "sesh", "chor", "pay", "jum", "shan"],
@@ -1079,7 +1200,7 @@ uz: {
   pk_p: "Kunduzi 25–28°, kechqurun 18–21°, Toshkentda esa 5–17°. Ro‘yxatni belgilab boring — hech narsa esdan chiqmaydi.",
   pk_done: "# / % tayyor",
   t_r3_s: "Guanchjou (T3) → Sian (1 soat 55 daqiqa, yuk o‘zi o‘tadi) → Toshkent (T2) · 10 soat 40 daqiqa",
-  svc: "Bu faqat [[Naseeb Tour]] xizmat narxi",
+  svc: "Bu faqat [[Edu Expedition]] xizmat narxi",
   t_r1_s: "Shenchjen (T3) → Sian (2 soat 5 daqiqa) → Toshkent (T2) · 10 soat 45 daqiqa",
   wx_day: "Kunduzi",
   wx_night: "Kechasi",
@@ -1087,8 +1208,8 @@ uz: {
   b_h2: "Taxminan <span class=\"gold\">qancha ketadi?</span>",
   b_p: "Xizmat narxidan tashqari nimalarga pul kerak bo‘lishini bir joyga yig‘dik. Rejani tanlang — hisob o‘zi o‘zgaradi.",
   b_note: "Taxminiy hisob: bir o‘quvchi uchun, mehmonxonada 2 kishi bir xonada. Chipta va mehmonxona narxi bron qilingan kunga qarab o‘zgaradi.",
-  b_svc: "[[Naseeb]] xizmati",
-  b_svc_s: "universitetlar, sayohatlar, kurator",
+  b_svc: "Bizning xizmatimiz",
+  b_svc_s: "universitetlar, sayohatlar va kurator — hammasini biz tashkil qilamiz",
   b_fl: "Aviachiptalar",
   b_fl_1: "borish ≈ $225 + qaytish $220",
   b_fl_2: "borish-qaytish, bitta chipta",
@@ -1137,7 +1258,7 @@ uz: {
 },
 ru: {
   nav_plans: "Программы", nav_program: "Маршрут", nav_hotels: "Отели", nav_price: "Цены", cta: "Записаться",
-  hero_eyebrow: "Академическая поездка для школьников 14–17 лет",
+  hero_eyebrow: "Академическая поездка для школьников от 14 лет",
   hero_h1: "Выбирайте университет <span class=\"gold\">своими глазами</span>",
   hero_sub: "Шэньчжэнь, Гуанчжоу и Гонконг: девять университетов и обзорная экскурсия в каждом городе. Гуляем по кампусам и говорим с приёмными комиссиями лично.",
   c_sz: "Шэньчжэнь", c_gz: "Гуанчжоу", c_hk: "Гонконг",
@@ -1162,13 +1283,18 @@ ru: {
   choose: "Выбрать эту программу →",
   pr_label: "Маршрут", pr_h2: "По дням:", pr_p: "Выберите день или листайте ← →. Каждый день расписан по часам; цвет линии — город, где мы в это время.",
   part_m: "Утро", part_d: "День", part_e: "Вечер", both: "Все программы", only3: "Только 3 города", only23: "2 и 3 города",
-  sg_label: "Что посмотрим", sg_h2: "Кроме университетов — <span class=\"gold\">что ещё увидим?</span>", sg_p: "Самые известные места каждого города уже в программе. Нажмите на фото — откроется подробнее. Места с розовой меткой — по желанию.", sg_opt: "по желанию",
+  sg_label: "Что посмотрим", sg_h2: "Кроме университетов — <span class=\"gold\">что ещё увидим?</span>", sg_p: "Листайте вбок или выберите город. Нажмите на фото — откроется подробнее.", sg_opt: "по желанию",
   in_seat: "место 12A, у окна", in_h: "Взгляните в окно — <span class=\"gold\">ваше будущее</span> здесь", in_hint: "Прокрутите вниз",
+  so_t: "Пусть и вам будет <a href=\"https://www.naseebedu.com/\" target=\"_blank\" rel=\"noopener\">naseeb</a>!",
+  lg_out: "Вылет", lg_ret: "Обратно", lg_train: "Поезд", tk_ow: "в одну сторону", tk_in_rt: "в билете туда-обратно", tk_fl: "Авиабилеты", tk_two_ow: "два билета в одну сторону", tk_one_rt: "туда и обратно — один билет", tk_rail: "Поезда", tk_total: "Все билеты вместе",
+  d_only: "Скидка вычитается <b>только из стоимости услуг Edu Expedition</b> — авиабилеты, отель и другие расходы не входят.", p3_tl: "Всё за одну поездку", av_q: "А если визу в Гонконг не дадут?", av_a: "Тогда 8–10 ноября вместо Гонконга едем в <b>горы Аватара</b> (Чжанцзяцзе). Смотреть программу", av_on: "Виза есть — Гонконг", av_off: "Визы нет — горы Аватара", av_short: "горы Аватара", av_note: "Без визы: вместо университетов Гонконга — горы Аватара. Разницу в билетах и расходах сообщим отдельно.",
+  sg_all: "Все",
+  w1t: "Приёмная комиссия", w2t: "Гранты и стипендии", w3t: "Разговор со студентами", w4t: "Жизнь города", w5t: "Свой выбор",
   u_label: "Девять кампусов", u_h2: "Девять университетов — <span class=\"gold\">девять возможностей</span>", u_p: "В каждом — экскурсия по кампусу и встреча с приёмной комиссией.",
   h_label: "Отели", h_h2: "В центре города, <span class=\"gold\">удобно и безопасно</span>", h_pill: "Оплачивается отдельно · с завтраком",
   h_note: "Цены Trip.com (1 октября 2026), зависят от даты бронирования. Номер на двоих.",
   m_label: "Питание", m_h2: "Чёткое время, <span class=\"gold\">халяльная еда</span>",
-  m1_pill: "Входит в цену отеля", m1_b: "Завтрак · 07:00–08:00", m1_p: "В отеле, шведский стол — входит в оплату отеля. Обычно без халяль-сертификата, поэтому куратор помогает выбрать блюда без мяса — яйца, хлеб, кашу, фрукты и молочное.",
+  m1_pill: "Входит в цену отеля", m1_b: "Завтрак · 08:00–09:00", m1_p: "В отеле, шведский стол — входит в оплату отеля. Обычно без халяль-сертификата, поэтому куратор помогает выбрать блюда без мяса — яйца, хлеб, кашу, фрукты и молочное.",
   m2_pill: "Оплачивается отдельно", m2_b: "Обед · 12:30–13:30", m2_p: "Только в халяльных кафе — у кампуса или по пути.",
   m3_pill: "Оплачивается отдельно", m3_b: "Ужин · 18:00–19:00", m3_p: "В халяльных ресторанах рядом с отелем. Список дадим заранее, куратор подскажет дорогу.",
   t_label: "Билеты", t_h2: "Билеты <span class=\"gold\">готовы!</span>", t_pill: "Не входят в цену",
@@ -1181,27 +1307,29 @@ ru: {
   v_label: "Виза", v_h2: "В Китай — без визы, <span class=\"gold\">в Гонконг — с визой</span>",
   v_cn: "Китай", v_cn_pill: "Все программы", v_free: "БЕЗ ВИЗЫ", v_30: "ДО 30 ДНЕЙ",
   v_cn_p: "С 1 июня 2025 года граждане Узбекистана въезжают в Китай без визы на срок до 30 дней.",
-  v_hk: "Гонконг", v_fee: "ВИЗОВЫЙ СБОР", v_hk_p: "Для Гонконга нужна виза. Визовый сбор не входит в цену и оплачивается отдельно.",
+  v_hk: "Гонконг", v_fee: "ВИЗОВЫЙ СБОР", v_hk_p: "Для Гонконга нужна виза. Визовый сбор не входит в цену и оплачивается отдельно. Если визу не дадут, вместо Гонконга поедем в горы Аватара (Чжанцзяцзе).",
   pc_label: "Цены", pc_h2: "Стоимость услуг на одного школьника",
   inc_t: "Что входит в цену", i1: "Посещение университетов и встречи с приёмными комиссиями", i2: "Обзорная экскурсия в каждом городе", i3: "Культурные экскурсии",
   i4: "Завтрак каждый день", i5: "Куратор на всё время поездки", i6: "Сертификат участника",
   exc_t: "Оплачивается отдельно", exc_p: "Авиабилеты · Отель с завтраком (на ваш выбор) · Поезд и транспорт · Обеды и ужины · Вечерние программы по желанию и Disneyland ($100) · Медицинская страховка · Виза в Гонконг (3 города) · Личные расходы",
   d_label: "Скидки", d_h2: "Вместе — <span class=\"gold\">выгоднее</span>",
   d_p: "Пригласите друга — вы оба сэкономите 5%. Если едут двое ваших детей — скидка 10%.",
-  d1_k: "ДРУЗЬЯ", d1_p: "и тому, кто пригласил, и тому, кто пришёл", d2_k: "СЕМЬЯ", d2_p: "если едут двое детей",
+  d1_k: "ДРУЗЬЯ", d1_p: "и тому, кто пригласил, и тому, кто пришёл · от услуг Edu Expedition", d2_k: "СЕМЬЯ", d2_p: "если едут двое детей · от услуг Edu Expedition",
   f_label: "Запись", f_h2: "Забронируйте место <span class=\"gold\">для ребёнка</span>",
   f_p: "Оставьте контакты — куратор сам перезвонит и подробно расскажет о программе, оплате и документах.",
   f_name: "Имя родителя", f_phone: "Номер телефона", f_age: "Возраст участника", f_plan: "Программа", f_kids: "Сколько детей поедет?",
   f_tg: "Telegram (необязательно)", f_ref: "Кто вас пригласил? (необязательно)", f_fine: "Никаких обязательств · Ваши данные никому не передаются",
   e_name: "Напишите ваше имя", e_phone: "Введите 9 цифр, например 90 123 45 67", e_age: "Выберите или впишите возраст (18+)",
   ok_t: "Заявка принята!", ok_p: "Куратор скоро вам позвонит.", step_t: "Остался один шаг",
-  step_p: "Скопируйте текст ниже и отправьте в Telegram на @naseebtour — куратор свяжется с вами.",
+  step_p: "Скопируйте текст ниже и отправьте в Telegram на @burhunter — куратор свяжется с вами.",
   copy: "Скопировать текст", copied: "Скопировано ✓", open_tg: "Открыть Telegram",
   msg_h: "Naseeb Tour — заявка", msg_name: "Имя", msg_phone: "Телефон", msg_age: "Возраст", msg_plan: "Программа", msg_kids: "Количество детей", msg_ref: "Пригласил(а)",
   c_h2: "Пусть и вам <span class=\"gold\">повезёт!</span>",
   c_p: "Лучшее вложение в будущее ребёнка — образование. Есть вопросы? Пишите, мы обязательно ответим.", c_phone: "Телефон",
   footer: "Образовательная экспедиция · Naseeb Tour · 31 октября (сб) – 11 ноября (ср) 2026",
   months: ["октября", "ноября"], days: ["воскресенье", "понедельник", "вторник", "среда", "четверг", "пятница", "суббота"],
+  meet_on: "Онлайн-встреча",
+  meet_off: "Встреча-знакомство",
   dep_day: "День вылета",
   day_n: "День #",
   wx_typ: "обычно",
@@ -1223,6 +1351,7 @@ ru: {
   tr_s: "Без пересадок · 47 мин · продажа билетов примерно за 2 недели",
   tr_class: "2-й класс",
   tr_note: "1-й класс — $51, бизнес — $96.",
+  dwin: "%1: с другом экономия <b>%2</b>, семьёй — <b>%3</b>",
   dx1: "Друзья",
   dx2: "Семья",
   wds: ["вс", "пн", "вт", "ср", "чт", "пт", "сб"],
@@ -1241,7 +1370,7 @@ ru: {
   pk_p: "Днём 25–28°, вечером 18–21°, а в Ташкенте 5–17°. Отмечайте пункты — ничего не забудете.",
   pk_done: "Готово: # из %",
   t_r3_s: "Гуанчжоу (T3) → Сиань (1 ч 55 мин, багаж идёт сразу) → Ташкент (T2) · 10 ч 40 мин",
-  svc: "Это только стоимость услуг Naseeb Tour",
+  svc: "Это только стоимость услуг Edu Expedition",
   t_r1_s: "Шэньчжэнь (T3) → Сиань (2 ч 5 мин) → Ташкент (T2) · 10 ч 45 мин",
   wx_day: "Днём",
   wx_night: "Ночью",
@@ -1249,8 +1378,8 @@ ru: {
   b_h2: "Сколько всего <span class=\"gold\">понадобится?</span>",
   b_p: "Собрали в одном месте всё, на что нужны деньги помимо стоимости услуг. Выберите программу — расчёт изменится.",
   b_note: "Примерный расчёт: на одного школьника, по 2 человека в номере. Цены на билеты и отели зависят от даты бронирования.",
-  b_svc: "Услуги Naseeb",
-  b_svc_s: "университеты, экскурсии, куратор",
+  b_svc: "Наши услуги",
+  b_svc_s: "университеты, экскурсии и куратор — всё организуем мы",
   b_fl: "Авиабилеты",
   b_fl_1: "туда ≈ $225 + обратно $220",
   b_fl_2: "туда-обратно, один билет",
@@ -1299,7 +1428,7 @@ ru: {
 },
 en: {
   nav_plans: "Plans", nav_program: "Program", nav_hotels: "Hotels", nav_price: "Prices", cta: "Sign up",
-  hero_eyebrow: "Academic trip for students aged 14–17",
+  hero_eyebrow: "Academic trip for students aged 14 and over",
   hero_h1: "Choose your university <span class=\"gold\">with your own eyes</span>",
   hero_sub: "Shenzhen, Guangzhou and Hong Kong: nine universities and a city tour in every city. We walk the campuses and talk to admissions teams face to face.",
   c_sz: "Shenzhen", c_gz: "Guangzhou", c_hk: "Hong Kong",
@@ -1324,13 +1453,18 @@ en: {
   choose: "Choose this plan →",
   pr_label: "Program", pr_h2: "Day by day:", pr_p: "Pick a day or use ← →. Every day is planned hour by hour; the line colour shows which city we're in.",
   part_m: "Morning", part_d: "Afternoon", part_e: "Evening", both: "All plans", only3: "3 cities only", only23: "2 and 3 cities",
-  sg_label: "Sightseeing", sg_h2: "Beyond the campuses — <span class=\"gold\">what else will we see?</span>", sg_p: "Each city's best-known sights are in the program. Tap a photo for details. Places marked in pink are optional.", sg_opt: "optional",
+  sg_label: "Sightseeing", sg_h2: "Beyond the campuses — <span class=\"gold\">what else will we see?</span>", sg_p: "Swipe sideways or pick a city. Tap a photo for details.", sg_opt: "optional",
   in_seat: "seat 12A, by the window", in_h: "Look out the window — <span class=\"gold\">your future</span> is right there", in_hint: "Scroll down",
+  so_t: "May it be <a href=\"https://www.naseebedu.com/\" target=\"_blank\" rel=\"noopener\">naseeb</a> for you too!",
+  lg_out: "Outbound", lg_ret: "Return", lg_train: "Train", tk_ow: "one way", tk_in_rt: "on the return ticket", tk_fl: "Flights", tk_two_ow: "two one-way tickets", tk_one_rt: "out and back on one ticket", tk_rail: "Trains", tk_total: "All tickets together",
+  d_only: "The discount comes <b>off the Edu Expedition service fee only</b> — not flights, hotels or other costs.", p3_tl: "See it all in one trip", av_q: "What if the Hong Kong visa is refused?", av_a: "Then on 8–10 November we go to the <b>Avatar Mountains</b> (Zhangjiajie) instead of Hong Kong. See the program", av_on: "Visa granted — Hong Kong", av_off: "No visa — Avatar Mountains", av_short: "Avatar Mountains", av_note: "Without the visa: the Avatar Mountains instead of the Hong Kong universities. We will confirm any difference in tickets and costs separately.",
+  sg_all: "All",
+  w1t: "Admissions", w2t: "Grants & scholarships", w3t: "Talk to students", w4t: "City life", w5t: "Their own choice",
   u_label: "Nine campuses", u_h2: "Nine universities — <span class=\"gold\">nine chances</span>", u_p: "At each one we tour the campus and hear from admissions.",
   h_label: "Hotels", h_h2: "In the city centre, <span class=\"gold\">comfortable and safe</span>", h_pill: "Paid separately · with breakfast",
   h_note: "Trip.com prices (1 October 2026), depending on booking date. Rooms for two.",
   m_label: "Meals", m_h2: "Set meal times, <span class=\"gold\">halal food</span>",
-  m1_pill: "In the hotel rate", m1_b: "Breakfast · 07:00–08:00", m1_p: "A hotel buffet, included in the hotel rate. It's usually not halal-certified, so the curator helps students choose meat-free food — eggs, bread, porridge, fruit and dairy.",
+  m1_pill: "In the hotel rate", m1_b: "Breakfast · 08:00–09:00", m1_p: "A hotel buffet, included in the hotel rate. It's usually not halal-certified, so the curator helps students choose meat-free food — eggs, bread, porridge, fruit and dairy.",
   m2_pill: "Paid separately", m2_b: "Lunch · 12:30–13:30", m2_p: "Only at halal restaurants — near the campus or along the way.",
   m3_pill: "Paid separately", m3_b: "Dinner · 18:00–19:00", m3_p: "At halal restaurants near the hotel. We share the list in advance and the curator shows the way.",
   t_label: "Tickets", t_h2: "Your tickets <span class=\"gold\">are ready!</span>", t_pill: "Not included",
@@ -1343,27 +1477,29 @@ en: {
   v_label: "Visa", v_h2: "China visa-free, <span class=\"gold\">Hong Kong with a visa</span>",
   v_cn: "China", v_cn_pill: "All plans", v_free: "VISA-FREE", v_30: "UP TO 30 DAYS",
   v_cn_p: "Since 1 June 2025, citizens of Uzbekistan can visit China visa-free for up to 30 days.",
-  v_hk: "Hong Kong", v_fee: "VISA FEE", v_hk_p: "Hong Kong requires a visa. The fee is not included and is paid separately.",
+  v_hk: "Hong Kong", v_fee: "VISA FEE", v_hk_p: "Hong Kong requires a visa. The fee is not included and is paid separately. If the visa is refused, we go to the Avatar Mountains (Zhangjiajie) instead of Hong Kong.",
   pc_label: "Prices", pc_h2: "Service price per student",
   inc_t: "What's included", i1: "University visits and admissions meetings", i2: "A city tour in every city", i3: "Cultural tours",
   i4: "Breakfast every day", i5: "A curator for the whole trip", i6: "Certificate of participation",
   exc_t: "Paid separately", exc_p: "Flights · Hotel with breakfast (your choice) · Train and transport · Lunch and dinner · Optional evening plans and Disneyland ($100) · Medical insurance · Hong Kong visa (3 cities) · Personal expenses",
   d_label: "Discounts", d_h2: "Come together — <span class=\"gold\">pay less</span>",
   d_p: "Invite a friend — you both save 5%. Send two of your children together — 10% off.",
-  d1_k: "FRIENDS", d1_p: "for the one who invites and the one who comes", d2_k: "FAMILY", d2_p: "when two children go together",
+  d1_k: "FRIENDS", d1_p: "for the one who invites and the one who comes · off the Edu Expedition fee", d2_k: "FAMILY", d2_p: "when two children go together · off the Edu Expedition fee",
   f_label: "Sign up", f_h2: "Reserve a place <span class=\"gold\">for your child</span>",
   f_p: "Leave your details — our curator will call you and explain the program, payment and documents.",
   f_name: "Parent's name", f_phone: "Phone number", f_age: "Participant's age", f_plan: "Plan", f_kids: "How many children are going?",
   f_tg: "Telegram (optional)", f_ref: "Who invited you? (optional)", f_fine: "No obligation · We never share your details",
   e_name: "Please enter your name", e_phone: "Enter 9 digits, e.g. 90 123 45 67", e_age: "Choose or type an age (18+)",
   ok_t: "Application received!", ok_p: "Our curator will call you soon.", step_t: "One more step",
-  step_p: "Copy the text below and send it to @naseebtour on Telegram — our curator will get in touch.",
+  step_p: "Copy the text below and send it to @burhunter on Telegram — our curator will get in touch.",
   copy: "Copy text", copied: "Copied ✓", open_tg: "Open Telegram",
   msg_h: "Naseeb Tour — application", msg_name: "Name", msg_phone: "Phone", msg_age: "Age", msg_plan: "Plan", msg_kids: "Children", msg_ref: "Invited by",
   c_h2: "May it be <span class=\"gold\">your Naseeb too!</span>",
   c_p: "Education is the best investment in your child's future. Any questions? Just write — we'll always reply.", c_phone: "Phone",
   footer: "Expedition in Education · Naseeb Tour · Sat 31 October – Wed 11 November 2026",
   months: ["October", "November"], days: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+  meet_on: "Online meeting",
+  meet_off: "Meet-up day",
   dep_day: "Departure day",
   day_n: "Day #",
   wx_typ: "typical",
@@ -1385,6 +1521,7 @@ en: {
   tr_s: "Direct · 47 min · tickets go on sale about 2 weeks before",
   tr_class: "2nd class",
   tr_note: "1st class $51, business $96.",
+  dwin: "%1: save <b>%2</b> with a friend, <b>%3</b> as a family",
   dx1: "Friends",
   dx2: "Family",
   wds: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
@@ -1403,7 +1540,7 @@ en: {
   pk_p: "25–28° by day, 18–21° in the evening, and 5–17° in Tashkent. Tick things off as you go.",
   pk_done: "# of % packed",
   t_r3_s: "Guangzhou (T3) → Xi'an (1 h 55 min, bags through) → Tashkent (T2) · 10 h 40 min",
-  svc: "Naseeb Tour service fee only",
+  svc: "Edu Expedition service fee only",
   t_r1_s: "Shenzhen (T3) → Xi'an (2 h 5 min) → Tashkent (T2) · 10 h 45 min",
   wx_day: "Day",
   wx_night: "Night",
@@ -1411,8 +1548,8 @@ en: {
   b_h2: "Roughly <span class=\"gold\">how much in total?</span>",
   b_p: "Everything you'll spend on top of the service fee, in one place. Pick a plan and the estimate updates.",
   b_note: "Estimate per student, two to a room. Flight and hotel prices depend on when you book.",
-  b_svc: "Naseeb service",
-  b_svc_s: "universities, tours, curator",
+  b_svc: "Our service",
+  b_svc_s: "universities, tours and a curator — we arrange it all",
   b_fl: "Flights",
   b_fl_1: "out ≈ $225 + back $220",
   b_fl_2: "round trip, one ticket",
@@ -1479,8 +1616,120 @@ T.cyr = {};
 for (const k in T.uz) T.cyr[k] = toCyr(T.uz[k]);
 
 /* ---------- program data ---------- */
-const DATES = [[9, 31], [10, 1], [10, 2], [10, 3], [10, 4], [10, 5], [10, 6], [10, 7], [10, 8], [10, 9], [10, 10], [10, 11]];
+const DATES = [[9, 27], [9, 30], [9, 31], [10, 1], [10, 2], [10, 3], [10, 4], [10, 5], [10, 6], [10, 7], [10, 8], [10, 9], [10, 10], [10, 11]];
 const DAYS = [
+ {
+  "c": "tas",
+  "img": "tas_park",
+  "mini": [
+   "tas_meet",
+   {
+    "uz": "Tanishuv",
+    "ru": "Знакомство",
+    "en": "Meet-up"
+   },
+   {
+    "uz": "O‘quvchilar va ota-onalar",
+    "ru": "Ученики и родители",
+    "en": "Students and parents"
+   }
+  ],
+  "t": {
+   "uz": "Onlayn uchrashuv",
+   "ru": "Онлайн-встреча",
+   "en": "Online meeting"
+  },
+  "wx": [
+   "tas",
+   "sun",
+   18,
+   7
+  ],
+  "rows": [
+   [
+    {
+     "uz": "Vaqtini xabar qilamiz",
+     "ru": "Время сообщим",
+     "en": "Time TBA"
+    },
+    {
+     "uz": "<b>Onlayn uchrashuv</b> — o‘quvchilar va ota-onalar bilan.",
+     "ru": "<b>Онлайн-встреча</b> с учениками и родителями.",
+     "en": "<b>Online meeting</b> with students and parents."
+    },
+    {
+     "c": "tas"
+    }
+   ]
+  ],
+  "places": [
+   [
+    "tas_meet",
+    "Tanishuv",
+    {
+     "uz": "O‘quvchilar va ota-onalar bilan uchrashuv.",
+     "ru": "Встреча с учениками и родителями.",
+     "en": "Meeting with students and parents."
+    }
+   ]
+  ]
+ },
+ {
+  "c": "tas",
+  "img": "tas_meet",
+  "mini": [
+   "tas_meet",
+   {
+    "uz": "Tanishuv",
+    "ru": "Знакомство",
+    "en": "Meet-up"
+   },
+   {
+    "uz": "O‘quvchilar va ota-onalar",
+    "ru": "Ученики и родители",
+    "en": "Students and parents"
+   }
+  ],
+  "t": {
+   "uz": "Tanishuv uchrashuvi",
+   "ru": "Встреча-знакомство",
+   "en": "Welcome meeting"
+  },
+  "wx": [
+   "tas",
+   "sun",
+   17,
+   6
+  ],
+  "rows": [
+   [
+    {
+     "uz": "Vaqtini xabar qilamiz",
+     "ru": "Время сообщим",
+     "en": "Time TBA"
+    },
+    {
+     "uz": "<b>Tanishuv uchrashuvi</b> — o‘quvchilar va ota-onalar bilan.",
+     "ru": "<b>Встреча-знакомство</b> с учениками и родителями.",
+     "en": "<b>Welcome meeting</b> with students and parents."
+    },
+    {
+     "c": "tas"
+    }
+   ]
+  ],
+  "places": [
+   [
+    "tas_meet",
+    "Tanishuv",
+    {
+     "uz": "O‘quvchilar va ota-onalar bilan uchrashuv.",
+     "ru": "Встреча с учениками и родителями.",
+     "en": "Meeting with students and parents."
+    }
+   ]
+  ]
+ },
  {
   "c": "go",
   "img": "tas_park",
@@ -2039,9 +2288,9 @@ const DAYS = [
       "en": "Shenzhen"
      },
      {
-      "uz": "Xayr, Shenchjen!",
-      "ru": "До свидания, Шэньчжэнь!",
-      "en": "Goodbye, Shenzhen!"
+      "uz": "Uyga qaytamiz",
+      "ru": "Возвращаемся домой",
+      "en": "Heading home"
      }
     ],
     "t": {
@@ -2113,9 +2362,9 @@ const DAYS = [
      [
       "21:20",
       {
-       "uz": "Toshkentdamiz! Ota-onalar kutib oladi.",
-       "ru": "Мы в Ташкенте! Родители встречают.",
-       "en": "Home in Tashkent — parents meet us."
+       "uz": "Toshkentdamiz! Bizdan bir vakil (Edu Expedition vakili) va ota-onalar kutib oladi.",
+       "ru": "Мы в Ташкенте! Встречают наш представитель (Edu Expedition) и родители.",
+       "en": "Home in Tashkent — an Edu Expedition representative and the parents meet us."
       },
       {
        "c": "tas"
@@ -2125,7 +2374,7 @@ const DAYS = [
     "places": [
      [
       "sz_skyline",
-      "Xayr, Shenchjen!",
+      "Shenchjen",
       {
        "uz": "1 shahar guruhi shu kuni uyga qaytadi.",
        "ru": "Группа «1 город» в этот день возвращается домой.",
@@ -2689,9 +2938,9 @@ const DAYS = [
       "en": "Guangzhou"
      },
      {
-      "uz": "Xayr, Guanchjou!",
-      "ru": "До свидания, Гуанчжоу!",
-      "en": "Goodbye, Guangzhou!"
+      "uz": "Uyga qaytamiz",
+      "ru": "Возвращаемся домой",
+      "en": "Heading home"
      }
     ],
     "gallery": null,
@@ -2762,9 +3011,9 @@ const DAYS = [
      [
       "21:20",
       {
-       "uz": "Toshkentdamiz (T2)! Ota-onalar kutib oladi.",
-       "ru": "Мы в Ташкенте (T2)! Родители встречают.",
-       "en": "Tashkent (T2) — parents meet us."
+       "uz": "Toshkentdamiz (T2)! Bizdan bir vakil (Edu Expedition vakili) va ota-onalar kutib oladi.",
+       "ru": "Мы в Ташкенте (T2)! Встречают наш представитель (Edu Expedition) и родители.",
+       "en": "Tashkent (T2) — an Edu Expedition representative and the parents meet us."
       },
       {
        "c": "tas"
@@ -2774,7 +3023,7 @@ const DAYS = [
     "places": [
      [
       "canton",
-      "Xayr, Guanchjou!",
+      "Guanchjou",
       {
        "uz": "2 shahar guruhi shu kuni Sian orqali Toshkentga qaytadi.",
        "ru": "Группа «2 города» в этот день летит в Ташкент через Сиань.",
@@ -2821,7 +3070,108 @@ const DAYS = [
      "en": "The world's largest permanent light-and-sound show, per Guinness — every night at 8 pm."
     }
    ]
-  ]
+  ],
+  "avatar": {
+   "c": "zj",
+   "img": "zj_avatar",
+   "mini": [
+    "zj_avatar",
+    {
+     "uz": "Avatar tog‘lari",
+     "ru": "Горы Аватара",
+     "en": "Avatar Mountains"
+    },
+    {
+     "uz": "Zhangjiajie",
+     "ru": "Чжанцзяцзе",
+     "en": "Zhangjiajie"
+    }
+   ],
+   "t": {
+    "uz": "Avatar tog‘lariga yo‘l",
+    "ru": "В горы Аватара",
+    "en": "To the Avatar Mountains"
+   },
+   "wx": [
+    "zj",
+    "partly",
+    18,
+    10
+   ],
+   "rows": [
+    [
+     "08:00–09:00",
+     {
+      "uz": "Nonushta, so‘ng xonalarni topshiramiz.",
+      "ru": "Завтрак, затем сдаём номера.",
+      "en": "Breakfast, then we check out."
+     },
+     {
+      "c": "gz"
+     }
+    ],
+    [
+     "09:00",
+     {
+      "uz": "[[Guangzhou South]] vokzaliga yo‘l olamiz — metroda 40 daqiqacha.",
+      "ru": "Едем на вокзал Guangzhou South — около 40 минут на метро.",
+      "en": "To Guangzhou South station — about 40 minutes by metro."
+     },
+     {
+      "c": "gz"
+     }
+    ],
+    [
+     "≈ 11:00",
+     {
+      "uz": "Tezyurar poyezdda [[Zhangjiajie]]ga — taxminan 5,5 soat.",
+      "ru": "Скоростной поезд до Чжанцзяцзе — около 5,5 часа.",
+      "en": "High-speed train to Zhangjiajie — about 5.5 hours."
+     },
+     {
+      "c": "go"
+     }
+    ],
+    [
+     "12:30–13:30",
+     {
+      "uz": "Tushlik — yo‘lda, halol yegulikni o‘zimiz bilan olamiz.",
+      "ru": "Обед в дороге — халяльную еду берём с собой.",
+      "en": "Lunch on the way — we bring halal food with us."
+     },
+     {
+      "c": "go"
+     }
+    ],
+    [
+     "≈ 16:30",
+     {
+      "uz": "[[Zhangjiajie]]damiz. Mehmonxonaga joylashamiz.",
+      "ru": "Мы в Чжанцзяцзе. Заселяемся в отель.",
+      "en": "We arrive in Zhangjiajie and check in."
+     }
+    ],
+    [
+     "18:00–19:00",
+     {
+      "uz": "Kechki ovqat — halol oshxonada.",
+      "ru": "Ужин — в халяльном ресторане.",
+      "en": "Dinner at a halal restaurant."
+     }
+    ]
+   ],
+   "places": [
+    [
+     "zj_avatar",
+     "Avatar tog‘lari",
+     {
+      "uz": "Zhangjiajie qoyalari «Avatar» filmidagi uchar tog‘larga ilhom bergan. YuNESKO merosi ro‘yxatida.",
+      "ru": "Скалы Чжанцзяцзе вдохновили «парящие горы» из фильма «Аватар». Объект наследия ЮНЕСКО.",
+      "en": "Zhangjiajie's stone pillars inspired the floating mountains in Avatar. A UNESCO World Heritage site."
+     }
+    ]
+   ]
+  }
  },
  {
   "c": "hk",
@@ -2944,7 +3294,88 @@ const DAYS = [
      "en": "Listed by Guinness as one of the most densely populated places on Earth — markets, neon and non-stop life."
     }
    ]
-  ]
+  ],
+  "avatar": {
+   "c": "zj",
+   "img": "zj_avatar",
+   "mini": [
+    "zj_avatar",
+    {
+     "uz": "Avatar tog‘lari",
+     "ru": "Горы Аватара",
+     "en": "Avatar Mountains"
+    },
+    {
+     "uz": "Zhangjiajie",
+     "ru": "Чжанцзяцзе",
+     "en": "Zhangjiajie"
+    }
+   ],
+   "t": {
+    "uz": "Avatar tog‘lari",
+    "ru": "Горы Аватара",
+    "en": "The Avatar Mountains"
+   },
+   "wx": [
+    "zj",
+    "partly",
+    18,
+    10
+   ],
+   "rows": [
+    [
+     "08:00–09:00",
+     {
+      "uz": "Nonushta mehmonxonada.",
+      "ru": "Завтрак в отеле.",
+      "en": "Breakfast at the hotel."
+     }
+    ],
+    [
+     "08:30",
+     {
+      "uz": "<b>[[Zhangjiajie]] milliy o‘rmon bog‘i</b> — minglab tosh ustunlar. [[Bailong]] lifti bilan 326 metr yuqoriga.",
+      "ru": "<b>Национальный лесной парк Чжанцзяцзе</b> — тысячи каменных столбов. Наверх на лифте Bailong — 326 метров.",
+      "en": "<b>Zhangjiajie National Forest Park</b> — thousands of stone pillars. Up 326 metres in the Bailong Elevator."
+     }
+    ],
+    [
+     "12:30–13:30",
+     {
+      "uz": "Tushlik — halol oshxonada.",
+      "ru": "Обед — в халяльном кафе.",
+      "en": "Lunch at a halal restaurant."
+     }
+    ],
+    [
+     "14:30",
+     {
+      "uz": "[[Yuanjiajie]] va [[Tianzi]] tog‘i — eng chiroyli ko‘rinish maydonchalari.",
+      "ru": "Юаньцзяцзе и гора Тяньцзы — лучшие смотровые площадки.",
+      "en": "Yuanjiajie and Tianzi Mountain — the best viewpoints."
+     }
+    ],
+    [
+     "18:00–19:00",
+     {
+      "uz": "Kechki ovqat — halol oshxonada.",
+      "ru": "Ужин — в халяльном ресторане.",
+      "en": "Dinner at a halal restaurant."
+     }
+    ]
+   ],
+   "places": [
+    [
+     "zj_avatar",
+     "Zhangjiajie milliy bog‘i",
+     {
+      "uz": "1982-yilda Xitoyning birinchi milliy o‘rmon bog‘i bo‘lgan. 3000 dan ortiq qumtosh ustunlar.",
+      "ru": "В 1982 году стал первым национальным лесным парком Китая. Более 3000 песчаниковых столбов.",
+      "en": "China's first national forest park (1982), with more than 3,000 sandstone pillars."
+     }
+    ]
+   ]
+  }
  },
  {
   "c": "hk",
@@ -3006,12 +3437,20 @@ const DAYS = [
    [
     "14:30",
     {
-     "uz": "<b>[[Disneyland]]</b> — ixtiyoriy, $100. Soat 18:30 gacha.",
-     "ru": "<b>Disneyland</b> — по желанию, $100. До 18:30.",
-     "en": "<b>Disneyland</b> — optional, $100. Until 18:30."
+     "uz": "<b>[[Disneyland]]</b> — $100.",
+     "ru": "<b>Disneyland</b> — $100.",
+     "en": "<b>Disneyland</b> — $100."
     },
     {
      "opt": true
+    }
+   ],
+   [
+    "14:30",
+    {
+     "uz": "Disneylendga bormaydiganlar uchun — universitetlardan birida <b>workshop</b>.",
+     "ru": "Для тех, кто не идёт в Disneyland, — <b>воркшоп</b> в одном из университетов.",
+     "en": "For those not going to Disneyland — a <b>workshop</b> at one of the universities."
     }
    ],
    [
@@ -3077,7 +3516,103 @@ const DAYS = [
      "en": "Opened on Lantau Island in 2005 — Disney characters, rides and parades."
     }
    ]
-  ]
+  ],
+  "avatar": {
+   "c": "zj",
+   "img": "zj_tianmen",
+   "mini": [
+    "zj_tianmen",
+    {
+     "uz": "Tianmen tog‘i",
+     "ru": "Гора Тяньмэнь",
+     "en": "Tianmen Mountain"
+    },
+    {
+     "uz": "«Osmon darvozasi»",
+     "ru": "«Небесные врата»",
+     "en": "Heaven's Gate"
+    }
+   ],
+   "t": {
+    "uz": "Tianmen tog‘i va Guanchjouga qaytish",
+    "ru": "Гора Тяньмэнь и обратно в Гуанчжоу",
+    "en": "Tianmen Mountain and back to Guangzhou"
+   },
+   "wx": [
+    "zj",
+    "partly",
+    18,
+    10
+   ],
+   "rows": [
+    [
+     "08:00–09:00",
+     {
+      "uz": "Nonushta, so‘ng xonalarni topshiramiz.",
+      "ru": "Завтрак, затем сдаём номера.",
+      "en": "Breakfast, then we check out."
+     }
+    ],
+    [
+     "08:30",
+     {
+      "uz": "<b>[[Tianmen]] tog‘i</b> — kanat yo‘li, qoya bo‘yidagi shisha yo‘lak va «Osmon darvozasi».",
+      "ru": "<b>Гора Тяньмэнь</b> — канатная дорога, стеклянная тропа над обрывом и «Небесные врата».",
+      "en": "<b>Tianmen Mountain</b> — the cable car, the glass cliff walk and Heaven's Gate."
+     }
+    ],
+    [
+     "12:30–13:30",
+     {
+      "uz": "Tushlik — halol oshxonada.",
+      "ru": "Обед — в халяльном кафе.",
+      "en": "Lunch at a halal restaurant."
+     }
+    ],
+    [
+     "≈ 16:00",
+     {
+      "uz": "Tezyurar poyezdda [[Guanchjou]]ga — taxminan 5,5 soat. Kechki ovqat yo‘lda.",
+      "ru": "Скоростной поезд в Гуанчжоу — около 5,5 часа. Ужин в дороге.",
+      "en": "High-speed train back to Guangzhou — about 5.5 hours. Dinner on the way."
+     },
+     {
+      "c": "go"
+     }
+    ],
+    [
+     "≈ 21:30",
+     {
+      "uz": "[[Guangzhou South]]. Mehmonxonada tunaymiz, ertaga uyga uchamiz.",
+      "ru": "Guangzhou South. Ночуем в отеле, завтра летим домой.",
+      "en": "Guangzhou South. We sleep at a hotel and fly home tomorrow."
+     },
+     {
+      "c": "gz"
+     }
+    ]
+   ],
+   "places": [
+    [
+     "zj_tianmen",
+     "Tianmen tog‘i",
+     {
+      "uz": "Tog‘ ichidagi 131 metrlik tabiiy ark — «Osmon darvozasi». Unga 999 zinapoya olib boradi.",
+      "ru": "Природная арка высотой 131 м внутри горы — «Небесные врата». К ней ведут 999 ступеней.",
+      "en": "A 131-metre natural arch through the mountain — Heaven's Gate — reached by 999 steps."
+     }
+    ],
+    [
+     "zj_walk",
+     "Shisha yo‘lak",
+     {
+      "uz": "Qoya bo‘yida, yuzlab metr balandlikdagi shisha yo‘lak.",
+      "ru": "Стеклянная тропа на краю обрыва, на высоте сотен метров.",
+      "en": "A glass walkway on the cliff edge, hundreds of metres up."
+     }
+    ]
+   ]
+  }
  },
  {
   "c": "gz",
@@ -3169,9 +3704,9 @@ const DAYS = [
    [
     "21:20",
     {
-     "uz": "Toshkentdamiz (T2)! Ota-onalar kutib oladi.",
-     "ru": "Мы в Ташкенте (T2)! Родители встречают.",
-     "en": "Tashkent (T2) — parents meet us."
+     "uz": "Toshkentdamiz (T2)! Bizdan bir vakil (Edu Expedition vakili) va ota-onalar kutib oladi.",
+     "ru": "Мы в Ташкенте (T2)! Встречают наш представитель (Edu Expedition) и родители.",
+     "en": "Tashkent (T2) — an Edu Expedition representative and the parents meet us."
     },
     {
      "c": "tas"
@@ -3193,21 +3728,22 @@ const DAYS = [
 ];
 /* weather: typical early-November values; replaced by the live Open-Meteo forecast once the date is within 16 days */
 const WXI = { sun: "☀️", partly: "⛅", cloud: "☁️", rain: "🌦️" };
-const GEO = { tas: [41.31, 69.24], sz: [22.54, 114.06], gz: [23.13, 113.26], hk: [22.30, 114.17] };
+const GEO = { tas: [41.31, 69.24], zj: [29.12, 110.48], sz: [22.54, 114.06], gz: [23.13, 113.26], hk: [22.30, 114.17] };
 const LIVE = {};
 function wmo(c) { return c <= 1 ? "sun" : c <= 3 ? "partly" : c <= 48 ? "cloud" : "rain"; }
 async function liveWeather() {
   if (Date.now() < new Date("2026-10-16T00:00:00+05:00").getTime() || Date.now() > new Date("2026-11-12").getTime()) return;
   for (const [city, [la, lo]] of Object.entries(GEO)) {
     try {
-      const r = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${la}&longitude=${lo}&daily=weather_code,temperature_2m_max,temperature_2m_min&timezone=auto&start_date=2026-10-31&end_date=2026-11-11`);
+      const r = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${la}&longitude=${lo}&daily=weather_code,temperature_2m_max,temperature_2m_min&timezone=auto&start_date=2026-10-27&end_date=2026-11-11`);
       const j = await r.json(); j.daily.time.forEach((t, k) => { if (j.daily.temperature_2m_max[k] != null) LIVE[city + t] = [wmo(j.daily.weather_code[k]), Math.round(j.daily.temperature_2m_max[k]), Math.round(j.daily.temperature_2m_min[k])]; });
     } catch (_) {}
   }
   renderTabs(); renderWx(); show(di);
 }
-const PLAN_LAST = { 1: 4, 2: 8, 3: 11 };
-const CITY = { go: ["#FFFFFF", { uz: "Yo‘l", ru: "В пути", en: "Travel" }], sz: ["#6FE3D0", "c_sz"], gz: ["#FF9B7A", "c_gz"], hk: ["#D8B4FE", "c_hk"] };
+const PRE = 2;  // index 0 = online meeting (27 Oct), 1 = in-person meeting (30 Oct), 2 = departure
+const PLAN_LAST = { 1: 6, 2: 10, 3: 13 };
+const CITY = { go: ["#FFFFFF", { uz: "Yo‘l", ru: "В пути", en: "Travel" }], tas: ["#FFFFFF", { uz: "Toshkent", ru: "Ташкент", en: "Tashkent" }], zj: ["#7EE2A8", { uz: "Zhangjiajie", ru: "Чжанцзяцзе", en: "Zhangjiajie" }], sz: ["#6FE3D0", "c_sz"], gz: ["#FF9B7A", "c_gz"], hk: ["#D8B4FE", "c_hk"] };
 const UNIS = [
   ["szu", "Shenzhen University", "sz", 2], ["hitsz", "Harbin Institute of Technology, Shenzhen", "sz", 2], ["sustech", "SUSTech", "sz", 3],
   ["hkustgz", "HKUST (Guangzhou)", "gz", 5], ["scut", "South China University of Technology", "gz", 6], ["sysu", "Sun Yat-sen University", "gz", 6],
@@ -3731,6 +4267,7 @@ let lang = "uz", plan = 3, di = 0, age = "", kids = 1, gender = "";
 try { const s = localStorage.getItem("naseeb-lang"); if (T[s]) lang = s; } catch (_) {}
 const tr = k => strip(T[lang][k] ?? T.uz[k] ?? "");
 const pick = o => { if (typeof o === "string") return tr(o); const v = lang === "cyr" ? toCyr(o.uz) : (o[lang] ?? o.uz); return strip(v); };
+function dayName(i) { return i === 0 ? tr("meet_on") : i === 1 ? tr("meet_off") : i === PRE ? tr("dep_day") : tr("day_n").replace("#", i - PRE); }
 function dateLabel(i) {
   const [m, d] = DATES[i], wd = new Date(2026, m, d).getDay(), L = T[lang];
   if (lang === "en") return `${L.days[wd]} ${d} ${L.months[m - 9]}`;
@@ -3747,10 +4284,12 @@ function applyText() {
   $("#name").placeholder = { uz: "Ism Familiya", cyr: "Исм Фамилия", ru: "Имя Фамилия", en: "First and last name" }[lang];
   $("#ref").placeholder = { uz: "Do‘stingizning ismi", cyr: "Дўстингизнинг исми", ru: "Имя друга", en: "Your friend's name" }[lang];
   $("#planName").textContent = tr("p" + plan + "_name");
-  renderTabs(); renderUnis(); renderSights(); renderHotels(); renderHalal(); renderDisc(); renderWx(); renderBudget(); show(di);
+  renderTabs(); renderTickets(); renderUnis(); renderSights(); renderHotels(); renderHalal(); renderDisc(); renderWx(); renderBudget(); show(di);
   if ($(".hmap")) mapLabels();
 }
-function dayOf(i) { const b = DAYS[i]; return Object.assign({}, b, (b.alt && b.alt[plan]) || {}); }
+let AV = false;  // true = Hong Kong visa refused → Zhangjiajie (Avatar mountains) on 8–10 Nov
+function rawDay(i) { const b = DAYS[i]; return AV && b.avatar ? Object.assign({}, b, b.avatar) : b; }
+function dayOf(i) { const b = rawDay(i); return Object.assign({}, b, (b.alt && b.alt[plan]) || {}); }
 function wxOf(i) {
   const d = dayOf(i), [city, ic, hi, lo] = d.wx, [m, dd] = DATES[i];
   const live = LIVE[`${city}2026-${m + 1}-${String(dd).padStart(2, "0")}`];
@@ -3762,34 +4301,36 @@ function renderTabs() {
     const d = dayOf(i), b = document.createElement("button"); b.type = "button"; b.setAttribute("role", "tab");
     const [m, dd] = DATES[i], wd = new Date(2026, m, dd).getDay();
     b.innerHTML = `<i style="background:${CITY[d.c][0]}"></i>${dd} ${pick({ uz: m === 9 ? "okt" : "noy", ru: m === 9 ? "окт" : "ноя", en: m === 9 ? "Oct" : "Nov" })}<span class="wd">${T[lang].wds[wd]} · ${WXI[wxOf(i).ic]}</span>`;
-    b.disabled = i > PLAN_LAST[plan]; b.onclick = () => show(i); box.appendChild(b);
+    b.onclick = () => show(i); box.appendChild(b);
   });
 }
 function cityName(c) { return typeof CITY[c][1] === "string" ? tr(CITY[c][1]) : pick(CITY[c][1]); }
 function scopeChip(i) {
   const alt = DAYS[i].alt && DAYS[i].alt[plan];
   if (alt || DAYS[i].alt) return `<span class="pill soft">${tr("both")}</span>`;
-  if (i <= 3) return `<span class="pill soft">${tr("both")}</span>`;
-  if (i <= 7) return `<span class="pill soft">${tr("only23")}</span>`;
+  if (i <= PRE + 3) return `<span class="pill soft">${tr("both")}</span>`;
+  if (i <= PRE + 7) return `<span class="pill soft">${tr("only23")}</span>`;
+  if (AV && DAYS[i].avatar) return `<span class="pill goldp">${tr("p3_name")} · ${tr("av_short")}</span>`;
   return `<span class="pill goldp">${tr("p3_name")}</span>`;
 }
-const RC = { go: "rgba(255,255,255,.55)", tas: "#FFFFFF", sz: "#6FE3D0", gz: "#FF9B7A", hk: "#D8B4FE" };
+const RC = { go: "rgba(255,255,255,.55)", tas: "#FFFFFF", zj: "#7EE2A8", sz: "#6FE3D0", gz: "#FF9B7A", hk: "#D8B4FE" };
 function show(i) {
-  di = Math.max(0, Math.min(PLAN_LAST[plan], i)); const d = dayOf(di), w = wxOf(di);
+  di = Math.max(0, Math.min(DAYS.length - 1, i)); const d = dayOf(di), w = wxOf(di);
   $$("#days button").forEach((b, k) => b.setAttribute("aria-selected", k === di));
   $("#stageImg").src = IMG(d.img); $("#stageImg").alt = pick(d.t);
-  PLS = (DAYS[di].alt ? [...(DAYS[di].places || []), ...((DAYS[di].alt[Object.keys(DAYS[di].alt)[0]].places) || [])] : d.places) || [[d.mini[0], strip(pick(d.mini[1])), d.mini[2]]];
-  if (DAYS[di].alt && plan === +Object.keys(DAYS[di].alt)[0]) PLS = [...(DAYS[di].alt[Object.keys(DAYS[di].alt)[0]].places || []), ...(DAYS[di].places || [])];
+  const RD = rawDay(di);
+  PLS = (RD.alt ? [...(RD.places || []), ...((RD.alt[Object.keys(RD.alt)[0]].places) || [])] : d.places) || [[d.mini[0], strip(pick(d.mini[1])), d.mini[2]]];
+  if (RD.alt && plan === +Object.keys(RD.alt)[0]) PLS = [...(RD.alt[Object.keys(RD.alt)[0]].places || []), ...(RD.places || [])];
   pi = 0; renderMini();
-  const no = di === 0 ? tr("dep_day") : tr("day_n").replace("#", di);
+  const no = dayName(di);
   $("#dChips").innerHTML = `<span class="pill white">${no} · ${dateLabel(di)}</span><span class="pill soft" style="color:${CITY[d.c][0]}">${cityName(d.c)}</span>${scopeChip(di)}<span class="pill wx">${WXI[w.ic]} ${tr("wx_day")} ${w.hi}° · 🌙 ${tr("wx_night")} ${w.lo}°</span>`;
   const minW = m => pick({ uz: `${m} daq`, ru: `${m} мин`, en: `${m} min` });
   const shopsH = c => { const S = SHOPS[c]; if (!S || !S.list) return ""; return `<details class="places"><summary>${tr("sh_open").replace("#", S.list.length)} ▾</summary><ol class="near">${S.list.map(p => `<li><a href="https://www.google.com/maps/search/?api=1&query=${p.lat},${p.lon}" target="_blank" rel="noopener"><img src="${IMG(p.img)}" alt="" loading="lazy"><b>${p.name}</b><span>${p.approx ? "≈ " : ""}${p.km} km · ${p.walk ? minW(p.min) + " " + tr("h_on_foot") : tr("by_metro") + " ~" + minW(p.min)} · 🚇 ${p.metro}</span><small>${pick(p.desc)}<br>📍 ${p.addr} · ${p.hours}</small></a></li>`).join("")}</ol><small class="pl-note">${tr("sh_from")}</small></details>`; };
-  const rowsH = dd => dd.rows.map(([t, x, e = {}]) => `<div class="row t${e.opt ? " opt" : ""}" style="--rc:${RC[e.c || dd.c]}"><span>${t}</span><p>${pick(x)}${e.opt ? `<span class="opt-tag">${tr("opt")}</span>` : ""}</p>${e.shops ? shopsH(e.shops) : ""}</div>`).join("");
-  const base = DAYS[di];
+  const rowsH = dd => dd.rows.map(([t, x, e = {}]) => `<div class="row t${e.opt ? " opt" : ""}" style="--rc:${RC[e.c || dd.c]}"><span>${typeof t === "object" ? pick(t) : t}</span><p>${pick(x)}${e.opt ? `<span class="opt-tag">${tr("opt")}</span>` : ""}</p>${e.shops ? shopsH(e.shops) : ""}</div>`).join("");
+  const base = rawDay(di);
   if (base.alt) {
     const ak = Object.keys(base.alt)[0], A = Object.assign({}, base, base.alt[ak]);
-    const tagA = tr("p" + ak + "_name"), tagB = ak === "1" ? tr("only23") : tr("p3_name");
+    const tagA = tr("p" + ak + "_name"), tagB = ak === "1" ? tr("only23") : tr("p3_name") + (AV ? " · " + tr("av_short") : "");
     const mine = plan === +ak ? "a" : "b";
     $("#dTitle").textContent = tr("split_t");
     $("#dRows").innerHTML = `<div class="split2"><div class="br${mine === "a" ? " on" : ""}"><span class="pill ${mine === "a" ? "white" : "soft"}">${tagA}</span><b>${pick(A.t)}</b>${rowsH(A)}</div><div class="br${mine === "b" ? " on" : ""}"><span class="pill ${mine === "b" ? "goldp" : "soft"}">${tagB}</span><b>${pick(base.t)}</b>${rowsH(base)}</div></div>`;
@@ -3797,6 +4338,8 @@ function show(i) {
     $("#dTitle").textContent = pick(d.t);
     $("#dRows").innerHTML = rowsH(d);
   }
+  $("#avBar").hidden = !DAYS[di].avatar;
+  $$("#avBar button").forEach(b => b.setAttribute("aria-pressed", (b.dataset.av === "1") === AV));
   const g = $("#gallery"); g.hidden = !d.gallery;
   g.innerHTML = d.gallery ? d.gallery.map(([img, cap]) => `<figure><img src="${IMG(img)}" alt="${pick(cap)}" loading="lazy"><figcaption>${pick(cap)}</figcaption></figure>`).join("") : "";
 }
@@ -3805,7 +4348,7 @@ function renderWx() {
     const d = dayOf(i), w = wxOf(i), [m, dd] = DATES[i], wd = new Date(2026, m, dd).getDay();
     const city = d.wx[0] === "tas" ? pick({ uz: "Toshkent", ru: "Ташкент", en: "Tashkent" }) : cityName(d.wx[0]);
     const tip = d.tip || DAYS[i].tip;
-    return `<div class="wx-card glass${i > PLAN_LAST[plan] ? " off" : ""}"><span class="wd">${T[lang].days[wd]}</span><span class="dt">${dd} ${pick({ uz: m === 9 ? "okt" : "noy", ru: m === 9 ? "окт" : "ноя", en: m === 9 ? "Oct" : "Nov" })}</span><span class="city" style="color:${RC[d.wx[0]]}">${city}</span><span class="ic">${WXI[w.ic]}</span><div class="dn"><span>☀ ${tr("wx_day")} <b>${w.hi}°</b></span><span class="n">🌙 ${tr("wx_night")} <b>${w.lo}°</b></span></div>${tip ? `<p>${pick(tip)}</p>` : ""}</div>`;
+    return `<div class="wx-card glass"><span class="wd">${T[lang].days[wd]}</span><span class="dt">${dd} ${pick({ uz: m === 9 ? "okt" : "noy", ru: m === 9 ? "окт" : "ноя", en: m === 9 ? "Oct" : "Nov" })}</span><span class="city" style="color:${RC[d.wx[0]]}">${city}</span><span class="ic">${WXI[w.ic]}</span><div class="dn"><span>☀ ${tr("wx_day")} <b>${w.hi}°</b></span><span class="n">🌙 ${tr("wx_night")} <b>${w.lo}°</b></span></div>${tip ? `<p>${pick(tip)}</p>` : ""}</div>`;
   }).join("");
 }
 let packed = {}; try { packed = JSON.parse(localStorage.getItem("naseeb-pack") || "{}"); } catch (_) {}
@@ -3830,7 +4373,7 @@ function renderMini() {
 function openPlace(k) {
   pi = (k + PLS.length) % PLS.length; const [img, name, info] = PLS[pi];
   $("#pmImg").src = IMG(img); $("#pmImg").alt = name; $("#pmT").textContent = name; $("#pmInfo").textContent = pick(info);
-  const dd = PLS[pi][3] ?? di; $("#pmDay").textContent = (dd === 0 ? tr("dep_day") : tr("day_n").replace("#", dd)) + " · " + dateLabel(dd);
+  const dd = PLS[pi][3] ?? di; $("#pmDay").textContent = dayName(dd) + " · " + dateLabel(dd);
   $("#pmCount").textContent = `${pi + 1} / ${PLS.length}`;
   $("#pmPrev").hidden = $("#pmNext").hidden = PLS.length < 2;
   $("#pmDots").innerHTML = PLS.map((p, j) => `<button type="button" class="${j === pi ? "on" : ""}" data-j="${j}" aria-label="${p[1]}"></button>`).join("");
@@ -3840,22 +4383,34 @@ function openPlace(k) {
 function closePlace() { $("#pModal").hidden = true; document.body.style.overflow = ""; if (PLS_SAVED) { [PLS, pi] = PLS_SAVED; PLS_SAVED = null; renderMini(); } }
 function renderUnis() {
   $("#unis").innerHTML = UNIS.map(([img, name, c, day]) => {
-    const off = (plan === 1 && c !== "sz") || (plan === 2 && c === "hk");
+    const off = false;
     return `<div class="card glass" style="opacity:${off ? .4 : 1}"><img src="${IMG(img)}" alt="${name}" loading="lazy"><div class="in"><span class="city" style="color:${CITY[c][0]}">${cityName(c)} · ${dateLabel(day)}</span><b>${name}</b></div></div>`;
   }).join("");
 }
 // [day, place image, optional] — every sight outside the campuses, in program order
-const SIGHTS = [[1,"sz_civic"],[2,"oct",1],[3,"huaqiangbei"],[3,"nantou"],[4,"p_cantonfair"],[4,"canton_tall",1],[5,"gd_science"],[5,"canton",1],
-  [6,"p_huaisheng"],[6,"pearl",1],[7,"yongqing"],[7,"shangxiajiu"],[8,"stars"],[8,"hk_harbour",1],[9,"mongkok",1],[10,"disney",1]];
+const SIGHTS = [[3,"sz_civic"],[4,"oct",1],[5,"huaqiangbei"],[5,"nantou"],[6,"p_cantonfair"],[6,"canton_tall",1],[7,"gd_science"],[7,"canton",1],
+  [8,"p_huaisheng"],[8,"pearl",1],[9,"yongqing"],[9,"shangxiajiu"],[10,"stars"],[10,"hk_harbour",1],[11,"mongkok",1],[12,"disney",1]];
 const sightList = () => SIGHTS.map(([d, im, o]) => { const P = DAYS[d].places.find(x => x[0] === im); return [im, P[1], P[2], d, o]; });
+let SGC = "all";
 function renderSights() {
-  $("#sights").innerHTML = sightList().map(([im, name, info, d, o], k) => { const c = DAYS[d].c, off = d > PLAN_LAST[plan];
-    return `<button type="button" class="sight glass" data-k="${k}" style="opacity:${off ? .4 : 1}"><span class="ph"><img src="${IMG(im)}" alt="${name}" loading="lazy">${o ? `<i class="opt">${tr("sg_opt")}</i>` : ""}</span><span class="in"><span class="city" style="color:${CITY[c][0]}">${cityName(c)} · ${dateLabel(d)}</span><b>${name}</b><small>${pick(info)}</small></span></button>`; }).join("");
+  const L = sightList().map((x, k) => [...x, k]).filter(([, , , d]) => SGC === "all" || DAYS[d].c === SGC);
+  $("#sights").innerHTML = L.map(([im, name, info, d, o, k], n) => { const c = DAYS[d].c;
+    return `<button type="button" class="sight" data-k="${k}" style="--c:${CITY[c][0]};--d:${n * 60}ms"><img src="${IMG(im)}" alt="${name}" loading="lazy"><span class="sgsh"></span>${o ? `<i class="opt">${tr("sg_opt")}</i>` : ""}<span class="in"><span class="city">${cityName(c)} · ${dateLabel(d)}</span><b>${name}</b><small>${pick(info)}</small><span class="more">${tr("pl_more")} →</span></span></button>`; }).join("");
   $$("#sights .sight").forEach(b => b.onclick = () => { PLS_SAVED = PLS_SAVED || [PLS, pi]; PLS = sightList(); openPlace(+b.dataset.k); });
+  $$("#sgCity button").forEach(b => b.setAttribute("aria-pressed", b.dataset.c === SGC));
+  $("#sights").scrollLeft = 0; sgProgress();
+  requestAnimationFrame(() => $("#sights").classList.add("in"));
 }
+function sgProgress() {
+  const t = $("#sights"), n = t.children.length, w = t.firstElementChild ? t.firstElementChild.offsetWidth + 16 : 1;
+  const k = Math.min(n, Math.round(t.scrollLeft / w) + 1), max = t.scrollWidth - t.clientWidth;
+  $("#sgCount").textContent = `${k} / ${n}`; $("#sgBar").style.width = (max > 0 ? (t.scrollLeft / max) * 100 : 100) + "%";
+}
+function sgMove(dir) { const t = $("#sights"), w = t.firstElementChild.offsetWidth + 16, end = t.scrollLeft + t.clientWidth >= t.scrollWidth - 4;
+  t.scrollBy({ left: dir > 0 && end ? -t.scrollWidth : dir * w, behavior: "smooth" }); }
 let PLS_SAVED = null;
 function renderHalal() {
-  $("#halal").innerHTML = ["sz", "gz", "hk"].map(c => { const off = (plan === 1 && c !== "sz") || (plan === 2 && c === "hk");
+  $("#halal").innerHTML = ["sz", "gz", "hk"].map(c => { const off = false;
     const rows = HD[c].rest.map(r => `<div class="hl-r">${r.img ? `<img src="${IMG(r.img)}" alt="${r.name}" loading="lazy">` : ""}<b>${r.name}</b><span>${pick(r.cuisine)}${r.hours ? " · " + r.hours : ""}</span><small>📍 <a href="${mapUrl(c, r)}" target="_blank" rel="noopener">${r.addr}</a></small></div>`).join("")
       + HEXTRA[c].map(([n, cu, ad, im]) => `<div class="hl-r">${im ? `<img src="${IMG(im)}" alt="${strip(n)}" loading="lazy">` : ""}<b>${strip(n)}</b><span>${pick(cu)}</span><small>📍 ${ad}</small></div>`).join("");
     return `<div class="hl glass" style="opacity:${off ? .4 : 1}"><div class="hl-h"><b style="color:${CITY[c][0]}">${cityName(c)}</b><small>${pick(HAREA[c])}</small></div>${rows}</div>`; }).join("");
@@ -3871,9 +4426,9 @@ function renderHotels() {
         <ul class="cmp"><li class="walk ${cls(q[0])}"><details><summary><span>${tr("h_walk")}</span><em>${minW(n0.min)} ▾</em></summary><ol class="near">${near}</ol></details></li><li class="${cls(q[1])}"><span>${tr("h_rate")}</span><em>${r}/10</em></li><li class="${cls(q[2])}"><span>${tr("h_night")}</span><em>$${price}</em></li><li><span>${tr("h_total")} · ${nightW(n)}</span><em>$${price * n}</em></li></ul></div></div>`; }).join("");
     return `<div style="opacity:${off ? .4 : 1};margin-bottom:26px"><div class="hsub"><b>${cityName(c)}: ${tr("h_three")}</b><small style="color:var(--soft)">${tr("h_near")} ${pick(HAREA[c])}</small></div><div class="choose3">${cards}</div></div>`; }).join("");
 }
-const BUDGET = { 1: { svc: 490, fl: 445, ht: 145, food: 60, tr: 20, ins: 15, visa: 0, pocket: 100 },
+const BUDGET = { 1: { svc: 690, fl: 445, ht: 145, food: 60, tr: 20, ins: 15, visa: 0, pocket: 100 },
                  2: { svc: 990, fl: 371, ht: 280, food: 120, tr: 50, ins: 20, visa: 0, pocket: 150 },
-                 3: { svc: 1490, fl: 370, ht: 475, food: 210, tr: 100, ins: 25, visa: 150, pocket: 200 } };
+                 3: { svc: 1490, fl: 370, ht: 475, food: 210, tr: 100, ins: 25, visa: 150, pocket: 170 } };
 const OPTS = { 1: [], 2: [["o_ct", 25], ["o_boat", 20]], 3: [["o_ct", 25], ["o_boat", 20], ["o_peak", 15], ["o_disney", 100]] };
 function renderBudget() {
   const B = BUDGET[plan], money = v => "$" + String(v).replace(/\B(?=(\d{3})+(?!\d))/g, " ");
@@ -3886,7 +4441,39 @@ function renderBudget() {
 }
 function renderDisc() {
   const f = v => { const r = Math.floor(v / 5) * 5, t = String(r); const [a, b] = t.split("."); return "$" + a.replace(/\B(?=(\d{3})+(?!\d))/g, " ") + (b ? (lang === "en" ? "." : ",") + b : ""); };
-  $("#discEx").innerHTML = [490, 990, 1490].map(p => `<span>${f(p)} → ${tr("dx1")} ${f(p * .95)} · ${tr("dx2")} ${f(p * .9)}</span>`).join("");
+  $("#discEx").innerHTML = [690, 990, 1490].map((p, k) => { const save = r => "$" + (p - Math.floor(p * r / 5) * 5);
+    return `<span>${tr("dwin").replace("%1", tr("p" + (k + 1) + "_name")).replace("%2", save(.95)).replace("%3", save(.9))}</span>`; }).join("");
+}
+
+/* ---------- tickets: one journey per plan, in date order (day = index into DATES) ---------- */
+const FLY_OUT = { m: "fly", day: 2, a: "TAS", b: "SZX", t: "20:10 → 11:40 (+1)", code: "MU6038 + MU5331", via: "t_out_s" };
+const G1040 = { m: "rail", day: 6, a: "10:23", b: "10:52", from: "Shenzhen North", to: "Guangzhou South", code: "G1040", price: 11, via: { uz: "To‘g‘ri yo‘nalish · 29 daqiqa", ru: "Без пересадок · 29 мин", en: "Direct · 29 min" } };
+const LEGS = {
+  1: [{ ...FLY_OUT, price: 225, ow: 1 }, { m: "fly", day: 6, a: "SZX", b: "TAS", t: "13:35 → 21:20", code: "MU2320 + MU855", via: "t_r1_s", price: 220, ow: 1 }],
+  2: [FLY_OUT, G1040, { m: "fly", day: 10, a: "CAN", b: "TAS", t: "13:40 → 21:20", code: "MU2302 + MU855", via: "t_ret_s" }],
+  3: [FLY_OUT, G1040,
+      { m: "rail", day: 10, a: "10:14", b: "11:01", from: "Guangzhou South", to: "Hong Kong West Kowloon", code: "G6503", price: 32, via: "tr_s" },
+      { m: "rail", day: 12, a: "21:02", b: "22:38", from: "Hong Kong West Kowloon", to: "Guangzhou East", code: "G6564", price: 32, via: { uz: "To‘g‘ri yo‘nalish · 1 soat 36 daqiqa · vokzaldan 230 m — Zhonghui International Apartment", ru: "Без пересадок · 1 ч 36 мин · от вокзала 230 м — Zhonghui International Apartment", en: "Direct · 1 h 36 min · 230 m from the station — Zhonghui International Apartment" } },
+      { m: "fly", day: 13, a: "CAN", b: "TAS", t: "13:40 → 21:20", code: "MU2302 + MU855", via: "t_r3_s" }] };
+const RT = { 2: 371, 3: 370 };  // round-trip fare on one ticket; plan 1 is two one-way tickets
+function renderTickets() {
+  const L = LEGS[plan], last = L.length - 1, money = v => "$" + String(v).replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+  $("#legs").innerHTML = L.map((g, k) => {
+    const kind = g.m === "rail" ? tr("lg_train") : k === 0 ? tr("lg_out") : tr("lg_ret");
+    const head = `<p class="k">${k + 1} · ${kind} · ${dateLabel(g.day)}</p>`;
+    const price = g.price ? `<span class="pr">${money(g.price)}</span>${g.ow ? `<span>${tr("tk_ow")}</span>` : ""}` : `<span>${tr("tk_in_rt")}</span>`;
+    if (g.m === "rail") return `<div class="ticket leg leg-train">
+      <div class="main">${head}<p class="route">${g.a} <i>🚄</i> ${g.b}</p><small>${g.from} → ${g.to}</small><small class="via">${pick(g.via)}</small></div>
+      <div class="stub"><span>${tr("tr_class")}</span><b>${g.code}</b>${price}</div></div>`;
+    return `<div class="ticket leg">
+      <div class="main">${head}<p class="route">${g.a} <i>✈</i> ${g.b}</p><small class="via">${pick(g.via)}</small></div>
+      <div class="stub"><span>China Eastern</span><b>${g.code}</b><span>${g.t}</span>${price}</div></div>`;
+  }).join("");
+  const fl = BUDGET[plan].fl, rail = L.filter(g => g.m === "rail").reduce((a, g) => a + g.price, 0);
+  $("#tSum").innerHTML = `<div class="ts-row"><span>${tr("tk_fl")}<small>${plan === 1 ? tr("tk_two_ow") : tr("tk_one_rt")}</small></span><b>${money(fl)}</b></div>`
+    + (rail ? `<div class="ts-row"><span>${tr("tk_rail")}<small>${L.filter(g => g.m === "rail").map(g => g.code).join(" · ")}</small></span><b>${money(rail)}</b></div>` : "")
+    + `<div class="ts-row tot"><span>${tr("tk_total")}</span><b>${money(fl + rail)}</b></div>${plan === 2 ? `<p class="ts-bag">${tr("t_rt_p")}</p>` : ""}`;  // baggage terms are from the $371 ticket
+  $$("#tSeg button").forEach(b => b.setAttribute("aria-pressed", +b.dataset.plan === plan));
 }
 function setPlan(p) {
   plan = +p;
@@ -3894,7 +4481,7 @@ function setPlan(p) {
   $$("#planOpts button").forEach(b => b.setAttribute("aria-pressed", +b.dataset.plan === plan));
   $$("[data-ret]").forEach(el => el.classList.toggle("dim", +el.dataset.ret !== plan));
   $("#planName").textContent = tr("p" + plan + "_name");
-  renderTabs(); renderUnis(); renderSights(); renderHotels(); renderHalal(); renderDisc(); renderWx(); renderBudget(); show(di);
+  renderTabs(); renderTickets(); renderUnis(); renderSights(); renderHotels(); renderHalal(); renderDisc(); renderWx(); renderBudget(); show(di);
 }
 
 
@@ -3951,6 +4538,19 @@ $$(".lang button").forEach(b => b.onclick = () => { lang = b.dataset.lang; try {
 $$(".plan").forEach(b => b.onclick = () => setPlan(b.dataset.plan));
 $$("#planOpts button").forEach(b => b.onclick = () => setPlan(b.dataset.plan));
 $$("#bSeg button").forEach(b => b.onclick = () => setPlan(b.dataset.plan));
+$$("#tSeg button").forEach(b => b.onclick = () => setPlan(b.dataset.plan));
+new IntersectionObserver(([e], o) => { if (e.isIntersecting) { $(".sign-off").classList.add("go"); o.disconnect(); } }, { threshold: .4 }).observe($(".sign-off"));
+new IntersectionObserver(([e], o) => { if (e.isIntersecting) { $("#roadmap").classList.add("go"); o.disconnect(); } }, { threshold: .35 }).observe($("#roadmap"));
+$$("#sgCity button").forEach(b => b.onclick = () => { SGC = b.dataset.c; $("#sights").classList.remove("in"); renderSights(); });
+$("#sgPrev").onclick = () => sgMove(-1); $("#sgNext").onclick = () => sgMove(1);
+$("#sights").addEventListener("scroll", sgProgress, { passive: true });
+// gentle autoplay while the section is on screen, stops for good once the visitor touches it
+{ let auto = null, used = false; const stop = () => { used = true; clearInterval(auto); };
+  ["pointerdown", "wheel", "touchstart", "keydown"].forEach(e => $("#joylar").addEventListener(e, stop, { passive: true }));
+  if (!matchMedia("(prefers-reduced-motion: reduce)").matches) new IntersectionObserver(([e]) => { clearInterval(auto); if (e.isIntersecting && !used) auto = setInterval(() => sgMove(1), 3200); }, { threshold: .5 }).observe($("#joylar")); }
+function setAV(v) { AV = v; renderTabs(); renderWx(); show(di); }
+$$("#avBar button").forEach(b => b.onclick = () => setAV(b.dataset.av === "1"));
+$("#avGo").onclick = () => { setPlan(3); setAV(true); show(PRE + 8); $("#dastur").scrollIntoView({ behavior: "smooth" }); };
 $("#wxPrev").onclick = () => $("#wxgrid").scrollBy({ left: -320, behavior: "smooth" }); $("#wxNext").onclick = () => $("#wxgrid").scrollBy({ left: 320, behavior: "smooth" });
 $$("[data-plan-link]").forEach(a => a.addEventListener("click", () => setPlan(a.dataset.planLink)));
 $("#miniOpen").onclick = () => openPlace(pi); $("#miniImg").onclick = () => openPlace(pi);
@@ -3979,7 +4579,7 @@ $("#form").addEventListener("submit", async e => {
   let tg = $("#tg").value.trim(); if (tg && !tg.startsWith("@")) tg = "@" + tg;
   err("#f-name", name.length < 3 ? tr("e_name") : ""); err("#f-phone", phone.length !== 9 ? tr("e_phone") : ""); err("#f-age", age ? "" : tr("e_age")); err("#f-gender", gender ? "" : tr("e_gender"));
   if (name.length < 3 || phone.length !== 9 || !age || !gender) return;
-  const pretty = "+998 " + $("#phone").value, planTxt = `${tr("p" + plan + "_name")} (${tr("p" + plan + "_dates")}, ${["", "$490", "$990", "$1 490"][plan]})`;
+  const pretty = "+998 " + $("#phone").value, planTxt = `${tr("p" + plan + "_name")} (${tr("p" + plan + "_dates")}, ${["", "$690", "$990", "$1 490"][plan]})`;
   const msg = `${tr("msg_h")}\n${tr("msg_name")}: ${name}\n${tr("msg_phone")}: ${pretty}\n${tr("msg_age")}: ${age}\n${tr("f_gender")}: ${tr("g_" + gender)}\n${tr("msg_plan")}: ${planTxt}\n${tr("msg_kids")}: ${kids}` + (tg ? `\nTelegram: ${tg}` : "") + (ref ? `\n${tr("msg_ref")}: ${ref}` : "");
   let sent = false;
   const requestId = makeRequestId();
