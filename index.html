@@ -1,5 +1,5 @@
 <!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
-<title>Ta’lim ekspeditsiyasi · Naseeb Tour</title>
+<title>Edu Expedition</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
@@ -716,12 +716,158 @@ footer .sign-off.go .so-t a::after{transform:scaleX(1)}
 .coupon .stub{display:flex;align-items:center;justify-content:center;padding:14px 0;min-width:0}
 .coupon .stub span{transform:none;writing-mode:vertical-rl;rotate:180deg;white-space:nowrap;font-size:12px;letter-spacing:.08em;line-height:1}
 
+/* team */
+.team{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
+.tm{display:flex;flex-direction:column;gap:4px;padding:14px 14px 18px;border-radius:28px;text-decoration:none;color:#fff;transition:transform .25s,border-color .25s}
+a.tm:hover{transform:translateY(-4px);border-color:rgba(246,196,83,.7)}
+.tm img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:20px;margin-bottom:8px;max-width:100%}
+.tm small{font-size:11.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
+.tm b{font-size:18px;line-height:1.2}
+.tm span{font-size:13px;color:var(--soft);overflow-wrap:anywhere}
+.tm-more{align-items:center;justify-content:center;text-align:center;border:1.5px dashed rgba(246,196,83,.55)!important;background:rgba(246,196,83,.06)!important}
+.tm-more b{font-size:clamp(44px,5vw,64px);color:var(--gold);line-height:1}
+.tm-more span{font-size:15px;color:#fff;max-width:12em}
+@media (max-width:1100px){.team{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:640px){.team{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.tm{padding:10px 10px 14px;border-radius:22px}.tm b{font-size:15px}.tm-more{grid-column:1/-1;flex-direction:row;gap:12px;padding:18px}}
+
+/* team v2: full-bleed portrait cards */
+#jamoa .team{grid-template-columns:repeat(5,minmax(0,1fr));gap:18px}
+#jamoa .tm{position:relative;display:block;aspect-ratio:3/4;padding:0;border-radius:28px;overflow:hidden;background:#0B1430;border:1px solid rgba(255,255,255,.16);box-shadow:0 20px 44px rgba(0,0,0,.4);text-decoration:none;color:#fff;transition:transform .35s,box-shadow .35s,border-color .35s}
+#jamoa .tm img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:0;margin:0;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+#jamoa .tm::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,14,34,0) 42%,rgba(8,14,34,.78) 72%,rgba(8,14,34,.96))}
+#jamoa a.tm:hover{transform:translateY(-6px);border-color:rgba(246,196,83,.75);box-shadow:0 28px 56px rgba(0,0,0,.5)}
+#jamoa a.tm:hover img{transform:scale(1.06)}
+#jamoa .tm-in{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:16px;display:flex;flex-direction:column;gap:4px}
+#jamoa .tm-in small{align-self:flex-start;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#0B1430;background:var(--gold);border-radius:999px;padding:3px 9px;line-height:1.3}
+#jamoa .tm-in b{font-size:18px;line-height:1.15;margin-top:4px}
+#jamoa .tm-h{font-size:12.5px;color:#DDE3EE;overflow-wrap:anywhere}
+#jamoa .tm-h i{font-style:normal;opacity:.7;margin-right:6px}
+#jamoa .tm-go{position:absolute;top:12px;right:12px;z-index:1;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.92);color:#0B1430;font-weight:700;transition:transform .3s}
+#jamoa a.tm:hover .tm-go{transform:rotate(45deg)}
+#jamoa .tm-more{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;padding:20px;background:radial-gradient(120% 90% at 50% 0%,rgba(246,196,83,.28),rgba(11,20,48,.95) 65%);border:1.5px solid rgba(246,196,83,.6)}
+#jamoa .tm-more::after{display:none}
+#jamoa .faces{display:flex;align-items:center}
+#jamoa .faces img,#jamoa .faces span{position:static;width:42px;height:42px;border-radius:50%;border:2px solid #0B1430;margin-left:-12px;object-fit:cover}
+#jamoa .faces img:first-child{margin-left:0}
+#jamoa .faces span{display:grid;place-items:center;background:var(--gold);color:#0B1430;font-weight:800;font-size:20px}
+#jamoa .tm-more b{font-size:clamp(52px,6vw,76px);line-height:1;letter-spacing:-.03em;background:linear-gradient(180deg,#FFE6A3,#F6C453);-webkit-background-clip:text;background-clip:text;color:transparent}
+#jamoa .tm-more>span{font-size:15px;font-weight:500;color:#fff;max-width:11em;line-height:1.35}
+@media (max-width:1100px){#jamoa .team{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:640px){#jamoa .team{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}#jamoa .tm{border-radius:22px}#jamoa .tm-in{padding:12px}#jamoa .tm-in b{font-size:15px}#jamoa .tm-h{font-size:11px}
+  #jamoa .tm-more{grid-column:1/-1;aspect-ratio:auto;flex-direction:row;flex-wrap:wrap;padding:18px}}
+#jamoa .tm-h{display:flex;flex-direction:column;gap:0;white-space:nowrap;min-width:0}
+#jamoa .tm-h i{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;margin:0}
+#jamoa .tm-in{min-width:0}
+#jamoa .tm-h{overflow:hidden;text-overflow:ellipsis}
+#jamoa .tm-more{border:1.5px solid rgba(246,196,83,.65)!important;background:radial-gradient(120% 90% at 50% 0%,rgba(246,196,83,.28),rgba(11,20,48,.95) 65%)!important}
+@media (max-width:640px){#jamoa .tm-more>span{flex-basis:100%}}
+
+/* header VIP link (opens the VIP page in a new tab) */
+.vipbtn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-weight:700;font-size:13px;letter-spacing:.12em;color:#0B1430;background:linear-gradient(135deg,#FFE29A,#F6C453 55%,#E0A93A);border-radius:999px;padding:9px 16px;box-shadow:0 6px 18px rgba(246,196,83,.35);transition:transform .2s,box-shadow .2s;white-space:nowrap}
+.vipbtn span{font-size:12px;letter-spacing:0}
+.vipbtn:hover{transform:translateY(-1px);box-shadow:0 10px 24px rgba(246,196,83,.5)}
+@media (max-width:640px){.vipbtn{padding:7px 11px;font-size:12px}}
+/* team v3: photo on top, text in its own panel below — never over the face */
+#jamoa .tm{aspect-ratio:auto;display:flex;flex-direction:column;background:linear-gradient(180deg,#14204A,#0B1430)}
+#jamoa .tm img{position:relative;inset:auto;display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;object-position:50% 25%}
+#jamoa .tm::after{display:none}
+#jamoa .tm-in{position:relative;left:auto;right:auto;bottom:auto;padding:14px 16px 18px;flex:1;gap:5px}
+#jamoa .tm-in small{white-space:normal}
+#jamoa .tm-more{aspect-ratio:auto;min-height:100%}
+@media (max-width:640px){#jamoa .tm-in{padding:10px 12px 14px}}
+#jamoa .tm-more .faces img{width:42px;height:42px;aspect-ratio:1/1;border-radius:50%;flex:none}
+#jamoa .tm-more{justify-content:center}
+/* sign-off pill: equal text on both sides, aligned with the NASEEB letters (the bird sits above them) */
+footer .so-by{gap:16px;padding:12px 28px}
+footer .so-by .by,footer .so-by .url{font-size:15px;line-height:1;color:var(--soft,#DDE3EE);transform:translateY(7px)}
+footer .so-by .url{border-left:0;padding-left:0;display:inline-flex;align-items:center;gap:16px}
+footer .so-by .url::before{content:"";width:1px;height:20px;background:rgba(255,255,255,.25)}
+footer .so-by .by{display:inline-flex;align-items:center;gap:16px}
+footer .so-by .by::after{content:"";width:1px;height:20px;background:rgba(255,255,255,.25)}
+@media (max-width:520px){footer .so-by .by::after{display:none}}
+
+/* universities: same carousel as sights */
+#unisec .sights{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:6px 2px 18px;margin:0 -2px;scrollbar-width:none;grid-template-columns:none}
+#unisec .sights::-webkit-scrollbar{display:none}
+.sg-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.sg-city{margin:0}
+.sg-nav{display:flex;align-items:center;gap:10px}
+.sg-count{font-size:14px;color:var(--soft);min-width:52px;text-align:right;font-variant-numeric:tabular-nums}
+.sg-bar{height:3px;border-radius:3px;background:rgba(255,255,255,.12);overflow:hidden}
+.sg-bar i{display:block;height:100%;width:0;background:var(--gold,#F6C453);transition:width .25s}
+#unisec .sight{all:unset;box-sizing:border-box;cursor:pointer;position:relative;flex:0 0 clamp(240px,28vw,320px);aspect-ratio:3/4;border-radius:28px;overflow:hidden;scroll-snap-align:start;
+  box-shadow:0 18px 40px rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.16);opacity:0;transform:translateY(24px) scale(.97);transition:opacity .5s,transform .5s}
+#unisec .sights.in .sight{opacity:1;transform:none;transition-delay:var(--d)}
+#unisec .sight img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+#unisec .sight:hover img,#unisec .sight:focus-visible img{transform:scale(1.08)}
+#unisec .sight .sgsh{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,14,34,0) 35%,rgba(8,14,34,.55) 62%,rgba(8,14,34,.95))}
+#unisec .sight .opt{position:absolute;top:14px;right:14px;font-style:normal;font-size:12px;font-weight:600;color:#0B1430;background:var(--opt,#FF8FC7);border-radius:999px;padding:3px 10px}
+#unisec .sight .in{position:absolute;left:0;right:0;bottom:0;padding:18px;display:flex;flex-direction:column;gap:5px}
+#unisec .sight .city{align-self:flex-start;font-size:11.5px;font-weight:600;color:#0B1430;background:var(--c);border-radius:999px;padding:3px 10px}
+#unisec .sight b{font-size:21px;line-height:1.15;color:#fff}
+#unisec .sight small{font-size:13px;line-height:1.4;color:#DDE3EE;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;max-height:0;opacity:0;transition:max-height .4s,opacity .4s}
+#unisec .sight:hover small,#unisec .sight:focus-visible small{max-height:40px;opacity:1}
+#unisec .sight .more{font-size:12.5px;font-weight:600;color:var(--gold,#F6C453)}
+#unisec .sight:focus-visible{outline:2px solid var(--gold,#F6C453);outline-offset:3px}
+@media (hover:none){#unisec .sight small{max-height:40px;opacity:1}}
+@media (max-width:640px){#unisec .sight{flex-basis:72vw}.sg-top{flex-direction:column;align-items:stretch}.sg-nav{justify-content:flex-end}}
+@media (prefers-reduced-motion:reduce){#unisec .sight{opacity:1;transform:none;transition:none}#unisec .sight img{transition:none}}
+
+
+#unisec .sight .sgsh{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,14,34,0) 35%,rgba(8,14,34,.55) 62%,rgba(8,14,34,.95))}
+
+/* VIP header button v2: navy with gold edge, gold crown, slow shimmer */
+.vipbtn{position:relative;overflow:hidden;gap:7px;padding:9px 16px 9px 13px;color:#F6C453;background:linear-gradient(180deg,#16224A,#0B1430);border:1.5px solid rgba(246,196,83,.75);box-shadow:0 0 0 3px rgba(246,196,83,.12),0 8px 22px rgba(0,0,0,.35)}
+.vipbtn svg{width:16px;height:16px;display:block;filter:drop-shadow(0 0 6px rgba(246,196,83,.6))}
+.vipbtn b{font-weight:800;letter-spacing:.16em;background:linear-gradient(90deg,#F6C453,#FFF1C4,#F6C453);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:vipShine 3.5s linear infinite}
+.vipbtn::after{content:"";position:absolute;top:0;bottom:0;width:30px;left:-40px;background:linear-gradient(90deg,transparent,rgba(255,241,196,.35),transparent);transform:skewX(-20deg);animation:vipSweep 4s ease-in-out 1s infinite}
+.vipbtn:hover{border-color:#F6C453;box-shadow:0 0 0 4px rgba(246,196,83,.2),0 10px 26px rgba(0,0,0,.4)}
+@keyframes vipShine{to{background-position:-200% 0}}
+@keyframes vipSweep{0%,70%{left:-40px}100%{left:120%}}
+@media (prefers-reduced-motion:reduce){.vipbtn b,.vipbtn::after{animation:none}}
+@media (max-width:1180px){.nav nav a{padding:9px 10px}}
+@media (max-width:1260px) and (min-width:981px){
+  .nav nav{gap:0}.nav nav a{font-size:13px;padding:8px 8px}
+  .nav .bar{padding-left:16px;gap:8px}.brand .brand-word{height:34px}
+  .lang button{padding:6px 7px}
+  .nav .btn{font-size:13px;padding-left:14px}
+  .vipbtn{padding:8px 12px 8px 10px}
+}
+@media (max-width:1100px) and (min-width:981px){.nav .btn [data-t="cta"]{display:none}.nav .btn{padding:6px}}
+.nav .btn{white-space:nowrap;flex:none}
+@media (max-width:1500px) and (min-width:981px){.nav nav{gap:0}.nav nav a{padding:8px 10px}.lang button{padding:6px 8px}}
+@media (max-width:1380px) and (min-width:1101px){.nav nav a{font-size:13.5px;padding:8px 8px}}
+@media (min-width:981px){.nav nav{gap:0}.nav nav a{padding:8px 10px}.lang button{padding:6px 8px}}
+@media (max-width:1380px) and (min-width:1101px){.nav nav a{font-size:13.5px;padding:8px 8px}}
+
+/* halal v2: compact rows, photo thumb + text + map button */
+#halal{align-items:start}
+#halal .hl{padding:20px 20px 10px;border-radius:28px}
+#halal .hl-h{flex-direction:row;justify-content:space-between;align-items:flex-start;gap:12px;padding-bottom:12px;margin:0;border-bottom:1px solid rgba(255,255,255,.12)}
+#halal .hl-h b{display:block;font-size:20px;color:var(--c)}
+#halal .hl-h small{display:block}
+#halal .cnt{flex:none;min-width:30px;height:30px;border-radius:999px;display:grid;place-items:center;font-size:13px;font-weight:700;color:#0B1430;background:var(--c)}
+#halal ul{list-style:none;margin:0;padding:0}
+#halal .hr{display:grid;grid-template-columns:64px minmax(0,1fr) auto;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+#halal .hr:last-child{border-bottom:0}
+#halal .th{width:64px;height:64px;border-radius:16px;overflow:hidden;display:grid;place-items:center;background:rgba(255,255,255,.08);color:var(--c)}
+#halal .th img{width:100%;height:100%;object-fit:cover;margin:0;border-radius:0}
+#halal .th svg{width:26px;height:26px}
+#halal .tx{display:flex;flex-direction:column;gap:1px;min-width:0}
+#halal .tx b{font-size:15px;line-height:1.25}
+#halal .tx span{font-size:12.5px;color:#DDE3EE;line-height:1.35}
+#halal .tx small{font-size:11.5px;color:var(--soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#halal .mp{flex:none;font-size:12px;font-weight:600;text-decoration:none;color:#fff;border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:6px 10px;white-space:nowrap;transition:background .2s,border-color .2s}
+#halal .mp:hover{background:rgba(255,255,255,.1);border-color:var(--c)}
+@media (max-width:520px){#halal .hr{grid-template-columns:56px minmax(0,1fr);row-gap:8px}#halal .th{width:56px;height:56px}#halal .mp{grid-column:2;justify-self:start}}
+
 </style>
 
 <header class="nav"><div class="wrap"><div class="bar glass">
   <a class="brand" href="#top" aria-label="Expedition in Education"><svg class="brand-word" viewBox="0 0 480 205" aria-hidden="true"><text x="240" y="66" font-family="Poppins, Arial, sans-serif" font-weight="700" font-size="66" letter-spacing="-1.5" text-anchor="middle"><tspan fill="#E5A526">e</tspan><tspan fill="#FFFFFF">xpedition</tspan></text><text x="240" y="138" font-family="Poppins, Arial, sans-serif" font-weight="700" font-size="66" letter-spacing="-1.5" text-anchor="middle"><tspan fill="#E5A526">in e</tspan><tspan fill="#FFFFFF">ducation</tspan></text><path d="M44 172 Q 220 202 404 166" fill="none" stroke="#E5A526" stroke-width="7" stroke-linecap="round"/><path transform="translate(424 160) rotate(-14)" d="M16,0 L-14,-12 L-6,0 L-14,12 Z" fill="#FFFFFF"/></svg></a>
-  <nav><a href="#rejalar" data-t="nav_plans"></a><a href="#dastur" data-t="nav_program"></a><a href="#obhavo" data-t="nav_wx"></a><a href="#mehmonxona" data-t="nav_hotels"></a><a href="#narx" data-t="nav_price"></a></nav>
+  <nav><a href="#rejalar" data-t="nav_plans"></a><a href="#dastur" data-t="nav_program"></a><a href="#obhavo" data-t="nav_wx"></a><a href="#mehmonxona" data-t="nav_hotels"></a><a href="#narx" data-t="nav_price"></a><a href="#jamoa" data-t="nav_team"></a></nav>
   <div class="right">
+    <a class="vipbtn" href="https://claude.ai/artifact/5fTPo5QXVkc8nHqY3wxuAG" target="_blank" rel="noopener" aria-label="VIP (opens in a new tab)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8l4.5 4L12 5l4.5 7L21 8l-2 10H5z" fill="currentColor"/></svg><b>VIP</b></a>
     <div class="lang" role="group" aria-label="Language"><button type="button" data-lang="uz">UZ</button><button type="button" data-lang="cyr">ЎЗ</button><button type="button" data-lang="ru">RU</button><button type="button" data-lang="en">EN</button></div>
     <a class="btn" href="#ariza"><span data-t="cta"></span> <span class="round" aria-hidden="true">→</span></a>
   </div>
@@ -849,12 +995,15 @@ footer .sign-off.go .so-t a::after{transform:scaleX(1)}
   </div>
 </section>
 
-<section class="photo">
+<section class="photo" id="unisec">
   <img class="bg blur" src="img/hku.jpg" alt="">
   <div class="shade"></div>
   <div class="wrap">
     <div class="sh"><div><p class="label" data-t="u_label"></p><h2 data-t="u_h2"></h2></div><p data-t="u_p"></p></div>
-    <div class="cards" id="unis"></div>
+    <div class="sg-top"><div class="seg glass sg-city" id="unCity" role="group"><button type="button" data-c="all" aria-pressed="true" data-t="sg_all"></button><button type="button" data-c="sz" aria-pressed="false" data-t="c_sz"></button><button type="button" data-c="gz" aria-pressed="false" data-t="c_gz"></button><button type="button" data-c="hk" aria-pressed="false" data-t="c_hk"></button></div>
+      <div class="sg-nav"><span class="sg-count" id="unCount"></span><button class="round" type="button" id="unPrev" aria-label="←">←</button><button class="round" type="button" id="unNext" aria-label="→">→</button></div></div>
+    <div class="sights" id="unis"></div>
+    <div class="sg-bar" aria-hidden="true"><i id="unBar"></i></div>
   </div>
 </section>
 
@@ -1008,6 +1157,15 @@ footer .sign-off.go .so-t a::after{transform:scaleX(1)}
   </div>
 </section>
 
+<section class="photo" id="jamoa">
+  <img class="bg blur" src="img/sustech.jpg" alt="">
+  <div class="shade"></div>
+  <div class="wrap">
+    <div class="sh"><div><p class="label" data-t="tm_label"></p><h2 data-t="tm_h2"></h2></div><p data-t="tm_p"></p></div>
+    <div class="team"><a class="tm" href="https://www.instagram.com/hasan_mamasaidov/" target="_blank" rel="noopener" style="--i:0"><img src="img/p_hasan.jpg" alt="Hasan Mamasaidov" loading="lazy"><span class="tm-in"><small data-t="tm_advisor"></small><b>Hasan Mamasaidov</b><span class="tm-h"><i>Instagram</i>@hasan_mamasaidov</span></span><span class="tm-go" aria-hidden="true">↗</span></a><a class="tm" href="https://t.me/naseeb_edu" target="_blank" rel="noopener" style="--i:1"><img src="img/p_humoyun.jpg" alt="Humoyun Nasipkulov" loading="lazy"><span class="tm-in"><small data-t="tm_founder"></small><b>Humoyun Nasipkulov</b><span class="tm-h"><i>Telegram</i>@naseeb_edu</span></span><span class="tm-go" aria-hidden="true">↗</span></a><a class="tm" href="https://t.me/Muhammadamin_HKU" target="_blank" rel="noopener" style="--i:2"><img src="img/p_muhammadamin.jpg" alt="Muhammadamin Rahmonberdiev" loading="lazy"><span class="tm-in"><small data-t="tm_pm"></small><b>Muhammadamin Rahmonberdiev</b><span class="tm-h"><i>Telegram</i>@Muhammadamin_HKU</span></span><span class="tm-go" aria-hidden="true">↗</span></a><a class="tm" href="https://t.me/burhunter" target="_blank" rel="noopener" style="--i:3"><img src="img/p_burxoniddin.jpg" alt="Burxoniddin Fatiddinov" loading="lazy"><span class="tm-in"><small data-t="ps_role"></small><b>Burxoniddin Fatiddinov</b><span class="tm-h"><i>Telegram</i>@burhunter</span></span><span class="tm-go" aria-hidden="true">↗</span></a><div class="tm tm-more" style="--i:4"><div class="faces" aria-hidden="true"><img src="img/p_hasan.jpg" alt=""><img src="img/p_humoyun.jpg" alt=""><img src="img/p_muhammadamin.jpg" alt=""><img src="img/p_burxoniddin.jpg" alt=""><span>+</span></div><b>10+</b><span data-t="tm_more"></span></div></div>
+  </div>
+</section>
+
 <section class="photo">
   <img class="bg" src="img/canton.jpg" alt="">
   <div class="shade" style="background:linear-gradient(90deg,rgba(8,14,34,.9),rgba(8,14,34,.6) 60%,rgba(8,14,34,.25))"></div>
@@ -1086,7 +1244,7 @@ const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAl
    [[...]] marks names that stay in Latin letters in every language (universities, places, brands). */
 const T = {
 uz: {
-  nav_plans: "Rejalar", nav_program: "Dastur", nav_hotels: "Mehmonxonalar", nav_price: "Narx", cta: "Ro‘yxatdan o‘tish",
+  nav_plans: "Rejalar", nav_program: "Dastur", nav_hotels: "Mehmonxonalar", nav_price: "Narx", nav_team: "Jamoa", cta: "Ro‘yxatdan o‘tish",
   hero_eyebrow: "14 va undan katta o‘quvchilar uchun akademik sayohat",
   hero_h1: "Universitetni <span class=\"gold\">o‘z ko‘zingiz bilan</span> tanlang",
   hero_sub: "Shenchjen, Guanchjou va Gonkong: to‘qqizta universitet va har bir shaharda sayohat. Kampuslarni o‘z ko‘zimiz bilan ko‘ramiz, qabul komissiyalari bilan yuzma-yuz suhbatlashamiz.",
@@ -1119,6 +1277,8 @@ uz: {
   d_only: "Chegirma faqat <b>[[Edu Expedition]] xizmat haqidan</b> ayriladi — aviachipta, mehmonxona va boshqa xarajatlarga tegishli emas.", p3_tl: "Hammasini bir safarda ko‘ring", av_q: "Gonkong vizasi chiqmasa-chi?", av_a: "Unda 8–10-noyabr kunlari Gonkong o‘rniga <b>Avatar tog‘lariga</b> ([[Zhangjiajie]]) boramiz. Dasturni ko‘ring", av_on: "Viza chiqsa — Gonkong", av_off: "Viza chiqmasa — Avatar tog‘lari", av_short: "Avatar tog‘lari", av_note: "Viza chiqmasa: Gonkong universitetlari o‘rniga Avatar tog‘lari. Chipta va xarajatlar farqini alohida xabar qilamiz.",
   sg_all: "Hammasi",
   w1t: "Qabul komissiyasi", w2t: "Grant va stipendiya", w3t: "Talabalar bilan suhbat", w4t: "Shahar hayoti", w5t: "O‘z tanlovi",
+  tm_label: "Jamoa", tm_h2: "Safarni kimlar <span class=\"gold\">tashkil qiladi</span>", tm_p: "Har bir bosqichda farzandingiz yonida tajribali jamoa bo‘ladi.", tm_founder: "Loyiha asoschisi", tm_advisor: "Maslahatchi", tm_pm: "Loyiha menejeri", tm_more: "va yana jamoa a’zolari",
+  hl_map: "Xaritada",
   u_label: "To‘qqiz kampus", u_h2: "To‘qqizta universitet — <span class=\"gold\">to‘qqizta imkoniyat</span>", u_p: "Har birida kampusni aylanamiz va qabul komissiyasini tinglaymiz.",
   h_label: "Mehmonxonalar", h_h2: "Shahar markazida, <span class=\"gold\">qulay va xavfsiz</span>", h_pill: "Alohida to‘lanadi · nonushta bilan",
   h_note: "Narxlar [[Trip.com]] bo‘yicha (2026-yil 1-oktabr), bron qilingan kunga qarab o‘zgaradi. Xona 2 kishilik.",
@@ -1257,7 +1417,7 @@ uz: {
   h_transit: "Guanchjou, 10–11-noyabr · 1 kecha · Guangzhou East vokzalidan 230 m piyoda (Tianhe Sports Center) · 9,3/10 (3 978 sharh)",
 },
 ru: {
-  nav_plans: "Программы", nav_program: "Маршрут", nav_hotels: "Отели", nav_price: "Цены", cta: "Записаться",
+  nav_plans: "Программы", nav_program: "Маршрут", nav_hotels: "Отели", nav_price: "Цены", nav_team: "Команда", cta: "Записаться",
   hero_eyebrow: "Академическая поездка для школьников от 14 лет",
   hero_h1: "Выбирайте университет <span class=\"gold\">своими глазами</span>",
   hero_sub: "Шэньчжэнь, Гуанчжоу и Гонконг: девять университетов и обзорная экскурсия в каждом городе. Гуляем по кампусам и говорим с приёмными комиссиями лично.",
@@ -1290,6 +1450,8 @@ ru: {
   d_only: "Скидка вычитается <b>только из стоимости услуг Edu Expedition</b> — авиабилеты, отель и другие расходы не входят.", p3_tl: "Всё за одну поездку", av_q: "А если визу в Гонконг не дадут?", av_a: "Тогда 8–10 ноября вместо Гонконга едем в <b>горы Аватара</b> (Чжанцзяцзе). Смотреть программу", av_on: "Виза есть — Гонконг", av_off: "Визы нет — горы Аватара", av_short: "горы Аватара", av_note: "Без визы: вместо университетов Гонконга — горы Аватара. Разницу в билетах и расходах сообщим отдельно.",
   sg_all: "Все",
   w1t: "Приёмная комиссия", w2t: "Гранты и стипендии", w3t: "Разговор со студентами", w4t: "Жизнь города", w5t: "Свой выбор",
+  tm_label: "Команда", tm_h2: "Кто <span class=\"gold\">организует поездку</span>", tm_p: "На каждом этапе рядом с вашим ребёнком — опытная команда.", tm_founder: "Основатель проекта", tm_advisor: "Советник", tm_pm: "Менеджер проекта", tm_more: "и ещё членов команды",
+  hl_map: "На карте",
   u_label: "Девять кампусов", u_h2: "Девять университетов — <span class=\"gold\">девять возможностей</span>", u_p: "В каждом — экскурсия по кампусу и встреча с приёмной комиссией.",
   h_label: "Отели", h_h2: "В центре города, <span class=\"gold\">удобно и безопасно</span>", h_pill: "Оплачивается отдельно · с завтраком",
   h_note: "Цены Trip.com (1 октября 2026), зависят от даты бронирования. Номер на двоих.",
@@ -1427,7 +1589,7 @@ ru: {
   h_transit: "Гуанчжоу, 10–11 ноября · 1 ночь · 230 м пешком от вокзала Guangzhou East (Tianhe Sports Center) · 9,3/10 (3 978 отзывов)",
 },
 en: {
-  nav_plans: "Plans", nav_program: "Program", nav_hotels: "Hotels", nav_price: "Prices", cta: "Sign up",
+  nav_plans: "Plans", nav_program: "Program", nav_hotels: "Hotels", nav_price: "Prices", nav_team: "Team", cta: "Sign up",
   hero_eyebrow: "Academic trip for students aged 14 and over",
   hero_h1: "Choose your university <span class=\"gold\">with your own eyes</span>",
   hero_sub: "Shenzhen, Guangzhou and Hong Kong: nine universities and a city tour in every city. We walk the campuses and talk to admissions teams face to face.",
@@ -1460,6 +1622,8 @@ en: {
   d_only: "The discount comes <b>off the Edu Expedition service fee only</b> — not flights, hotels or other costs.", p3_tl: "See it all in one trip", av_q: "What if the Hong Kong visa is refused?", av_a: "Then on 8–10 November we go to the <b>Avatar Mountains</b> (Zhangjiajie) instead of Hong Kong. See the program", av_on: "Visa granted — Hong Kong", av_off: "No visa — Avatar Mountains", av_short: "Avatar Mountains", av_note: "Without the visa: the Avatar Mountains instead of the Hong Kong universities. We will confirm any difference in tickets and costs separately.",
   sg_all: "All",
   w1t: "Admissions", w2t: "Grants & scholarships", w3t: "Talk to students", w4t: "City life", w5t: "Their own choice",
+  tm_label: "Team", tm_h2: "Who <span class=\"gold\">runs the trip</span>", tm_p: "An experienced team is with your child at every step.", tm_founder: "Founder", tm_advisor: "Advisor", tm_pm: "Project manager", tm_more: "more team members",
+  hl_map: "Map",
   u_label: "Nine campuses", u_h2: "Nine universities — <span class=\"gold\">nine chances</span>", u_p: "At each one we tour the campus and hear from admissions.",
   h_label: "Hotels", h_h2: "In the city centre, <span class=\"gold\">comfortable and safe</span>", h_pill: "Paid separately · with breakfast",
   h_note: "Trip.com prices (1 October 2026), depending on booking date. Rooms for two.",
@@ -3744,10 +3908,10 @@ async function liveWeather() {
 const PRE = 2;  // index 0 = online meeting (27 Oct), 1 = in-person meeting (30 Oct), 2 = departure
 const PLAN_LAST = { 1: 6, 2: 10, 3: 13 };
 const CITY = { go: ["#FFFFFF", { uz: "Yo‘l", ru: "В пути", en: "Travel" }], tas: ["#FFFFFF", { uz: "Toshkent", ru: "Ташкент", en: "Tashkent" }], zj: ["#7EE2A8", { uz: "Zhangjiajie", ru: "Чжанцзяцзе", en: "Zhangjiajie" }], sz: ["#6FE3D0", "c_sz"], gz: ["#FF9B7A", "c_gz"], hk: ["#D8B4FE", "c_hk"] };
-const UNIS = [
-  ["szu", "Shenzhen University", "sz", 2], ["hitsz", "Harbin Institute of Technology, Shenzhen", "sz", 2], ["sustech", "SUSTech", "sz", 3],
-  ["hkustgz", "HKUST (Guangzhou)", "gz", 5], ["scut", "South China University of Technology", "gz", 6], ["sysu", "Sun Yat-sen University", "gz", 6],
-  ["hku", "The University of Hong Kong", "hk", 9], ["polyu", "Hong Kong PolyU", "hk", 9], ["hkust", "HKUST", "hk", 10]];
+const UNIS = [  // [image, name, city, day index into DATES]
+  ["szu", "Shenzhen University", "sz", 4], ["hitsz", "Harbin Institute of Technology, Shenzhen", "sz", 4], ["sustech", "SUSTech", "sz", 5],
+  ["hkustgz", "HKUST (Guangzhou)", "gz", 7], ["scut", "South China University of Technology", "gz", 8], ["sysu", "Sun Yat-sen University", "gz", 8],
+  ["hku", "The University of Hong Kong", "hk", 11], ["polyu", "Hong Kong PolyU", "hk", 11], ["hkust", "HKUST", "hk", 12]];
 /* halal places + hotel distances (build/halal_dist.py -> data/halal_dist.json). Walk = straight line × 1.3 at 75 m/min. */
 const HD = {
  "sz": {
@@ -4381,12 +4545,23 @@ function openPlace(k) {
   $("#pModal").hidden = false; document.body.style.overflow = "hidden"; if (!PLS_SAVED) renderMini();
 }
 function closePlace() { $("#pModal").hidden = true; document.body.style.overflow = ""; if (PLS_SAVED) { [PLS, pi] = PLS_SAVED; PLS_SAVED = null; renderMini(); } }
+let UNC = "all";
+const uniList = () => UNIS.map(([im, name, c, d]) => { const P = (DAYS[d].places || []).find(x => x[0] === im); return [im, name, P ? P[2] : { uz: "", ru: "", en: "" }, d, 0, c]; });
 function renderUnis() {
-  $("#unis").innerHTML = UNIS.map(([img, name, c, day]) => {
-    const off = false;
-    return `<div class="card glass" style="opacity:${off ? .4 : 1}"><img src="${IMG(img)}" alt="${name}" loading="lazy"><div class="in"><span class="city" style="color:${CITY[c][0]}">${cityName(c)} · ${dateLabel(day)}</span><b>${name}</b></div></div>`;
-  }).join("");
+  const L = uniList().map((x, k) => [...x, k]).filter(x => UNC === "all" || x[5] === UNC);
+  $("#unis").innerHTML = L.map(([im, name, info, d, o, c, k], n) => `<button type="button" class="sight" data-k="${k}" style="--c:${CITY[c][0]};--d:${n * 60}ms"><img src="${IMG(im)}" alt="${name}" loading="lazy"><span class="sgsh"></span><span class="in"><span class="city">${cityName(c)} · ${dateLabel(d)}</span><b>${name}</b><small>${pick(info)}</small><span class="more">${tr("pl_more")} →</span></span></button>`).join("");
+  $$("#unis .sight").forEach(b => b.onclick = () => { PLS_SAVED = PLS_SAVED || [PLS, pi]; PLS = uniList(); openPlace(+b.dataset.k); });
+  $$("#unCity button").forEach(b => b.setAttribute("aria-pressed", b.dataset.c === UNC));
+  $("#unis").scrollLeft = 0; carProgress("unis", "unCount", "unBar");
+  requestAnimationFrame(() => $("#unis").classList.add("in"));
 }
+function carProgress(id, cnt, bar) {
+  const t = $("#" + id), n = t.children.length, w = t.firstElementChild ? t.firstElementChild.offsetWidth + 16 : 1;
+  const k = Math.min(n, Math.round(t.scrollLeft / w) + 1), max = t.scrollWidth - t.clientWidth;
+  $("#" + cnt).textContent = `${k} / ${n}`; $("#" + bar).style.width = (max > 0 ? (t.scrollLeft / max) * 100 : 100) + "%";
+}
+function carMove(id, dir) { const t = $("#" + id), w = t.firstElementChild.offsetWidth + 16, end = t.scrollLeft + t.clientWidth >= t.scrollWidth - 4;
+  t.scrollBy({ left: dir > 0 && end ? -t.scrollWidth : dir * w, behavior: "smooth" }); }
 // [day, place image, optional] — every sight outside the campuses, in program order
 const SIGHTS = [[3,"sz_civic"],[4,"oct",1],[5,"huaqiangbei"],[5,"nantou"],[6,"p_cantonfair"],[6,"canton_tall",1],[7,"gd_science"],[7,"canton",1],
   [8,"p_huaisheng"],[8,"pearl",1],[9,"yongqing"],[9,"shangxiajiu"],[10,"stars"],[10,"hk_harbour",1],[11,"mongkok",1],[12,"disney",1]];
@@ -4409,11 +4584,16 @@ function sgProgress() {
 function sgMove(dir) { const t = $("#sights"), w = t.firstElementChild.offsetWidth + 16, end = t.scrollLeft + t.clientWidth >= t.scrollWidth - 4;
   t.scrollBy({ left: dir > 0 && end ? -t.scrollWidth : dir * w, behavior: "smooth" }); }
 let PLS_SAVED = null;
+const FORK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3v8M5 3v5a2 2 0 0 0 4 0V3M7 11v10M17 3c-2 0-3 3-3 6s1 3 3 3v9"/></svg>';
 function renderHalal() {
-  $("#halal").innerHTML = ["sz", "gz", "hk"].map(c => { const off = false;
-    const rows = HD[c].rest.map(r => `<div class="hl-r">${r.img ? `<img src="${IMG(r.img)}" alt="${r.name}" loading="lazy">` : ""}<b>${r.name}</b><span>${pick(r.cuisine)}${r.hours ? " · " + r.hours : ""}</span><small>📍 <a href="${mapUrl(c, r)}" target="_blank" rel="noopener">${r.addr}</a></small></div>`).join("")
-      + HEXTRA[c].map(([n, cu, ad, im]) => `<div class="hl-r">${im ? `<img src="${IMG(im)}" alt="${strip(n)}" loading="lazy">` : ""}<b>${strip(n)}</b><span>${pick(cu)}</span><small>📍 ${ad}</small></div>`).join("");
-    return `<div class="hl glass" style="opacity:${off ? .4 : 1}"><div class="hl-h"><b style="color:${CITY[c][0]}">${cityName(c)}</b><small>${pick(HAREA[c])}</small></div>${rows}</div>`; }).join("");
+  const mq = q => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
+  const item = (name, sub, map, addr, img) => `<li class="hr"><span class="th">${img ? `<img src="${IMG(img)}" alt="" loading="lazy">` : FORK}</span>
+    <span class="tx"><b>${name}</b><span>${sub}</span><small title="${addr}">${addr}</small></span>
+    <a class="mp" href="${map}" target="_blank" rel="noopener" aria-label="${tr("hl_map")}: ${name}">${tr("hl_map")} ↗</a></li>`;
+  $("#halal").innerHTML = ["sz", "gz", "hk"].map(c => {
+    const rows = HD[c].rest.map(r => item(r.name, pick(r.cuisine) + (r.hours ? " · " + r.hours : ""), mapUrl(c, r), r.addr, r.img))
+      .concat(HEXTRA[c].map(([n, cu, ad, im]) => item(strip(n), pick(cu), mq(strip(n) + " " + (c === "gz" ? "Guangzhou" : "Hong Kong")), ad, im)));
+    return `<div class="hl glass" style="--c:${CITY[c][0]}"><div class="hl-h"><div><b>${cityName(c)}</b><small>${pick(HAREA[c])}</small></div><span class="cnt">${rows.length}</span></div><ul>${rows.join("")}</ul></div>`; }).join("");
 }
 function renderHotels() {
   const nightW = n => pick({ uz: `${n} kecha`, ru: `${n} ${n === 1 ? "ночь" : n < 5 ? "ночи" : "ночей"}`, en: `${n} nights` });
@@ -4541,6 +4721,9 @@ $$("#bSeg button").forEach(b => b.onclick = () => setPlan(b.dataset.plan));
 $$("#tSeg button").forEach(b => b.onclick = () => setPlan(b.dataset.plan));
 new IntersectionObserver(([e], o) => { if (e.isIntersecting) { $(".sign-off").classList.add("go"); o.disconnect(); } }, { threshold: .4 }).observe($(".sign-off"));
 new IntersectionObserver(([e], o) => { if (e.isIntersecting) { $("#roadmap").classList.add("go"); o.disconnect(); } }, { threshold: .35 }).observe($("#roadmap"));
+$$("#unCity button").forEach(b => b.onclick = () => { UNC = b.dataset.c; $("#unis").classList.remove("in"); renderUnis(); });
+$("#unPrev").onclick = () => carMove("unis", -1); $("#unNext").onclick = () => carMove("unis", 1);
+$("#unis").addEventListener("scroll", () => carProgress("unis", "unCount", "unBar"), { passive: true });
 $$("#sgCity button").forEach(b => b.onclick = () => { SGC = b.dataset.c; $("#sights").classList.remove("in"); renderSights(); });
 $("#sgPrev").onclick = () => sgMove(-1); $("#sgNext").onclick = () => sgMove(1);
 $("#sights").addEventListener("scroll", sgProgress, { passive: true });
